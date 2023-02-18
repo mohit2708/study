@@ -1,3 +1,24 @@
+# Python List interview questions
+
+### Table of Contents
+
+|  No.  | Questions                                               |
+| :---: | ------------------------------------------------------- |
+|       | [What is List?](#ques-what-is-list)                     |
+|       | [Access List Items?](#access-list-items)                |
+|       | [Change List Items](#change-list-items)                 |
+|       | [Add List Items](#add-list-items)                       |
+|       | [Remove List Items](#remove-list-items)                 |
+|       | [Loop Lists](#loop-lists)                               |
+|       | [Copy Lists](#copy-lists)                               |
+|       | [Join Lists](#join-lists)                               |
+|       | [List Comprehension](#list-comprehension)               |
+|       | [List Methods](#list-methods)                           |
+|       | [list() Constructor](#list-constructor)                 |
+|       | [What is difference between Discard() and Remove()?](#) |
+
+
+
 ### **Ques. What is List?**
 * Lists are used to store multiple items in a single variable.
 * List items are **ordered**, **changeable**, and **allow duplicate** values.
