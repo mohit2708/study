@@ -1,3 +1,19 @@
+# Python Sets interview questions
+
+
+|  No.  | Questions                                   |
+| :---: | ------------------------------------------- |
+|       | [What is Set?](#ques-what-is-set)           |
+|       | [Length of a Set](#get-the-length-of-a-set) |
+|       | [Acesss Items of set](#acesss-items-of-set) |
+|       | [Remove Item of set](#remove-item-of-set-)  |
+|       | [Loop Sets](#loop-sets)                     |
+|       | [Join Two Set](#join-two-set)               |
+|       | [set() Constructor](#set-constructor)       |
+|       | [Set Methods](#set-methods)                 |
+
+
+
 ### **Ques. What is Set?**
 * Sets are used to store multiple items in a single variable.
 * A set is a collection which is both unordered, unindexed and unchangeable, and do not allow **duplicate** values.
