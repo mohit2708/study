@@ -1,4 +1,23 @@
 
+# Python Dictionary interview questions
+
+
+|  No.  | Questions                                                                                    |
+| :---: | -------------------------------------------------------------------------------------------- |
+|       | [What is Dictionaries?](#ques-what-is-dictionaries)                                          |
+|       | (Dictionary Length)[#dictionary-length]                                                      |
+|       | [Access Item](#access-item-of-dictionary)                                                    |
+|       | [Change Dictionary Items](#change-dictionary-items)                                          |
+|       | [Add Dictionary Items](#add-dictionary-items)                                                |
+|       | [Remove Dictionary Items](#remove-dictionary-items)                                          |
+|       | [Copy Dictionaries](#copy-dictionaries)                                                      |
+|       | [loop-dictionaries](#loop-dictionaries)                                                      |
+|       | [Nested Dictionaries](#nested-dictionaries)                                                  |
+|       | [Dictionary Methods](#dictionary-methods)                                                    |
+|       | [How to Merging Or Adding two Dictionaries](#ques-How-to-Merging-Or-Adding-two-Dictionaries) |
+
+
+
 ### **Ques. What is Dictionaries?**
 * Dictionaries are written with curly **brackets{}**, and have keys and values.
 * Dictionary items are **ordered**, **changeable**, and **does not allow duplicates**.
