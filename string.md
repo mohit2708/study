@@ -1,5 +1,35 @@
+# Python String interview questions
+
+
+|  No.  | Questions                                                                                                                        |
+| :---: | -------------------------------------------------------------------------------------------------------------------------------- |
+|       | [Python Strings](#Python-Strings)]                                                                                               |
+|       | [Assign String to a Variable](#Assign-String-to-a-Variable)                                                                      |
+|       | [Multiline Strings](#Multiline-Strings)                                                                                          |
+|       | [Check String](#Check-String)                                                                                                    |
+|       | [Slicing Strings](#Slicing-Strings)                                                                                              |
+|       | [Modify Strings](#Modify-Strings)                                                                                                |
+|       | [String Concatenation](#String-Concatenation)                                                                                    |
+|       | [Format - Strings](#Format-Strings)                                                                                              |
+|       | [ What is an f-string and how do you use it](#ques-What-is-an-f-string-and-how-do-you-use-it)                                    |
+|       | [Escape Characters](#Escape-Characters)                                                                                          |
+|       | [How would you confirm that 2 strings have the same identity](#ques-How-would-you-confirm-that-2-strings-have-the-same-identity) |
+|       | [check if each word in a string begins with a capital letter](#ques-check-if-each-word-in-a-string-begins-with-a-capital-letter) |
+|       | [When would you use rfind()](#ques-When-would-you-use-rfind())                                                                   |
+|       | [Count the number of a specific character in a string](#ques-Count-the-number-of-a-specific-character-in-a-string)               |
+|       | [find the length / Count number of characters in a string](#ques-find-the-length-/-Count-number-of-characters-in-a-string)       |
+|       | [Remove vowels from a string](#ques-remove-vowels-from-a-string)                                                                 |
+|       | [Extract numbers from string](#ques-Extract-numbers-from-string)                                                                 |
+|       | [Find repeated characters in a string python](#ques-Find-repeated-characters-in-a-string-python)                                 |
+|       | [program to count the frequency of each character](#ques-program-to-count-the-frequency-of-each-character)                       |
+|       | [Looping Through a String](#Looping-Through-a-String)                                                                            |
+|       | [Reversed the String](#ques-Reversed-the-String)                                                                                 |
+|       |                                                                                                                                  |
+|       |                                                                                                                                  |
+|       |                                                                                                                                  |
+
 ### **Ques. Python Strings?**
-* Once a string object has been created, it cannot be changed. “Modifying” that string creates a whole new object in memory.
+* Once a string object has been created, it cannot be changed. "Modifying" that string creates a whole new object in memory.
 * 'hello' is the same as "hello".
 
 ### **Ques. Assign String to a Variable?**
@@ -26,7 +56,34 @@ sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
 ```
 
+### **Ques. Check String?**
+* The **in** operator will return **True** if a string contains a substring.
+* we can use the keyword **in**.
+```python
+txt = "The best things in life are free!"
+print("free" in txt)
+
+Output:- True
+```
+* Use it in an if statement:
+```python
+txt = "The best things in life are free!"
+if "free" in txt:
+  print("Yes, 'free' is present.")
+
+Output:- Yes, 'free' is present.
+```
+* Check **if NOT**
+```python
+txt = "The best things in life are free!"
+print("expensive" not in txt)
+
+output:- True
+```
+
 ### **Ques. Slicing Strings?**
+* We can return a range of characters by using the slice syntax.
+* Specify the start index and the end index, separated by a colon, to return a part of the string.
 ```python
 b = "Hello, World!" 
 
@@ -41,9 +98,28 @@ Output:- llo, World!
 
 print(b[-5:-2]) # Negative Indexing: Get the characters from position 2, and all the way to the end.
 Output:- orl
+
+print(b[:-1]) 
+Output:- Hello, World
 ```
 
-### **Ques .Modify Strings?**
+### **Ques. Modify Strings?**
+* **Upper Case:-** it method returns the string in upper case:
+```python
+b = "Hello, World!"
+print(a.upper())
+
+Output:- HELLO, WORLD!
+```
+
+* **Lower Case:-** It method returns the string in lower case:
+```python
+b = "Hello, World!"
+print(a.lower())
+
+Output:- hello, world!
+```
+
 * The **replace()** method replaces a string with another string.
 ```python
 a = "Hello, World!"
@@ -58,20 +134,7 @@ b = a.split(",")
 
 Output:- ['Hello', ' World!']
 ```
-* **Upper Case**
-```python
-b = "Hello, World!"
-print(a.upper())
 
-Output:- HELLO, WORLD!
-```
-* **Lower Case**
-```python
-b = "Hello, World!"
-print(a.lower())
-
-Output:- hello, world!
-```
 * **strip() method**:- The strip() method removes any whitespace from the beginning or the end.
 ```python
 b = "      Hello, World!     "
@@ -81,7 +144,7 @@ Output:- Hello, World!
 ``` 
 
 ### **String Concatenation**
-* To concatenate, or combine, two strings you can use the **plus(+)** operator.
+* To concatenate, or combine, two strings we can use the **plus(+)** operator.
 ```python
 a = "Hello"
 b = "World"
@@ -101,7 +164,7 @@ print(c)
 Output:- Hello World 
 ```
 
-### **Format - Strings**
+### **Format Strings**
 ```python
 # String Format:- As we learned in the Python Variables chapter, we cannot combine strings and numbers like this.
 age = 36
@@ -114,14 +177,13 @@ File "demo_string_format_error.py", line 2, in <module>
    txt = "My name is John, I am " + age
 TypeError: must be str, not int
 
-
 # we can combine strings and numbers by using the __format()__ method!
 # The format() method takes the passed arguments, formats them, and places them in the string where the placeholders {} are:
-  age = 36
-  txt = "My name is John, and I am {}"
-  print(txt.format(age))
- 
-  output:- My name is John, and I am 36
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+
+output:- My name is John, and I am 36
 
  
 # The format() method takes unlimited number of arguments, and are placed into the respective placeholders:
@@ -147,13 +209,12 @@ Output:- I want to pay 49.95 dollars for 3 pieces of item 567
 ### **Ques. What is an f-string and how do you use it?**
 New in python 3.6, f-strings make string interpolation really easy. Using f-strings is similar to using format(). and F-strings are denoted by an f before the opening quote.
 ```python
-name = 'Chris'
-food = 'creme brulee'
+name = 'Mohit'
+food = 'Tea'
 print(f'Hello. My name is {name} and I like {food}.')
 
-Output:- Hello. My name is Chris and I like creme brulee.
+Output:- Hello. My name is Mohit and I like Tea.
 ```
-
 
 ### **Ques. Escape Characters?**
 * An escape character is a backslash \ followed by the character you want to insert.
@@ -218,7 +279,7 @@ Output:- Hello
 
 
 ### **Ques. How would you confirm that 2 strings have the same identity?**
-The <b>is</b> operator returns True if 2 names point to the same location in memory.
+The **is** operator returns True if 2 names point to the same location in memory.
 ```python
 animals           = ['python','gopher']
 more_animals      = animals
@@ -238,23 +299,22 @@ True
 False
 ```
 
-### **Ques. How would you check if each word in a string begins with a capital letter?**
-The <b>istitle()</b> function checks if each word is capitalized.
+### **Ques. Check if each word in a string begins with a capital letter?**
+The **istitle()** function checks if each word is capitalized.
 ```python
 print( 'The Hilton'.istitle() ) #=> True
 print( 'The dog'.istitle() ) #=> False
 print( 'sticky rice'.istitle() ) #=> False
 ```
 
-### **Ques. Check if a string contains a specific substring?**
-The <b>in</b> operator will return <b>True</b> if a string contains a substring.
+### **Ques. When would you use rfind()?**
+* **rfind()** is like find() but it starts searching from the right of a string and return the first matching substring.
 ```python
-str = "My name is mohit saxena"
+story = 'The price is right said Bob. The price is right.'
+story.rfind('is')
 
-print( 'saxena' in str ) #=> True
-print( 'car' in 'The worlds fastest plane' ) #=> False
+Output:- 39
 ```
-
 
 ### **Ques. Count the number of a specific character in a string?**
 * <b>count()</b> will return the number of occurrences of a specific character.
@@ -264,7 +324,28 @@ print('The first president of the organization..'.count('o')) # 3
 Output:- 3
 ```
 
-### **Ques. Count number of characters in a string**
+### **Ques. find the length / Count number of characters in a string**
+* To get the length of a string, use the **len()** function.
+```python
+a = "Hello, World!"
+print(len(a))
+
+Output:- 13
+```
+* Without function
+```python
+na = input("Enter a string: ")
+a = 0
+for i in na:
+    if i!=" ":
+        a = a+1
+print(a)
+
+Output:-
+Enter a string: mohit saxena
+11
+```
+
 ```python
 string = "My Name is Mohit Saxena";
 count = 0;
@@ -293,14 +374,7 @@ print(''.join([c for c in string if c not in vowels]))
 Output:- Hll mht sxn
 ```
 
-### **Ques. When would you use rfind()?**
-* **rfind()** is like find() but it starts searching from the right of a string and return the first matching substring.
-```python
-story = 'The price is right said Bob. The price is right.'
-story.rfind('is')
 
-Output:- 39
-```
 
 ### **Ques. Extract numbers from string?**
 ```python
@@ -327,21 +401,7 @@ print("Find number in string:",emp_lis)
 Output:- Find number in string: [89, 94]
 ```
 
-### **Ques. Get a Substring of a String?**
-```python
-my_string = "I love python."
 
-print(my_string[2:6])   # You need to specify the starting index and the ending index of the substring. In this case, love starts at index 2 and ends at index 6.
-
-print(my_string[2:])    # All the text from index 2 to the end are selected
-
-print(my_string[:-1])   # All the text before the last index is selected.
-
-Output:-
-love
-love python.
-I love python
-```
 
 ### **Ques. Find repeated characters in a string python?**
 ```python
@@ -400,53 +460,6 @@ o
 h
 i
 t  
-```
-
-
-### **Ques. How do you find the length of a string?**
-* To get the length of a string, use the **len()** function.
-```python
-a = "Hello, World!"
-print(len(a))
-
-Output:- 13
-```
-* Without function
-```python
-na = input("Enter a string: ")
-a = 0
-for i in na:
-    if i!=" ":
-        a = a+1
-print(a)
-
-Output:-
-Enter a string: mohit saxena
-11
-```
-
-### **Ques. Check String?**
-* we can use the keyword in.
-```python
-txt = "The best things in life are free!"
-print("free" in txt)
-
-Output:- True
-```
-* Use it in an if statement:
-```python
-txt = "The best things in life are free!"
-if "free" in txt:
-  print("Yes, 'free' is present.")
-
-Output:- Yes, 'free' is present.
-```
-* Check if NOT
-```python
-txt = "The best things in life are free!"
-print("expensive" not in txt)
-
-output:- True
 ```
 
 ### **Ques. Reversed the String?**
