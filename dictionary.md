@@ -5,15 +5,14 @@
 |  No.  | Questions                                                                                    |
 | :---: | -------------------------------------------------------------------------------------------- |
 |       | [What is Dictionaries?](#ques-what-is-dictionaries)                                          |
-|       | (Dictionary Length)[#dictionary-length]                                                      |
-|       | [Access Item](#access-item-of-dictionary)                                                    |
-|       | [Change Dictionary Items](#change-dictionary-items)                                          |
-|       | [Add Dictionary Items](#add-dictionary-items)                                                |
-|       | [Remove Dictionary Items](#remove-dictionary-items)                                          |
-|       | [Copy Dictionaries](#copy-dictionaries)                                                      |
-|       | [loop-dictionaries](#loop-dictionaries)                                                      |
-|       | [Nested Dictionaries](#nested-dictionaries)                                                  |
-|       | [Dictionary Methods](#dictionary-methods)                                                    |
+|       | [Dictionary Length](#ques-dictionary-length)                                                 |
+|       | [Access Item](#ques-access-item-of-dictionary)                                               |
+|       | [Add Dictionary Items](#ques-add-dictionary-items)                                           |
+|       | [Remove Dictionary Items](#ques-remove-dictionary-items)                                     |
+|       | [Copy Dictionaries](#ques-copy-dictionaries)                                                 |
+|       | [loop-dictionaries](#ques-loop-dictionaries)                                                 |
+|       | [Nested Dictionaries](#ques-nested-dictionaries)                                             |
+|       | [Dictionary Methods](#ques-dictionary-methods)                                               |
 |       | [How to Merging Or Adding two Dictionaries](#ques-How-to-Merging-Or-Adding-two-Dictionaries) |
 
 
@@ -127,6 +126,8 @@ if "model" in thisdict:
 
 Output:- Yes, 'model' is one of the keys in the thisdict dictionary
 ```
+
+
 ### **Ques. Add Dictionary Items?**
 ```python
 # Adding Items
@@ -285,9 +286,10 @@ Output:-
 [1, 2, 3, 4, 5, 6]
 [11, 12, 13, 14, 15, 16]
 [(1, 12), (2, 11), (3, 14), (4, 16), (5, 13), (6, 15)]
+```
 
-
-# Print all key names in the dictionary, one by one:
+* Print **all key names** in the dictionary, one by one.
+```python
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
@@ -300,8 +302,9 @@ Output:-
 brand
 model
 year
------------------------------------------------------------------------------
+```
 
+```python
 # You can use the keys() method to return the keys of a dictionary:
 thisdict =	{
   "brand": "Ford",
@@ -411,6 +414,28 @@ print(myfamily)
 Output:- 
 {'child1': {'name': 'Emil', 'year': 2004}, 'child2': {'name': 'Tobias', 'year': 2007}, 'child3': {'name': 'Linus', 'year': 2011}}
 
+```
+
+* Access Items in Nested Dictionaries
+```python
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Mohit",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+
+print(myfamily["child2"]["name"])
+
+Output:- Mohit
 ```
 
 ### **Ques. Dictionary Methods?**
@@ -640,6 +665,7 @@ print(dict_1)
 
 Output:- {'John': 15, 'Rick': 20, 'Misa': 12, 'Bonnie': 18, 'Matt': 16}
 ```
+
 * Using ** operator:- The simplest way to merge two dictionaries in python is by using the unpack operator(**)
 ```python
 dict_1 = {'John': 15, 'Rick': 20, 'Misa' : 12 }
