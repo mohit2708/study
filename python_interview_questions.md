@@ -2,44 +2,50 @@
 
 ### Table of Contents
 
-|  No.  | Questions                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| :---: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   1   | [What Is Python?](#Ques-what-is-Python)                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|   2   | [Features of Python?](#Ques-Features-of-Python)                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|   2   | [Python Frameworks?](#Ques-Python-Frameworks)                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|   3   | [File Extensions in Python?](#Ques-File-Extensions-in-Python)                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|       | [Python Comments?](#Ques-Python-Comments)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|       | [What is a dynamically typed language?](#ques-What-is-a-dynamically-typed-language?)                                                                                                                                                                                                                                                                                                                                                                                                |
-|       | [What is the operator](#ques-what-is-the-operator)                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|       | [What is membership operator and identity operator?](#ques-what-is-membership-operator-and-identity-operator)                                                                                                                                                                                                                                                                                                                                                                       |
-|       | [Python Variables?](#ques-python-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|       | [Global Variables?](#ques-global-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|       | [How to check What type of datatype?](#ques-how-to-check-what-type-of-datatype)                                                                                                                                                                                                                                                                                                                                                                                                     |
-|       | [How to get Id()?](#ques-how-to-get-id)                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|       | [Python Strings?](#ques-python-strings)                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|       | [Python Shallow Copy and Deep Copy?](#ques-python-shallow-copy-and-deep-copy)                                                                                                                                                                                                                                                                                                                                                                                                       |
-|       | [What is built-in module in Python?](#Ques-What-is-built-in-module-in-Python)                                                                                                                                                                                                                                                                                                                                                                                                       |
-|       | [Is indentation required in python?](#ques-is-indentation-required-in-python)                                                                                                                                                                                                                                                                                                                                                                                                       |
-|       | [How is memory managed in Python?](#ques-how-is-memory-managed-in-python)                                                                                                                                                                                                                                                                                                                                                                                                           |
-|       | [What is PEP 8?](#ques-what-is-pep-8)                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|       | [Global Keyword?](#ques-global-keyword)                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|       | [Python Collections (Arrays)?](#python-collections-arrays)                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|       | [What is List?](#ques-what-is-list) / [Access List Items](#access-list-items) / [Change List Items](#change-list-items) / [Add List Items](#add-list-items) / [Remove List Items](#remove-list-items) / [Loop Lists](#loop-lists) / [Copy Lists](#copy-lists) / [Join Lists](#join-lists) /  [List Comprehension](#list-comprehension) / [List Methods](#list-methods) / [list() Constructor](#list-constructor)                                                                    |
-|       | [What is difference between Discard() and Remove()?](#)                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|       | [What isTuples?](#ques-what-is-tuples) / [Tuple Length](#tuple-length) / [Create Tuple With One Item](#create-tuple-with-one-item) / [Access Tuple Items](#access-tuple-items) / [Update Tuples](#update-tuples) / [Unpack Tuples](#unpack-tuples) / [Loop Tuples](#loop-tuples) / [Join Tuples](#join-tuples) / [Tuple Methods](#tuple-methods) / [tuple() Constructor](#tuple-constructor)                                                                                        |
-|       | [Difference between List and Tuples in Python?](#ques-difference-between-list-and-tuples-in-python)                                                                                                                                                                                                                                                                                                                                                                                 |
-|       | [Convert a list into a tuple](#Ques-convert-a-list-into-a-tuple?)                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|       | [What is Set?](#ques-what-is-set) / [Length of a Set](#get-the-length-of-a-set) / [Acesss Items of set](#acesss-items-of-set) / [Remove Item of set](#remove-item-of-set-) / [Loop Sets](#loop-sets) / [Join Two Set](#join-two-set) / [set() Constructor](#set-constructor) / [Set Methods](#set-methods)                                                                                                                                                                          |
-|       | [What is Dictionaries?](#ques-what-is-dictionaries) / (Dictionary Length)[#dictionary-length] / [Access Item](#access-item-of-dictionary) / [Change Dictionary Items](#change-dictionary-items) / [Add Dictionary Items](#add-dictionary-items) / [Remove Dictionary Items](#remove-dictionary-items) / [Copy Dictionaries](#copy-dictionaries) / [loop-dictionaries](#loop-dictionaries) / [Nested Dictionaries](#nested-dictionaries) / [Dictionary Methods](#dictionary-methods) |
-|       | [How to Merging Or Adding two Dictionaries](#ques-How-to-Merging-Or-Adding-two-Dictionaries)                                                                                                                                                                                                                                                                                                                                                                                        |
-|       | [What is Decorators?](#ques-what-is-decorators)                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|       | [What is Generator Functions?](what-is-generator-functions)                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|       | [Combine two dictionary adding values for common keys?](#ques-Combine-two-dictionary-adding-values-for-common-keys)                                                                                                                                                                                                                                                                                                                                                                 |
-|       | [What is Class](#ques-what-is-Class)                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|       | [What is Object](#Ques-What-is-Object)                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|       | [Delete the Object?](#Ques-Delete-the-Object)                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|       | [What is MRO(Method Resolution Order) / Diamond Problam?](#Ques-What-is-MROMethod-Resolution-Order-/-Diamond-Problam)                                                                                                                                                                                                                                                                                                                                                               |
-|       | [What is Monkey Patching](#)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|  No.  | Questions                                                                                                             |
+| :---: | --------------------------------------------------------------------------------------------------------------------- |
+|   1   | [What Is Python?](#Ques-what-is-Python)                                                                               |
+|   2   | [Features of Python?](#Ques-Features-of-Python)                                                                       |
+|   3   | [Python Frameworks?](#Ques-Python-Frameworks)                                                                         |
+|   4   | [File Extensions in Python?](#Ques-File-Extensions-in-Python)                                                         |
+|   5   | [What is the difference between .py and .pyc files?](#ques-what-is-the-difference-between-py-and-pyc-files)           |
+|   5   | [Python Comments?](#ques-python-comments)                                                                             |
+|   6   | [What is python Variables?](#ques-what-is-python-variables)                                                           |
+|   7   | [What is Global Variables?](#ques-global-variables)                                                                   |
+|   8   | [What is Global Keyword?](#ques-global-Keyword)                                                                       |
+|   8   | [What is Data Types?](#ques-What-are-the-common-built-in-data-types-in-Python)                                        |
+|   9   | [What is Python Operators?](#ques-what-is-the-operator)                                                               |
+|       | [What is membership operator and identity operator?](#ques-what-is-membership-operator-and-identity-operator)         |
+|  10   | [What is Python If Else?](#ques-global-variables)                                                                     |
+|  11   | [What is Python While Loops?](#ques-global-variables)                                                                 |
+|  12   | [What is Python For Loops?](#ques-global-variables)                                                                   |
+|  13   | [What is Python Functions?](#ques-global-variables)                                                                   |
+|  14   | [What is Python Lambda?](#ques-global-variables)                                                                      |
+|  14   | [What is Python Arrays?](#ques-global-variables)                                                                      |
+|  14   | [What is Python Try Except?](#ques-global-variables)                                                                  |
+|       | [What is PEP 8?](#ques-what-is-pep-8)                                                                                 |
+|       | [What is Decorators?](#ques-what-is-decorators)                                                                       |
+|       | [What is Generator Functions?](#ques-what-is-generator-functions)                                                     |
+|       | [Python Shallow Copy and Deep Copy?](#ques-python-shallow-copy-and-deep-copy)                                         |
+|       | [What is MRO(Method Resolution Order) / Diamond Problam?](#Ques-What-is-MROMethod-Resolution-Order-/-Diamond-Problam) |
+|       | [What is Monkey Patching](#)                                                                                          |
+
+
+|       | [What is a dynamically typed language?](#ques-What-is-a-dynamically-typed-language?)                                  |
+|       | [How to check What type of datatype?](#ques-how-to-check-what-type-of-datatype)                                       |
+|       | [How to get Id()?](#ques-how-to-get-id)                                                                               |
+|       | [Python Strings?](#ques-python-strings)                                                                               |
+|       | [What is built-in module in Python?](#Ques-What-is-built-in-module-in-Python)                                         |
+|       | [Is indentation required in python?](#ques-is-indentation-required-in-python)                                         |
+|       | [How is memory managed in Python?](#ques-how-is-memory-managed-in-python)                                             |
+|       | [Global Keyword?](#ques-global-keyword)                                                                               |
+|       | [Python Collections (Arrays)?](#python-collections-arrays)                                                            |
+|       | [Convert a list into a tuple](#Ques-convert-a-list-into-a-tuple?)                                                     |
+|       | [Combine two dictionary adding values for common keys?](#ques-Combine-two-dictionary-adding-values-for-common-keys)   |
+|       | [What is Class](#ques-what-is-Class)                                                                                  |
+|       | [What is Object](#Ques-What-is-Object)                                                                                |
+|       | [Delete the Object?](#Ques-Delete-the-Object)                                                                         |
+
 
 
 
@@ -96,13 +102,6 @@
 * .py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program. We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run. It is only created for the files that you import.
 **[⬆ Back to Top](#table-of-contents)**
 
-### **Ques. What is PEP 8?**
-* PEP stands for __Python Enhancement Proposal__. 
-* It is a set of rules that specify how to format Python code for maximum readability.
-* PEP8 is a document that provides various guidline to write the readable in python.
-* PEP8 describe how the developers can write the beautiful code.
-**[⬆ Back to Top](#table-of-contents)**
-
 ### **Ques. Python Comments?**
 __single Line Comments:-__ Comments starts with a #
 ```python
@@ -130,15 +129,7 @@ print("Hello, World!")
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-### **Ques. How to get Id()?**
-id() function takes a single parameter object.
-```python
-a = 5
-print(id(a))
-```
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. What is python Variables**
+### **Ques. What is python Variables?**
 * Variables are containers for storing data values.
 * A variable name must start with a letter or the underscore character.
 * A variable name can only contain alpha-numeric characters and underscores
@@ -155,7 +146,9 @@ Output:-
 5
 John
 ```
-* Variables Casting
+
+##### Variables Casting
+* We want to specify the data type of a variable, this can be done with casting.
 ```python
 x = str(3)
 y = int(3)
@@ -171,7 +164,7 @@ Output:-
 3.0
 ```
 
-* You can get the data type of a variable with the **type()** function.
+##### You can get the data type of a variable with the **type()** function.
 ```python
 x = 5
 y = "John"
@@ -183,7 +176,8 @@ Output:-
 <class 'str'>
 ```
 
-* **Single or Double Quotes:-** String variables can be declared either by using single or double quotes:
+##### **Single or Double Quotes:-** 
+* String variables can be declared either by using single or double quotes:
 ```python
 x = "John"
 print(x)
@@ -195,7 +189,9 @@ Output:-
 John
 John
 ```
-* Case-Sensitive
+
+##### Case-Sensitive
+* Variable names are case-sensitive.
 ```python
 a = 4
 A = "Sally"
@@ -208,69 +204,130 @@ Output:-
 Sally
 ```
 
-
-
-
-
-
-
-
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. What are global, protected and private attributes in Python?**
-* **Global variables** are public variables that are defined in the global scope. To use the variable in the global scope inside a function, we use the **global** keyword.
-* **Protected attributes** are attributes defined with an **single underscore** prefixed to their identifier eg. _mohit. They can still be accessed and modified from outside the class they are defined in but a responsible developer should refrain from doing so.
-* **Private attributes** are attributes with **double underscore** prefixed to their identifier eg. __mohit. They cannot be accessed or modified from the outside directly and will result in an AttributeError if such an attempt is made.
-**[⬆ Back to Top](#table-of-contents)**
-
-
-### **Ques. Global Keyword?**
-* In Python, global keyword allows you to modify the variable outside of the current scope. It is used to create a global variable and make changes to the variable in a local context.
-__Rules of global Keyword__
- * When we create a variable inside a function, it is local by default.
- * When we define a variable outside of a function, it is global by default. You don't have to use global keyword.
- * We use global keyword to read and write a global variable inside a function.<br>
- __Example__
+##### Assign Multiple Values
+* Python allows you to assign values to multiple variables in one line.
 ```python
- def myfunc():
-  global x
-  x = "fantastic"
-myfunc()
-print("Python is " + x)
+x, y, z = "Orange", "Banana", "Cherry"
 
-Output:-Python is fantastic
+print(x)
+print(y)
+print(z)
+
+Output:- 
+Orange
+Banana
+Cherry 
 ```
 
+##### One Value to Multiple Variables
+* And we can assign the same value to multiple variables in one line.
+```python
+x = y = z = "Orange"
+
+print(x)
+print(y)
+print(z)
+
+Output:-
+Orange
+Orange
+Orange
+```
+
+##### Unpack a Collection
+* If we have a collection of values in a list, tuple etc. Python allows you to extract the values into variables. This is called unpacking.
+```python
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+
+print(x)
+print(y)
+print(z)
+
+Output:-
+
+apple
+banana
+cherry
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. Global Variables?**
+* Variables that are created outside of a function are known as global variables.
+* Global variables can be used by everyone, both inside of functions and outside.
+* Create a variable outside of a function, and use it inside the function.
 ```python
 x = "awesome"
+
+def myfunc():
+  print("Python is " + x)
+
+myfunc()
+
+Output:- Python is awesome
+```
+
+* If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.
+```python
+x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+
+print("Python is " + x)
+
+Output:-
+Python is fantastic
+Python is awesome
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+### Ques. global Keyword?
+* To create a global variable inside a function, you can use the global keyword.
+```python
 def myfunc():
   global x
   x = "fantastic"
+
 myfunc()
+
 print("Python is " + x)
+
+Output:- Python is fantastic
 ```
-output:-Python is fantastic
 
+* Also, use the global keyword if you want to change a global variable inside a function.
+```python
+x = "awesome"
 
-### **Ques. What is a dynamically typed language?**
-Type-checking can be done at two stages:-
-1. **Static-** Data Types are checked before execution.
-2. **Dynamic-** Data Types are checked during execution.
-Python is an interpreted language, executes each statement line by line and thus type-checking is done on the fly, during execution. Hence, Python is a Dynamically Typed Language.
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+
+print("Python is " + x)
+
+Output:- Python is fantastic
+```
 **[⬆ Back to Top](#table-of-contents)**
 
-### **Ques. Is indentation required in python?**
-Indentation is necessary for Python. It specifies a block of code. All code within loops, classes, functions, etc is specified within an indented block. It is usually done using four space characters. If your code is not indented necessarily, it will not execute accurately and will throw errors as well.
+### **Ques. Primitive Data Structures/Non-Primitive Data Structures**
+* Primitive Data Structures
+  * Integers
+  * Float
+  * Strings
+  * Boolean
+* Non-Primitive Data Structures
+  * Arrays
+  * Lists
+  * Tuples
+  * Dictionary
+  * Sets
 **[⬆ Back to Top](#table-of-contents)**
-
-### **Python Collections (Arrays)?**
-There are four collection data types in the Python programming language:
- * **List** is a collection which is ordered and changeable. Allows duplicate members.
- * **Tuple** is a collection which is ordered and unchangeable. Allows duplicate members.
- * **Set** is a collection which is unordered and unindexed. No duplicate members.
- * **Dictionary** is a collection which is unordered, changeable and indexed. No duplicate members.
-**[⬆ Back to Top](#table-of-contents)**
-
 
 ### **Ques. What are the common built-in data types in Python?**
 Python has the following data types built-in by default, in these categories:
@@ -310,39 +367,49 @@ output:- <class 'int'>
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-
-
-### **Ques. a=1, b=1 does both have same Id or not?**
-Two variables in Python have same id, but not in lists.
-```python
-a = 10
-b = 10
-print(id(a))
-print(id(b))
-
-Output:- 
-9788992
-9788992
----------------------------------------------
-# In List
-a = [1, 2, 3]
-b = [1, 2, 3]
-print(a is b)
-
-Output:- False
----------------------------------------------------
-# In tuples
-a = (1, 2, 3)
-b = (1, 2, 3)
-print(a is b)
-
-Output:- True
-```
-**[⬆ Back to Top](#table-of-contents)**
-
 ### **Ques. Type Casting / Type Conversion?**
 * The process of converting the value of one data type (integer, string, float, etc.) to another data type is called type conversion. 
 * Jab bhi hum ek data type ki value ko dusre data type ki value mai convert karte hai to usi ko hum bolte hai type conversion.
+```python
+# Integers
+x = int(1)
+y = int(2.8)
+z = int("3")
+print(x)
+print(y)
+print(z)
+
+Output:-
+1
+2
+3
+
+# Floats
+x = int(1)
+y = int(2.8)
+z = int("3")
+print(x)
+print(y)
+print(z)
+
+Oytput:-
+1
+2
+3
+
+# Strings
+x = str("s1")
+y = str(2)
+z = str(3.0)
+print(x)
+print(y)
+print(z)
+
+Output:-
+s1
+2
+3.0
+```
 
 Python has two types of type conversion.
 1. **Implicit Type Conversion: -** In Implicit type conversion, Python automatically converts one data type to another data type. This process doesn't need any user involvement.
@@ -390,52 +457,83 @@ Data type of num_str after Type Casting: <class 'int'>
 Sum of num_int and num_str: 579
 Data type of the sum: <class 'int'>
 ```
+**[⬆ Back to Top](#table-of-contents)**
 
+
+### **Ques. What is PEP 8?**
+* PEP stands for __Python Enhancement Proposal__. 
+* It is a set of rules that specify how to format Python code for maximum readability.
+* PEP8 is a document that provides various guidline to write the readable in python.
+* PEP8 describe how the developers can write the beautiful code.
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. How to get Id()?**
+id() function takes a single parameter object.
 ```python
-# int 
-
-x = int(1)
-y = int(2.8)
-z = int("3")
-print(x)
-print(y)
-print(z)
-
-Output:-
-1
-2
-3
-
-# Flot
-x = float(1)
-y = float(2.8)
-z = float("3")
-w = float("4.2")
-print(x)
-print(y)
-print(z)
-print(w)
-
-Output:-
-1.0
-2.8
-3.0
-4.2
-
-# String
-x = str("s1")
-y = str(2)
-z = str(3.0)
-print(x)
-print(y)
-print(z)
-
-Output:-
-s1
-2
-3.0
+a = 5
+print(id(a))
 ```
 **[⬆ Back to Top](#table-of-contents)**
+
+
+
+### **Ques. What are global, protected and private attributes in Python?**
+* **Global variables** are public variables that are defined in the global scope. To use the variable in the global scope inside a function, we use the **global** keyword.
+* **Protected attributes** are attributes defined with an **single underscore** prefixed to their identifier eg. _mohit. They can still be accessed and modified from outside the class they are defined in but a responsible developer should refrain from doing so.
+* **Private attributes** are attributes with **double underscore** prefixed to their identifier eg. __mohit. They cannot be accessed or modified from the outside directly and will result in an AttributeError if such an attempt is made.
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. What is a dynamically typed language?**
+Type-checking can be done at two stages:-
+1. **Static-** Data Types are checked before execution.
+2. **Dynamic-** Data Types are checked during execution.
+Python is an interpreted language, executes each statement line by line and thus type-checking is done on the fly, during execution. Hence, Python is a Dynamically Typed Language.
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. Is indentation required in python?**
+Indentation is necessary for Python. It specifies a block of code. All code within loops, classes, functions, etc is specified within an indented block. It is usually done using four space characters. If your code is not indented necessarily, it will not execute accurately and will throw errors as well.
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Python Collections (Arrays)?**
+There are four collection data types in the Python programming language:
+ * **List** is a collection which is ordered and changeable. Allows duplicate members.
+ * **Tuple** is a collection which is ordered and unchangeable. Allows duplicate members.
+ * **Set** is a collection which is unordered and unindexed. No duplicate members.
+ * **Dictionary** is a collection which is unordered, changeable and indexed. No duplicate members.
+**[⬆ Back to Top](#table-of-contents)**
+
+
+
+
+### **Ques. a=1, b=1 does both have same Id or not?**
+Two variables in Python have same id, but not in lists.
+```python
+a = 10
+b = 10
+print(id(a))
+print(id(b))
+
+Output:- 
+9788992
+9788992
+---------------------------------------------
+# In List
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a is b)
+
+Output:- False
+---------------------------------------------------
+# In tuples
+a = (1, 2, 3)
+b = (1, 2, 3)
+print(a is b)
+
+Output:- True
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+
 
 ### **Ques. Python Deep Copy and Shallow Copy?**
 __Deep Copy:-__ In deep copy any changes made to a copy of object do not reflect in the orginal object.
