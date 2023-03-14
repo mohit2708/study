@@ -114,4 +114,22 @@ ng g c user_auth/login
 * When data in the model changes, the view reflects the change, and when data in the view changes, the model is updated as well.
 * We can make connections in **two different ways** one way and two-way binding.
 
+* **One-way data binding** is a one-way interaction between component and its template. If you perform any changes in your component, then it will reflect the HTML elements. It supports the following types −
+  * **String interpolation:-** Interpolation is used to display data from component to view (DOM). It is denoted by the expression of {{ }} and also known as **mustache** syntax.
+  * **Event binding:-** Events are actions like mouse click, double click, hover or any keyboard and mouse actions. If a user interacts with an application and performs some actions, then event will be raised. It is denoted by either parenthesis () or on-
+  * **Property binding:-** Property binding is used to bind the data from property of a component to DOM elements. It is denoted by [].
+
+
+### Ques. What are Single Page Applications (SPA)?
+
+### Ques. What are decorators in Angular?
+* Decorators are a design pattern that is used to separate modification or decoration of a class without modifying the original source code.
+* In AngularJS, decorators are functions that allow a service, directive, or filter to be modified before it is used.
+* **There are four main types of angular decorators:**
+  * **Class decorators**, such as **@Component** and **@NgModule**
+  * **Property decorators** for properties inside classes, such as **@Input** and **@Output**
+  * **Method decorators** for methods inside classes, such as **@HostListener**
+  * **Parameter decorators** for parameters inside class constructors, such as **@Inject**
+
+
 
