@@ -1,42 +1,63 @@
 # Python Sets interview questions
 
 
-|  No.  | Questions                                   |
-| :---: | ------------------------------------------- |
-|       | [What is Set?](#ques-what-is-set)           |
-|       | [Length of a Set](#get-the-length-of-a-set) |
-|       | [Acesss Items of set](#acesss-items-of-set) |
-|       | [Remove Item of set](#remove-item-of-set-)  |
-|       | [Loop Sets](#loop-sets)                     |
-|       | [Join Two Set](#join-two-set)               |
-|       | [set() Constructor](#set-constructor)       |
-|       | [Set Methods](#set-methods)                 |
+|  No.  | Questions                                        |
+| :---: | ------------------------------------------------ |
+|       | [What is Set?](#ques-what-is-set)                |
+|       | [Length of a Set](#ques-get-the-length-of-a-set) |
+|       | [Acesss Items of set](#ques-acesss-items-of-set) |
+|       | [Remove Item of set](#remove-item-of-set-)       |
+|       | [Loop Sets](#loop-sets)                          |
+|       | [Join Two Set](#join-two-set)                    |
+|       | [set() Constructor](#set-constructor)            |
+|       | [Set Methods](#set-methods)                      |
 
 
 
 ### **Ques. What is Set?**
 * Sets are used to store multiple items in a single variable.
-* A set is a collection which is both unordered, unindexed and unchangeable, and do not allow **duplicate** values.
+* A set is a collection which is both **unordered**, **unindexed** and **unchangeable**.
+* Set items are **unchangeable**, but you can remove items and add new items.
+* Sets are **unordered**, so we cannot be sure in which order the items will appear.
+* Sets do not allow **duplicate** values.
 * Sets are written with **curly{}** brackets.
+* The values **True** and **1** are considered the same value in sets, and are treated as duplicates:
 * Example:-
 ```python
-thisset = {"apple", "banana", "cherry", "apple"}
+thisset = {"apple", "banana", "cherry", "apple", True, 1, 2}
 print(thisset)
 
-Output:- {'banana', 'cherry', 'apple'}
+Output:- {True, 2, 'cherry', 'apple', 'banana'}
 ```
 
 #### Note:-
 * Sets are unordered, so you cannot be sure in which order the items will appear.
 * **Unordered** means that the items in a set do not have a defined order.
 * **Sets are unchangeable**, meaning that we cannot change the items after the set has been created.(Once a set is created, you cannot change its items, but you can add new items.)
+
+* Sets do not allow **duplicate** values.
+```python
+thisset = {"apple", "banana", "cherry", "apple"}
+print(thisset)
+
+Output:- {'banana', 'apple', 'cherry'}
+```
+
 * Set items can be of any data type.(String, int and boolean)
-  
 ```python
 set1 = {"abc", 34, True, 40, "male"}
 print(set1)
 output:- {True, 34, 40, 'male', 'abc'}
 ```
+
+* The values **True and 1** are considered the **same value in sets**, and are treated as duplicates.
+```python
+thisset = {"apple", "banana", "cherry", True, 1, 2}
+print(thisset)
+
+Output:- {True, 2, 'banana', 'cherry', 'apple'}
+```
+
 
 ### **Ques. Get the Length of a Set?**
 ```python
@@ -107,8 +128,8 @@ print(thisset)
 			
 Output:- {'banana', 'cherry', 'apple', 'orange', 'kiwi'}
 ```
-### **Ques. Remove Item of set?**
 
+### **Ques. Remove Item of set?**
 * **remove() method:-** If the item to remove does not exist, remove() will raise an error.
 ```python
 thisset = {"apple", "banana", "cherry"}

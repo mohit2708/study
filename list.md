@@ -2,20 +2,22 @@
 
 ### Table of Contents
 
-|  No.  | Questions                                               |
-| :---: | ------------------------------------------------------- |
-|       | [What is List?](#ques-what-is-list)                     |
-|       | [Access List Items?](#access-list-items)                |
-|       | [Change List Items](#change-list-items)                 |
-|       | [Add List Items](#add-list-items)                       |
-|       | [Remove List Items](#remove-list-items)                 |
-|       | [Loop Lists](#loop-lists)                               |
-|       | [Copy Lists](#copy-lists)                               |
-|       | [Join Lists](#join-lists)                               |
-|       | [List Comprehension](#list-comprehension)               |
-|       | [List Methods](#list-methods)                           |
-|       | [list() Constructor](#list-constructor)                 |
-|       | [What is difference between Discard() and Remove()?](#) |
+|  No.  | Questions                                                         |
+| :---: | ----------------------------------------------------------------- |
+|       | [What is List?](#ques-what-is-list)                               |
+|       | [Access List Items?](#ques-access-list-items)                     |
+|       | [List Length?](#ques-List-Length)                                 |
+|       | [How to Check if Item Exists?](#ques-how-to-Check-if-Item-Exists) |
+|       | [Add List Items](#ques-add-list-items)                            |
+|       | [Change or Update List Items](#ques-Change-or-Update-List-Items)  |
+|       | [Remove List Items](#ques-remove-list-items)                      |
+|       | [Loop Lists](#loop-lists)                                         |
+|       | [Copy Lists](#copy-lists)                                         |
+|       | [Join Lists](#join-lists)                                         |
+|       | [List Comprehension](#list-comprehension)                         |
+|       | [List Methods](#list-methods)                                     |
+|       | [list() Constructor](#list-constructor)                           |
+|       | [What is difference between Discard() and Remove()?](#)           |
 
 
 
@@ -24,7 +26,9 @@
 * List items are **ordered**, **changeable**, and **allow duplicate** values.
 * In Python lists are written with **square brackets[]**, separated by commas.
 * The list is __changeable__, meaning that we can change, add, and remove items in a list after it has been created.
-* Since lists are indexed, lists can have items with the __same value.__
+* list Allow Duplicates values. **Ex:-** list = ["apple", "banana", "cherry", "apple", "cherry"]
+* List items can be of any data type. **Ex:-** list = ["abc", 34, True, 40, "male"]
+
 
 ```python
 my_list = ["apple", "banana", "cherry"]   #Output:- ["apple", "banana", "cherry"]
@@ -55,7 +59,16 @@ print(list[::-2])   # Output:- [4, 3, 4, 3]
 print(list[::-1])   # Output:- [4, 1, 3, 7, 4, 6, 3, 9]  #reverse the List using slice
 ```
 
-### **Ques. Check if Item Exists?**
+### **Ques. List Length**
+* use the len() function:
+```python
+thislist = ["apple", "banana", "cherry"]
+print(len(thislist))
+
+Output:- 3
+```
+
+### **Ques. How to Check if Item Exists?**
 ```python
 thislist = ["apple", "banana", "cherry"]
 if "apple" in thislist:
@@ -64,29 +77,7 @@ if "apple" in thislist:
 Output:- Yes, 'apple' is in the fruits list
 ```
  
-### **Ques. Change or Update List Items?**
-* **Change Item Value:-** To change the value of a specific item, refer to the index number.
-```python
-thislist = ["apple", "banana", "cherry"]
-thislist[1] = "blackcurrant"
-
-print(thislist)
-
-Output:- ['apple', 'blackcurrant', 'cherry']
-```
-* **Change a Range of Item Values:-** To change the value of items within a specific range, define a list with the new values, and refer to the range of index numbers where you want to insert the new values.
-* 1 se 2 wale range ke element hut jaynge
-```python
-thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
-thislist[1:3] = ["blackcurrant", "watermelon"]
-print(thislist)
-
-Output:- ['apple', 'blackcurrant', 'watermelon', 'orange', 'kiwi', 'mango']
-```
-
-
 ### **Ques. Add List Items?**
-
 * **Append method:-** add an item to the **end of the list**, use the append() method.
 ```python
 thislist = ["apple", "banana", "cherry"]
@@ -107,7 +98,7 @@ Output:- ['apple', 'orange', 'banana', 'cherry']
 * **Extend method:-** The extend() method does not have to append lists, you can **add any iterable** object (tuples, sets, dictionaries etc.).
 ```python
 thislist = ["apple", "banana", "cherry"]
-tropical = ["mango", "pineapple", "papaya"]
+tropical = ("mango", "pineapple", "papaya")
 
 thislist.extend(tropical)
 
@@ -116,15 +107,44 @@ print(thislist)
 Output:- ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
 ```
 
+### **Ques. Change or Update List Items?**
+* **Change Item Value:-** To change the value of a specific item, refer to the index number.
+```python
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+
+print(thislist)
+
+Output:- ['apple', 'blackcurrant', 'cherry']
+```
+* **Change a Range of Item Values:-** To change the value of items within a specific range, define a list with the new values, and refer to the range of index numbers where you want to insert the new values.
+* 1 se 2 wale range ke element hut jaynge
+```python
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+Output:- ['apple', 'blackcurrant', 'watermelon', 'orange', 'kiwi', 'mango']
+```
+
 ### **Ques. Remove List Items?**
-* **remove() method:-** Remove **Specified Item** from the List using remove() method.
-* .remove() removes the first instance of a matching object.
+* **remove() method:-** 
+* Remove **Specified Item** from the List using remove() method.
+* remove() removes the first instance of a matching object.
+* If item not exist then show the error.
 ```python
 thislist = ["apple", "banana", "cherry", "banana"]
 thislist.remove("banana")
 print(thislist)
 
 Output:- ['apple', 'cherry', "banana"]
+
+# If item not exist then show the error
+thislist = ["apple", "banana", "cherry", "banana"]
+thislist.remove("banana1")
+print(thislist)
+
+Output:- error item not in the list
 ```
 
 * **pop() method:-** The pop() method **removes the specified index**.

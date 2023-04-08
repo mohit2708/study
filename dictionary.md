@@ -304,23 +304,8 @@ model
 year
 ```
 
+* Print all values in the dictionary, one by one:
 ```python
-# You can use the keys() method to return the keys of a dictionary:
-thisdict =	{
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-for x in thisdict.keys():
-  print(x)
-
-Output:-
-brand
-model
-year
-----------------------------------------------------------------------------
-
-# Print all values in the dictionary, one by one:
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
@@ -333,9 +318,27 @@ Output:-
 Ford
 Mustang
 1964
---------------------------------------------------------------------------------
+```
 
-# You can also use the values() method to return values of a dictionary:
+* We can use the **keys()** method to return the keys of a dictionary:
+
+```python
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict.keys():
+  print(x)
+
+Output:-
+brand
+model
+year
+```
+
+* You can also use the **values()** method to return values of a dictionary:
+```python
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
@@ -348,9 +351,9 @@ Output:-
 Ford
 Mustang
 1964
-------------------------------------------------------------------------------
-
-# Loop through both keys and values, by using the items() method:
+```
+* Loop through both keys and values, by using the **items()** method.
+```python
 thisdict =	{
   "brand": "Ford",
   "model": "Mustang",
@@ -364,6 +367,9 @@ brand Ford
 model Mustang
 year 1964
 ```
+
+
+
 
 ### **Ques. Nested Dictionaries?**
 A dictionary can contain dictionaries, this is called nested dictionaries.
@@ -837,4 +843,30 @@ for i in sorted_value:
            new_dict[key] = value
 
 print(new_dict)
+```
+
+### **Ques. Can we use tuple as keys inside python dictionary?**
+* Yes, tuple can we used as key inside python dictionary, only if it contain only string, number or tuple. If a tuple contains any mutable datatype inside it like list, it can not be used as keys.
+
+### **Ques. Can we use lists as keys inside python dictionary?**
+* No, python list can not be used as keys inside python dictionary, as they are mutable in nature.
+
+### **Ques. What is enumarate function inside a dictionary?**
+* You can using enumarate function with dictionary to get position index and corresponding index at the same time.
+```python
+for i in enumerate(dict1):
+    print(i)
+
+#output
+(0, 'name')
+(1, 'age')
+(2, 'city')
+```
+
+### **Ques. What is zip function in python dictionary and how can you use it? How can combine two dictionaries together?**
+```python
+questions = ['name', 'location', 'favorite language']
+answers = ['Codersdaily', 'Indore', 'Python']
+for q, a in zip(questions, answers):
+    print('What is your {0}?  It is {1}.'.format(q, a))
 ```
