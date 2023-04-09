@@ -1535,3 +1535,216 @@ https://tinypng.com/<br>
 https://imagecompressor.com/<br>
 https://compressor.io/compress<br>
 https://kraken.io/web-interface
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+extra code for cheking
+
+1. logo lagane ke liye
+	-> easy logo download karke install karke activate karke.
+	->and appeaance mai easylogo mai jakr fill kar denge...
+	->and uska sorte code uthakar html ki jaghe lga denage jha sa logo aa rha hai.
+	<?php show_easylogo(); ?>
+======================================================================================
+2.	logo ka 2nd option
+	<img src="images/logo.png"> ki jagha <?php twentysixteen_the_custom_logo(); ?>
+========================================================================
+
+slider ko dynamic banane ke liye......
+================================================================================
+===============
+            --> <?php the_field("middele"); ?> //middle content ko call karane ke liye
+            <?php the_field("service_work_process",8); ?>
+==================
+ <?php $args = array('post_type' => 'disease','posts_per_page'=>-1,'post_status' => 'publish'
+  'category_name' => 'mobile-apps', 'order' => 'DESC' );
+
+               $loop = new WP_Query( $args );
+
+        while ( $loop->have_posts() ) : $loop->the_post();?>
+
+        <div class="one_fourth btm last animate fadeInUp about-third-Section-size-1" data-anim-type="fadeInUp" data-anim-delay="800">
+
+            <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ));?>" class="about-third-Section-top_img" /> </img>
+
+            <h4><?php echo $post->post_title ?></h4>
+
+            <p><?php echo $post->post_content ?></p>  
+
+        </div>         
+
+<?php endwhile; ?>
+----------------------------------------------
+<a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo substr($post->post_title, 0, 70);  ?>..</a><
+====================================
+<?php 
+              $icon = array('icon-flag','icon-clock', 'icon-hotairballoon', 'icon-heart', 'icon-linegraph', 'icon-chat');
+              $args = array('post_type' => 'chooseus','posts_per_page'=>-1,'post_status' => 'publish');
+
+               $loop = new WP_Query( $args );
+               $i='0';
+        while ( $loop->have_posts() ) : $loop->the_post();?>
+<div class="col-sm-6 col-md-4 col-lg-4">
+            <div class="alt-features-item align-center">
+                <div class="alt-features-icon">
+                    <span class="<?php echo $icon[$i];?>"></span>
+                </div>
+                    <h3 class="alt-features-title font-alt"><?php echo $post->post_title ?></h3>
+                <div class="alt-features-descr align-left">
+                 <?php echo $post->post_content ?>
+                </div>
+            </div>
+        </div>
+        <?php $i++;endwhile; ?>
+
+=================================================================================
+wordpress ke deshboard mai admin menu badana
+=================================================================================
+<?php 
+add_action( 'init', 'cptui_register_my_cpts_slider' );
+function cptui_register_my_cpts_slider() {
+	$labels = array(
+		"name" => __( 'Slider', 'twentysixteen' ),
+		"singular_name" => __( 'Slider', 'twentysixteen' ),
+		);
+	$args = array(
+		"label" => __( 'Slider', 'twentysixteen' ),
+		"labels" => $labels,
+		'menu_icon'   => 'dashicons-format-gallery',
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "slider", "with_front" => true ),
+		"query_var" => true,
+    //'taxonomies'  => array('category'),
+		"supports" => array( "title", "editor", "thumbnail" ),);
+	register_post_type( "slider", $args );
+// End of cptui_register_my_cpts_banner()
+}
+
+
+
+contact form 7
+          ============
+          <div class="sendMessage formArea clearfix">
+                  <ul class="row contactFormArea">
+                    <li class="col-xs-12 col-sm-4 NoPaddingRight">[text* Name placeholder"Your Name"]</li>
+                    <li class="col-xs-12 col-sm-4 NoPaddingRight">[email* Email placeholder"Your Email"]</li>
+                    <li class="col-xs-12 col-sm-4">[tel* minlength:1 maxlength:10 Mobile placeholder"Phone Number"]</li>
+                    <li class="col-xs-12 col-sm-12">[textarea* Textarea placeholder"Your Message..."]</li>
+                    <div class="clearfix"></div>
+                    <li class="col-sm-12 checkbox fromCheckBox text-center">
+                     
+                    </li>
+                    <li class="col-sm-12">[submit class:submitBnt "Send mail"]</li>
+                  </ul><!-- end of ul -->
+                  <div id="simple-msg"></div>
+                </div>
+///<?php echo do_shortcode( '[contact-form-7 id="27" title="Contact form 1"]' ); ?>
+particular page ke liye=============================
+<?php if(is_page('projects')|| is_page('to-qualify')):?>
+    <div class="col-sm-6">
+  <?php endif; ?>
+
+
+  remove_filter( 'the_content', 'wpautop' ); //remove the p and br
+  =================================
+  alternet loop
+  =================================
+  <?php $args = array('post_type' => 'profiles','posts_per_page'=>-1,'post_status' => 'publish');
+              
+               $loop = new WP_Query( $args );
+               $i=0;
+        while ( $loop->have_posts() ) : $loop->the_post();
+         if($i%2==0){?>
+            <div class="bordercol1">
+               <div class="col-sm-2">
+                 <div class="imgdiv">
+                  <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ));?>">
+                 </div>
+               </div>
+               <div class="col-sm-10">
+                  <div class="contenttext">
+                     <h4><strong><?php echo $post->post_title ?></strong></h4>
+                     <h5><strong>partner</strong></h5>
+                     
+                     <p><?php echo $post->post_content ?></p>
+                  </div>
+               </div>
+            </div>
+            <?php }else{?> 
+              <div class="bordercol1">
+                <div class="col-sm-10">
+                <div class="contenttext">
+                       <h4><strong><?php echo $post->post_title ?></strong></h4>
+                       <h5><strong>partner</strong></h5>
+                       
+                       <p><?php echo $post->post_content ?></p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                   <div class="imgdiv">
+                    <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ));?>">
+                   </div>
+                 </div>
+              </div>
+            <?php } $i++;?> 
+            <?php endwhile; ?>
+         </div>
+
+=========================================================
+//cutom field mai jab post banate hai
+=========================================================
+<section class="page-section">
+   <div class="container relative">
+      <div class="row">
+         <div class="col-md-7 mb-sm-40">
+            <!-- Gallery -->
+            <div class="work-full-media mt-0 white-shadow wow fadeInUp">
+               <ul class="clearlist work-full-slider owl-carousel">
+                  <li>
+                  <img src="<?php 
+                           $appl1 = get_field("application_development" ,4); 
+                            echo $appl1['url'];
+                    
+                    ?>" alt="" />
+                    
+                  </li>
+                  <li>
+                  <img src="<?php 
+                           $appl1 = get_field("apIMG2" ,4); 
+                            echo $appl1['url'];
+                    
+                    ?>" alt="" />
+                    
+                  </li>
+               </ul>
+            </div>
+            <!-- End Gallery -->
+         </div>
+         <div class="col-md-5 col-lg-4 col-lg-offset-1">
+            <!-- About Project -->
+            <div class="text">
+               
+               <p>
+                  <?php echo get_field("application_development_text" ,4); ?>  
+
+                 </p>
+
+            </div>
+            <!-- End About Project -->
+         </div>
+      </div>
+   </div>
+</section>
+==============================================================
