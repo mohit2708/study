@@ -1,7 +1,7 @@
 ### **Object-Oriented Programming (OOPS)**
 Main Concepts of Object-Oriented Programming (OOPs) 
-* Class
-* Objects
+* [Class](#ques-What-is-Class)
+* [Objects](#ques-What-is-Object)
 * Polymorphism
 * Encapsulation
 * Inheritance
@@ -10,33 +10,34 @@ Main Concepts of Object-Oriented Programming (OOPs)
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques.  What is Class?**
-* The class can be defined as a collection of objects. It is a logical entity that has some specific attributes and methods.
+* The class is a collection of objects. 
+* It is a logical entity that has some specific attributes and methods.
 * To define a class in Python, you can use the class keyword, followed by the class name and a colon. Inside the class, an __init__ method has to be defined with def. This is the initializer that you can later use to instantiate objects. It's similar to a constructor in Java. __init__ must always be present! It takes one argument: self, which refers to the object itself. Inside the method, the pass keyword is used as of now, because Python expects you to type something there.
 
-```python
-class ClassName:     
-  <statement-1>     
-            .     
-            .      
-  <statement-N>
-```
+    ```python
+    class ClassName:     
+    <statement-1>     
+                .     
+                .      
+    <statement-N>
+    ```
 
 * **Instantiating object**
-```python
-mohit = ClassName()
-print(mohit)
-```
+    ```python
+    mohit = ClassName()
+    print(mohit)
+    ```
 
-__Example__
+__Example 1__
 ```python
 class Person:
   def __init__(self, name, age):
-    self.name = name
+    self.f_name = name
     self.age = age
 
 p1 = Person("John", 36)
 
-print(p1.name)
+print(p1.f_name)
 print(p1.age)
 ```
 
@@ -156,8 +157,8 @@ After modifying the object properties
 ```
 
 
-* Here, the <strong>self</strong> is used as a reference variable, which refers to the current class object. It is always the first argument in the function definition. However, using self is optional in the function call.
-* The <strong>self-parameter</strong> refers to the current instance of the class and accesses the class variables. We can use anything instead of self, but it must be the first parameter of any function which belongs to the class
+* Here, the **self** is used as a reference variable, which refers to the current class object. It is always the first argument in the function definition. However, using self is optional in the function call.
+* The **self-parameter** refers to the current instance of the class and accesses the class variables. We can use anything instead of self, but it must be the first parameter of any function which belongs to the class
 
 
 
@@ -180,11 +181,28 @@ class Employee:
       emp.display()
 ```
 
-### **Ques. What is the use of self in Python?**
-Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python. It binds the attributes with the given arguments. self is used in different places and often thought to be a keyword. But unlike in C++, self is not a keyword in Python.
+### Ques. Counting the Number of objects of a Class?
+```python
+class Employee:
+    count = 0
+    def __init__(self):
+        Employee.count = Employee.count + 1
 
-### **Ques.  What is __init__?**
-<b>__init__</b> is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created. All classes have a __init__ method associated with them. It helps in distinguishing methods and attributes of a class from local variables.
+
+# creating objects
+e1 = Employee()
+e2 = Employee()
+e2 = Employee()
+print("The number of Employee:", Employee.count)
+
+Output:- The number of employee: 3
+```
+
+### **Ques. What is the use of self in Python?**
+* Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python. It binds the attributes with the given arguments. self is used in different places and often thought to be a keyword. But unlike in C++, self is not a keyword in Python.
+
+### **Ques.  What is __init__ Method?**
+**__init__** is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created. All classes have a __init__ method associated with them. It helps in distinguishing methods and attributes of a class from local variables.
 
 ```python
 class Student:
@@ -210,9 +228,21 @@ myEmptyFunc()    # nothing happens
 ```
 
 ### **Ques. What is break, continue and pass in Python?**
-* <b>Break:- </b>The break statement terminates the loop immediately and the control flows to the statement after the body of the loop.
-* <b>Continue:- </b>The continue statement terminates the current iteration of the statement, skips the rest of the code in the current iteration and the control flows to the next iteration of the loop.
-* <b>Pass:-</b> As explained above, the pass keyword in Python is generally used to fill up empty blocks and is similar to an empty statement represented by a semi-colon in languages such as Java, C++, Javascript, etc.
+* **Break:-** The break statement terminates the loop immediately and the control flows to the statement after the body of the loop.
+* **Continue:-** The continue statement terminates the current iteration of the statement, skips the rest of the code in the current iteration and the control flows to the next iteration of the loop.
+* **Pass:-** As explained above, the pass keyword in Python is generally used to fill up empty blocks and is similar to an empty statement represented by a semi-colon in languages such as Java, C++, Javascript, etc.
+```python
+pat = [1, 3, 2, 1, 2, 3, 1, 0, 1, 3]
+for p in pat:
+   pass
+   if (p == 0):
+       current = p
+       break
+   elif (p % 2 == 0):
+       continue
+   print(p)    # output => 1 3 1 3 1
+print(current)    # output => 0
+```
 
 ### **Python Access Modifiers**
 * **Public Member:** Accessible anywhere from outside the class.
@@ -254,8 +284,8 @@ Mohit
 555
 ```
 
-* **protected Access Modifier**
-adding a prefix _(single underscore) to a variable name makes it protected.
+* **protected Access Modifier:-** Accessible within the class and it's sub-classes.
+* adding a prefix _(single underscore) to a variable name makes it protected.
 ```python
 class Employee:
     # constructor
@@ -307,8 +337,7 @@ print(p1._age)        # protected: can be accessed but not advised
 ```
 
 ### **Ques What is Inheritance?**
-* Inheritance is the ability to ‘inherit’ features or attributes from already written classes into newer classes we make.
-* Inheritance is the capability of one class to derive or inherit the properties from another class.
+* The process of inheriting all the methods and properties of the parent class into a child class is called inheritance.
 * **Benefits:-** It provides the reusability of a code. We don’t have to write the same code again and again.
 
 ```python
@@ -329,12 +358,18 @@ Bungalow.display_architect()             # calling method through object
 
 Output:- 
 572ft
-This building is 572ft
+This house is 572ft
 The architect is John Doe
 ```
 
-##### Types Of Inheritance?
-* **Single Inheritance:-** Single Inheritance is the simplest form of inheritance where a single child class is derived from a single parent class.
+#### Types Of Inheritance?
+1. [Single inheritance](#Single-Inheritance)
+2. Multiple Inheritance
+3. Multilevel inheritance
+4. Hierarchical Inheritance
+5. Hybrid Inheritance
+##### Single Inheritance:-
+* In single inheritance, a child class inherits from a single-parent class. Here is one child class and one parent class.
 ```python
     A
     |
@@ -343,26 +378,29 @@ The architect is John Doe
     B
 ```
 ```python
-class parent:                  # parent class
-    def func1:                   
-        print(“Hello Parent”)
- 
-class child(parent):           # child class
-    def func2:                 # we include the parent class
-        print(“Hello Child”)   # as an argument in the child
-                               # class
- 
-# Driver Code
-test = child()                 # object created
-test.func1()                   # parent method called via child object
-test.func2()                   # child method called
+# Base class
+class Vehicle:
+    def Vehicle_info(self):
+        print('Inside Vehicle class')
+
+# Child class
+class Car(Vehicle):
+    def car_info(self):
+        print('Inside Car class')
+
+# Create object of Car
+car = Car()
+
+# access Vehicle's info using car object
+car.Vehicle_info()
+car.car_info()
 
 Output:- 
-Hello Parent
-Hello Child
+Inside Vehicle class
+Inside Car class
 ```
-
-* **Multiple Inheritance:-** In multiple inheritance, a single child class is inherited from two or more parent classes. This means the child class has access to all the methods and attributes of all the parent classes.
+##### Multiple Inheritance:-
+* In multiple inheritance, a single child class is inherited from two or more parent classes. This means the child class has access to all the methods and attributes of all the parent classes.
 ```python
     A        B
     \       /
@@ -372,138 +410,233 @@ Hello Child
         C
 ```
 ```python
-class parent1:                     # first parent class
-    def func1:                   
-        print(“Hello Parent1”)
- 
-class parent2:                     # second parent class
-    def func2:                   
-        print(“Hello Parent2”)
- 
-class parent3:                     # third parent class
-    def func2:                     # the function name is same as parent2
-        print(“Hello Parent3”)
- 
-class child(parent1, parent2, parent3):     # child class
-    def func3:                     # we include the parent classes
-        print(“Hello Child”)       # as an argument comma separated
-                           
-# Driver Code
-test = child()        # object created
-test.func1()          # parent1 method called via child
-test.func2()          # parent2 method called via child instead of parent3
-test.func3()          # child method called
+class Person:
+    def person_info(self, name, age):
+        print('Inside Person class')
+        print('Name:', name, 'Age:', age)
+
+# Parent class 2
+class Company:
+    def company_info(self, company_name, location):
+        print('Inside Company class')
+        print('Name:', company_name, 'location:', location)
+
+# Child class
+class Employee(Person, Company):
+    def Employee_info(self, salary, skill):
+        print('Inside Employee class')
+        print('Salary:', salary, 'Skill:', skill)
+
+# Create object of Employee
+emp = Employee()
+
+# access data
+emp.person_info('Jessa', 28)
+emp.company_info('Google', 'Atlanta')
+emp.Employee_info(12000, 'Machine Learning')
+
+Output:-
+Inside Person class
+Name: Jessa Age: 28
+Inside Company class
+Name: Google location: Atlanta
+Inside Employee class
+Salary: 12000 Skill: Machine Learnings
+```
+
+##### Multi-Level Inheritance:-
+* In multilevel inheritance, a class inherits from a child class or derived class. Suppose three classes A, B, C. A is the superclass, B is the child class of A, C is the child class of B. In other words, we can say a chain of classes is called multilevel inheritance.
+```python
+    A
+    |
+    |
+    B
+    |
+    |
+    C
+```
+```python
+# Base class
+class Vehicle:
+    def Vehicle_info(self):
+        print('Inside Vehicle class')
+
+# Child class
+class Car(Vehicle):
+    def car_info(self):
+        print('Inside Car class')
+
+# Child class
+class SportsCar(Car):
+    def sports_car_info(self):
+        print('Inside SportsCar class')
+
+# Create object of SportsCar
+s_car = SportsCar()
+
+# access Vehicle's and Car info using SportsCar object
+s_car.Vehicle_info()
+s_car.car_info()
+s_car.sports_car_info()
+
+Output:-
+Inside Vehicle class
+Inside Car class
+Inside SportsCar class
+```
+
+##### Hierarchical Inheritance:-
+* In Hierarchical inheritance, more than one child class is derived from a single parent class. In other words, we can say one parent class and multiple child classes.
+```python
+                ParentClass
+                  / | \
+                 /  |  \
+                /   |   \
+              CC1  CC2  CC3
+```
+```python
+class Vehicle:
+    def info(self):
+        print("This is Vehicle")
+
+class Car(Vehicle):
+    def car_info(self, name):
+        print("Car name is:", name)
+
+class Truck(Vehicle):
+    def truck_info(self, name):
+        print("Truck name is:", name)
+
+obj1 = Car()
+obj1.info()
+obj1.car_info('BMW')
+
+obj2 = Truck()
+obj2.info()
+obj2.truck_info('Ford')
+
+Output:-
+This is Vehicle
+Car name is: BMW
+This is Vehicle
+Truck name is: Ford
+```
+
+##### Hybrid Inheritance:-
+* Hybrid Inheritance is the mixture of two or more different types of inheritance. Here we can have many to many relations between parent classes and child classes with multiple levels.
+```python
+         PC
+        /|\
+       / | \
+    CC1  |  CC2
+     \   |  /
+      \  | /
+        CC3
+```
+```python
+class Vehicle:
+    def vehicle_info(self):
+        print("Inside Vehicle class")
+
+class Car(Vehicle):
+    def car_info(self):
+        print("Inside Car class")
+
+class Truck(Vehicle):
+    def truck_info(self):
+        print("Inside Truck class")
+
+# Sports Car can inherits properties of Vehicle and Car
+class SportsCar(Car, Vehicle):
+    def sports_car_info(self):
+        print("Inside SportsCar class")
+
+# create object
+s_car = SportsCar()
+
+s_car.vehicle_info()
+s_car.car_info()
+s_car.sports_car_info()
 
 Output:-
 Hello Parent1
-Hello Parent2
-Hello Child
-```
-
-* **Multi-Level Inheritance:-** In multilevel inheritance, we go beyond just a parent-child relation. We introduce grandchildren, great-grandchildren, grandparents.
-```python
-
-```
-```python
-class grandparent:                 # first level
-    def func1:                   
-        print(“Hello Grandparent”)
- 
-class parent(grandparent):         # second level
-    def func2:                   
-        print(“Hello Parent”)
- 
-class child(parent):               # third level
-    def func3:                   
-        print(“Hello Child”)   
-                               
- 
-# Driver Code
-test = child()                     # object created
-test.func1()                       # 3rd level calls 1st level
-test.func2()                       # 3rd level calls 2nd level
-test.func3()                       # 3rd level calls 3rd level
-
-Output:-
-Hello Grandparent
-Hello Parent
-Hello Child
-```
-
-* **Hierarchical Inheritance:-** there are multiple derived child classes from a single parent class.
-```python
-class parent:                       # parent class
-    def func1:                   
-        print(“Hello Parent”)
- 
-class child1(parent):               # first child class
-    def func2:                   
-        print(“Hello Child1”)
- 
- 
-class child2(parent):               # second child class
-    def func3:                   
-        print(“Hello Child2”)   
-                               
- 
-# Driver Code
-test1 = child1()                     # objects created
-test2 = child2() 
- 
-test1.func1()                       # child1 calling parent method
-test1.func2()                       # child1 calling its own method
- 
-test2.func1()                       # child2 calling parent method
-test2.func3()                       # child2 calling its own method
-
-Output:-
-Hello Parent
 Hello Child1
-Hello Parent
+
+Hello Parent1
+Hello Parent2
+Hello Child1
 Hello Child2
 ```
 
-* **Hybrid Inheritance:-** Hybrid Inheritance is the mixture of two or more different types of inheritance. Here we can have many to many relations between parent classes and child classes with multiple levels.
+### **Ques. What is the super() Function?**
+* The **super** function returns a temporary object of the parent class that allows us to call a parent class method inside a child class method.
+* **Benefits** of using the super() function.
+  * We are not required to remember or specify the parent class name to access its methods.
+  * We can use the super() function in both single and multiple inheritances.
+  * The super() function support code reusability as there is no need to write the entire function
 ```python
-class parent1:                            # first parent class
-    def func1:                   
-        print(“Hello Parent”)
- 
- 
-class parent2:                            # second parent class
-    def func2:                   
-        print(“Hello Parent”)
- 
-class child1(parent1):                    # first child class
-    def func3:                   
-        print(“Hello Child1”)
- 
- 
-class child2(child1, parent2):            # second child class
-    def func4:                   
-        print(“Hello Child2”)   
-                               
- 
-# Driver Code
-test1 = child1()                          # object created
-test2 = child2()
- 
-test1.func1()                       # child1 calling parent1 method
-test1.func2()                       # child1 calling its own method
- 
-test2.func1()                       # child2 calling parent1 method
-test2.func2()                       # child2 calling parent2 method
-test2.func3()                       # child2 calling child1 method
-test2.func4()                       # child2 calling its own method
+class Company:
+    def company_name(self):
+        return 'Google'
 
-Output:-
-Hello Parent1
-Hello Child1
+class Employee(Company):
+    def info(self):
+        # Calling the superclass method using super()function
+        c_name = super().company_name()
+        print("Jessa works at", c_name)
 
-Hello Parent1
-Hello Parent2
-Hello Child1
-Hello Child2
+# Creating object of child class
+emp = Employee()
+emp.info()
+
+Output:- Jessa works at Google
+```
+
+### Ques. What is issubclass()?
+* we can use Python built-in function issubclass(). This function returns True if the given class is the subclass of the specified class. Otherwise, it returns False.
+```python
+Syntex:- issubclass(class, classinfo)
+```
+```python
+
+```
+
+### Ques. What is Method Overloading?
+* Two or more methods have the same name but different numbers of parameters, These methods are called overloaded methods.
+```python
+class Addition:
+	# first sum for 2 params
+	def my_sum(self, a, b):
+		return a + b
+	
+	# second overloaded sum for 3 params
+	def my_sum(self, a, b, c):
+		return a + b + c
+
+obj = Addition()
+# print(obj.my_sum(3, 4))
+print(obj.my_sum(3, 4, 5))
+
+Output: 12
+```
+
+### Ques. What is Method Overriding?
+* When a child class method has the same name, same parameters, and same return type as a method.
+```python
+class Vehicle:
+    def max_speed(self):
+        print("max speed is 100 Km/Hour")
+
+class Car(Vehicle):
+    # overridden the implementation of Vehicle class
+    def max_speed(self):
+        print("max speed is 200 Km/Hour")
+
+# Creating object of Car class
+car = Car()
+car.max_speed()
+
+Output:- max speed is 200 Km/Hour
 ```
 
 
@@ -1009,3 +1142,193 @@ class Father:
 
 obj = Father('mohit','saxena')
 obj.show_data()
+
+
+### Ques. What is Constructor?
+* Constructors are special function/method which is automatically called when an object is created.
+* Syntax of a constructor
+```python
+def __init__(self):
+    # body of the constructor
+```
+* Example:-
+```python
+class Student:
+    # constructor
+    # initialize instance variable
+    def __init__(self, name):
+        print('Inside Constructor')
+        self.name = name
+        print('All variables initialized')
+
+    # instance Method
+    def show(self):
+        print('Hello, my name is', self.name)
+
+
+# create object using constructor
+s1 = Student('Emma')
+s1.show()
+
+Output:-
+Inside Constructor
+All variables initialized
+Hello, my name is Emma
+```
+* **Types of Constructors:-**
+  * Default Constructor
+  * Non-parametrized constructor
+  * Parameterized constructor
+
+#### Default Constructor:- 
+* The default constructor is not present in the source py file. 
+```python
+class Employee:
+
+    def display(self):
+        print('Inside Display')
+
+emp = Employee()
+emp.display()
+
+Output:-Inside Display
+```
+
+#### Non-parametrized constructor
+* A constructor without any arguments is called a non-parameterized constructor. This type of constructor is used to initialize each object with default values.
+```python
+class Company:
+
+    # no-argument constructor
+    def __init__(self):
+        self.name = "Mohit"
+        self.address = "Greater Noida"
+
+    # a method for printing data members
+    def show(self):
+        print('Name:', self.name, 'Address:', self.address)
+
+# creating object of the class
+cmp = Company()
+
+# calling the instance method using the object
+cmp.show()
+
+Output:- Name: Mohit Address: Greater Noida
+```
+
+#### Parameterized Constructor:-
+* A constructor with defined parameters or arguments is called a parameterized constructor. We can pass different values to each object at the time of creation using a parameterized constructor.
+* The first parameter to constructor is self that is a reference to the being constructed, and the rest of the arguments are provided by the programmer. 
+```python
+class Employee:
+    # parameterized constructor
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    # display object
+    def show(self):
+        print(self.name, self.age, self.salary)
+
+# creating object of the Employee class
+emma = Employee('Emma', 23, 7500)
+emma.show()
+
+kelly = Employee('Kelly', 25, 8500)
+kelly.show()
+
+Output:-
+Emma 23 7500
+Kelly 25 8500
+```
+
+### Ques. Constructor With Default Values?
+* Python allows us to define a constructor with default values. The default value will be used if we do not pass arguments to the constructor at the time of object creation.
+```python
+class Student:
+    # constructor with default values age and classroom
+    def __init__(self, name, age=12, classroom=7):
+        self.name = name
+        self.age = age
+        self.classroom = classroom
+
+    # display Student
+    def show(self):
+        print(self.name, self.age, self.classroom)
+
+# creating object of the Student class
+emma = Student('Emma')
+emma.show()
+
+kelly = Student('Kelly', 13)
+kelly.show()
+
+Output:-
+Emma 12 7
+Kelly 13 7
+```
+
+### Ques. Constructor Overloading?
+* Python does not support constructor overloading.
+* If we define multiple constructors then, the interpreter will considers only the last constructor and throws an error if the sequence of the arguments doesn’t match as per the last constructor. 
+```python
+class Student:
+    # one argument constructor
+    def __init__(self, name):
+        print("One arguments constructor")
+        self.name = name
+
+    # two argument constructor
+    def __init__(self, name, age):
+        print("Two arguments constructor")
+        self.name = name
+        self.age = age
+
+# creating first object
+emma = Student('Emma')
+
+# creating Second object
+kelly = Student('Kelly', 13)
+
+Output:-
+TypeError: __init__() missing 1 required positional argument: 'age'
+```
+
+### Ques. What is Destructors?
+* Destructor is a special method that is called when an object is deleted or destroyed.
+* The special method **_ _del__()** is used to define a destructor. For example, when we execute del object_name destructor gets called automatically and the object gets garbage collected.
+```python
+class Student:
+
+    # constructor
+    def __init__(self, name):
+        print('Inside Constructor')
+        self.name = name
+        print('Object initialized')
+
+    def show(self):
+        print('Hello, my name is', self.name)
+
+    # destructor
+    def __del__(self):
+        print('Inside destructor')
+        print('Object destroyed')
+
+# create object
+s1 = Student('Emma')
+s1.show()
+
+# delete object
+del s1
+
+Output:-
+Inside Constructor
+Object initialized
+
+Hello, my name is Emma
+
+Inside destructor
+Object destroyed
+```
