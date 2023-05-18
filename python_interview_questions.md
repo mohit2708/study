@@ -64,7 +64,6 @@
   * mathematics
   * system scripting
 
-
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. Features of Python?**
@@ -75,21 +74,17 @@
 5. __Portable:-__ Since it is open-source, you can run Python on Windows, Mac, Linux or any other platform. Your programs will work without needing to the changed for every machine.
 6. __GUI Programming:-__ You can use it to develop a GUI (Graphical User Interface). One way to do this is through Tkinter.
 7. __Large Library:-__ Python provides you with a large standard library. You can use it to implement a variety of functions without needing to reinvent the wheel every time. Just pick the code you need and continue. This lets you focus on other important tasks.
-
-
-
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. Python Frameworks?**
-1. Django
-2. Flask
-3. Pyramid
-4. Tornado
-5. Bottle
-6. web2py
-7. NumPy
-8. SciPy
-9. Pylons
+* **Web Development:** Django, Pyramid, Bottle, Tornado, Flask, web2py
+* **GUI Development:** tkInter, PyGObject, PyQt, PySide, Kivy, wxPython
+* **Scientific and Numeric:** SciPy, Pandas, IPython
+* **Software Development:** Buildbot, Trac, Roundup
+* **System Administration:** Ansible, Salt, OpenStack, xonsh
+
+1. NumPy
+2. Pylons
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -105,6 +100,7 @@
 
 ### **Ques. What is the difference between .py and .pyc files?**
 * **.py** files contain the source code of a program. Whereas, **.pyc** file contains the bytecode of your program. We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run. It is only created for the files that you import.
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. What is an Interpreted language?**
@@ -268,38 +264,64 @@ cherry
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-### **Ques. Global Variables?**
-* Variables that are created outside of a function are known as global variables.
-* Global variables can be used by everyone, both inside of functions and outside.
-* Create a variable outside of a function, and use it inside the function.
-```python
-x = "awesome"
+### Ques. **What is Scope in Python?**
+* Every object in Python functions within a scope. A scope is a block of code where an object in Python remains relevant. Namespaces uniquely identify all the objects inside a program.
+1. **Local Scope/Local Variables:-** The Variables which are defined in the function are a local scope of the variable. These variables are defined in the function body.
+    ```python
+    x = "awesome"
 
-def myfunc():
-  print("Python is " + x)
+    def myfunc():
+      x = "fantastic"
+      print("Python is " + x)
 
-myfunc()
+    myfunc()
 
-Output:- Python is awesome
-```
+    print("Python is " + x)
 
-* If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.
-```python
-x = "awesome"
+    Output:-
+    Python is fantastic
+    Python is awesome
+    ```
+2. **Global Scope/Global Variables:-** The Variable which can be read from anywhere in the program is known as a global scope. These variables can be accessed inside and outside the function. 
+    ```python
+    x = 300
+    def myfunc():
+      print(x)
+    myfunc()
 
-def myfunc():
-  x = "fantastic"
-  print("Python is " + x)
+    print(x)
 
-myfunc()
+    Output:- 300
+    300
+    ```
+3. **NonLocal or Enclosing Scope:-** Nonlocal Variable is the variable that is defined in the nested function. It means the variable can be neither in the local scope nor in the global scope.
+    ```python
+    def func_outer():
+        x = "local"
+        def func_inner():
+            nonlocal x
+            x = "nonlocal"
+            print("inner:", x)
+        func_inner()
+        print("outer:", x)
+    func_outer()
+    ```
 
-print("Python is " + x)
+4. **Built-in Scope:-** If a Variable is not defined in local, Enclosed or global scope, then python looks for it in the built-in scope. In the Following Example, 1 from math module pi is imported, and the value of pi is not defined in global, local and enclosed. Python then looks for the pi value in the built-in scope and prints the value. Hence the name which is already present in the built-in scope should not be used as an identifier.
+    ```python
+    # Built-in Scope 
+    from math import pi 
+    # pi = 'Not defined in global pi'
+    def func_outer(): 
+        # pi = 'Not defined in outer pi' 
+        def inner(): 
+            # pi = 'not defined in inner pi' 
+            print(pi) 
+        inner() 
+    func_outer()
 
-Output:-
-Python is fantastic
-Python is awesome
-```
-**[⬆ Back to Top](#table-of-contents)**
+    Output:- 3.141592
+    ```
 
 ### **Ques. global Keyword?**
 * To create a global variable inside a function, you can use the global keyword.
@@ -330,8 +352,6 @@ print("Python is " + x)
 Output:- Python is fantastic
 ```
 **[⬆ Back to Top](#table-of-contents)**
-
-
 
 ### **Ques. What are the common built-in data types in Python?**
 * Variables can store data of different types, and different types can do different things.
@@ -939,7 +959,7 @@ New list: [[1, 1, 1], [2, 'AA', 2], [3, 3, 3]]
 * **Notice** that the anonymous function does not have a return keyword. This is because the anonymous function will automatically return the result of the expression in the function once it is executed.
 ```python
 def add(a,b):
-print(a+b)
+  print(a+b)
 add(5,10)
 
 # Using Lambda function
@@ -1208,12 +1228,12 @@ Output:- 5
 * pickling and unpickling  should be done using binary files since they support byte steam.
 * Python pickle module is used for serializing and de-serializing python object structures. The process to converts any kind of python objects (list, dict, etc.) into byte streams (0s and 1s) is called pickling or serialization or flattening or marshalling. We can converts the byte stream (generated through pickling) back into python objects by a process called as unpickling.
 **Pickling:**
-* pickling is a process of converting a class object into a byte stream so that it can be stored into a file. this is also called as object serialization.
+* pickling is a process of converting a class **object** into a **byte** stream so that it can be stored into a file. this is also called as object serialization.
 * Pickling is the name of the serialization process in Python. Any object in Python can be serialized into a byte stream and dumped as a file in the memory. 
 * The function used for the above process is **pickle.dump()**.
 
 **unpickling:**
-* unpickling is a process whereby byte stream is converted back into a class object. it is inverse operation of pickling. this is also called as de-serialization.
+* unpickling is a process whereby **byte** stream is converted back into a class **object**. it is inverse operation of pickling. this is also called as de-serialization.
 * The function used for the above process is **pickle.load()**.
 ```python
 import pickle
@@ -1242,12 +1262,6 @@ with open('student.dat', mode='rb') as f:
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-
-
-
-
-### Ques. **What is Scope in Python?**
-* Every object in Python functions within a scope. A scope is a block of code where an object in Python remains relevant. Namespaces uniquely identify all the objects inside a program.
 
 ### **Ques. What are global, protected and private attributes in Python?**
 * **Global variables** are public variables that are defined in the global scope. To use the variable in the global scope inside a function, we use the **global** keyword.
@@ -1341,11 +1355,11 @@ agar or karne hai to pip ki help sa karenge
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. How is memory managed in Python?**
+* Memory management in Python is handled by the **Python Memory Manager**. 
 * Python also has an inbuilt garbage collector, which recycles all the unused memory and so that it can be made available to the heap space.
 * Memory management in python is managed by Python private heap space. All Python objects and data structures are located in a private heap. The programmer does not have access to this private heap. The python interpreter takes care of this instead.
 * The allocation of heap space for Python objects is done by Python’s memory manager. The core API gives access to some tools for the programmer to code.
 **[⬆ Back to Top](#table-of-contents)**
-
 
 
 ### **Ques. What is Map, Filter, Reduce?**
@@ -1503,31 +1517,7 @@ Output:- I am a Banana
 3. Global(G): Defined at the uppermost level
 4. Built-in(B): Reserved names in Python builtin modules
 
-* Local Scope in Python
-```python
-pi = 'global pi variable'
-def inner():
-    pi = 'inner pi variable'
-    print(pi)
-  
-inner()
 
-Output:- inner pi variable
-```
-* Local and Global Scopes in Python
-```python
-pi = 'global pi variable'
-def inner():
-    pi = 'inner pi variable'
-    print(pi)
-  
-inner()
-print(pi)
-
-Output:- 
-inner pi variable
-global pi variable
-```
 
 * Local, Enclosed, and Global Scopes in Python
 ```python
@@ -1550,11 +1540,10 @@ global pi variable
 ```
 
 
+### What is docstring in Python?
 
-## Oops Interview Questions
 
-
-What are Python namespaces?
+### What are Python namespaces?
 A namespace in python refers to the name which is assigned to each object in python. The objects are variables and functions. As each object is created, its name along with space(the address of the outer function in which the object is), gets created. The namespaces are maintained in python like a dictionary where the key is the namespace and value is the address of the object. There 4 types of namespace in python-
 
 Built-in namespace– These namespaces contain all the built-in objects in python and are available whenever python is running.
@@ -1587,16 +1576,29 @@ print(list6)
 ```
 
 
+### Unique dictionary from list?
+```python
+a = [
+{'id':1,'name':'john', 'age':34},
+{'id':1,'name':'john', 'age':34},
+{'id':2,'name':'hanna', 'age':30},
+]
+
+b = {x['id']:x for x in a}.values()
+
+print(b)
+
+Output:-
+dict_values([{'id': 1, 'name': 'john', 'age': 34}, {'id': 2, 'name': 'hanna', 'age': 30}])
+```
+
 ### f
 
 g. WAP to count from a string?
 l. Count occurrence of each number in list.
 s. Write a custom insert() function for list eg. def custom_insert (list, index, item).
 bb. Can we pass list or tuple as a key in dictionary?
-cc. Unique dictionary from list.
 ee. What is property decorator?
-gg. Iterators and iterable difference.
-hh. Difference between generator and iterator in python.
 ii. What is lazy evaluation in python?
 b. Static file contains which type of file normally?
 c. How can be file read in specific location?
@@ -1611,41 +1613,16 @@ j. Difference multilevel and multiple inheritance and drawback?
 1. Exception Handling
 a. How can we handle errors in python?
 b. How many ways exception in python?
-5. Multithreading
+1. Multithreading
 a. What is GIL?
-6. Numpy
+1. Numpy
 a. Tell me some python libraries .. Numpy
 b. Convert a list into numpy
 
 https://pynative.com/python-constructors/
 
-Local Scope
-The Variables which are defined in the function are a local scope of the variable. These variables are defined in the function body.
-Example:- 
-def myfunc():
-  x = 300
-  print(x)
 
-myfunc()
 
-Output:- 300
-
-Global Scope
-The Variable which can be read from anywhere in the program is known as a global scope. These variables can be accessed inside and outside the function. 
-x = 300
-
-def myfunc():
-  print(x)
-
-myfunc()
-
-print(x)
-
-Output:- 300
-300
-
-NonLocal or Enclosing Scope
-Built-in Scope
 Global Keyword
 
 
