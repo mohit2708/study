@@ -31,9 +31,10 @@
 
 
 ```python
-my_list = ["apple", "banana", "cherry"]   #Output:- ["apple", "banana", "cherry"]
-my_list = [1, "Hello", 3.4]               #Output:- [1, "Hello", 3.4]
-my_list = ["mouse", [8, 4, 6], ['a']]     #Output:- ["mouse", [8, 4, 6], ['a']] //A list can also have another list as an item. This is called a nested list. 
+my_list = ["apple", "banana", "cherry", "banana"]   
+my_list = [1, "Hello", 3.4]              
+my_list = ["mouse", [8, 4, 6], ['a']]  # A list can also have another list as
+                                       # an item. This is called a nested list. 
 print(my_list)
 ```
 
@@ -59,6 +60,17 @@ print(list[::-2])   # Output:- [4, 3, 4, 3]
 print(list[::-1])   # Output:- [4, 1, 3, 7, 4, 6, 3, 9]  #reverse the List using slice
 ```
 
+* Accessing elements from a multi-dimensional list
+```python
+List = [['my', 'name'], ['is'],['mohit','saxena']]
+print(List[0][1])
+print(List[1][0])
+
+Output:-
+name
+is
+```
+
 ### **Ques. List Length**
 * use the len() function:
 ```python
@@ -66,6 +78,17 @@ thislist = ["apple", "banana", "cherry"]
 print(len(thislist))
 
 Output:- 3
+```
+
+### Split the strings and store into a list
+```python
+string = input("Enter string: ")
+lst = string.split()  
+print('The list is:', lst)
+
+Output:-
+Enter string: my name is mohit saxena
+The list is: ['my', 'name', 'is', 'mohit', 'saxena']
 ```
 
 ### **Ques. How to Check if Item Exists?**
@@ -101,7 +124,6 @@ thislist = ["apple", "banana", "cherry"]
 tropical = ("mango", "pineapple", "papaya")
 
 thislist.extend(tropical)
-
 print(thislist)
 
 Output:- ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
@@ -130,16 +152,17 @@ Output:- ['apple', 'blackcurrant', 'watermelon', 'orange', 'kiwi', 'mango']
 ### **Ques. Remove List Items?**
 * **remove() method:-** 
 * Remove **Specified Item** from the List using remove() method.
-* remove() removes the first instance of a matching object.
-* If item not exist then show the error.
+* remove() method the first instance of a matching object.
 ```python
 thislist = ["apple", "banana", "cherry", "banana"]
 thislist.remove("banana")
 print(thislist)
 
 Output:- ['apple', 'cherry', "banana"]
+```
 
-# If item not exist then show the error
+* If item not exist then show the error
+```python
 thislist = ["apple", "banana", "cherry", "banana"]
 thislist.remove("banana1")
 print(thislist)
@@ -188,57 +211,9 @@ print(thislist)
 Output:- []
 ```
 
-### **Ques. Loop Lists?**
-```python
-# Loop Through a List
-thislist = ["apple", "banana", "cherry"]
-for x in thislist:
-  print(x)
-
-Output:- 
-apple
-banana
-cherry
---------------------------------------------------------------------------------
-
-# Loop Through the Index Numbers
-# You can also loop through the list items by referring to their index number.
-#Use the range() and len() functions to create a suitable iterable.
-thislist = ["apple", "banana", "cherry"]
-for i in range(len(thislist)):
-  print(thislist[i])
-
-Output:-
- apple
- banana
- cherry
----------------------------------------------------------------------------------
-
-# Using a While Loop
-thislist = ["apple", "banana", "cherry"]
-i = 0
-while i < len(thislist):
-  print(thislist[i])
-  i = i + 1
-
-Output:-
-apple
-banana
-cherry
--------------------------------------------------------------------------------------
-
-# Looping Using List Comprehension
-thislist = ["apple", "banana", "cherry"]
-[print(x) for x in thislist]
-
-Output:-
- apple
- banana
- cherry
-``` 
-
-
 ### **Ques. Copy Lists?**
+* You cannot copy a list simply by typing list2 = list1, because: list2 will only be a reference to list1, and changes made in list1 will automatically also be made in list2.
+* So Two method of the copy below.
 * **copy() method**
 ```python
 thislist = ["apple", "banana", "cherry"]
@@ -293,6 +268,55 @@ print(list1)
 Output:-['a', 'b', 'c', 1, 2, 3]
 ```
 
+### **Ques. Loop Lists?**
+```python
+# Loop Through a List
+thislist = ["apple", "banana", "cherry"]
+for x in thislist:
+  print(x)
+
+Output:- 
+apple
+banana
+cherry
+--------------------------------------------------------------------------------
+
+# Loop Through the Index Numbers
+# You can also loop through the list items by referring to their index number.
+#Use the range() and len() functions to create a suitable iterable.
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i])
+
+Output:-
+ apple
+ banana
+ cherry
+---------------------------------------------------------------------------------
+
+# Using a While Loop
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+Output:-
+apple
+banana
+cherry
+-------------------------------------------------------------------------------------
+
+# Looping Using List Comprehension
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+
+Output:-
+ apple
+ banana
+ cherry
+``` 
+
 
 ### **Ques. List Comprehension?**
 * List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.
@@ -346,15 +370,15 @@ Output:- ['banana', 'cherry', 'Kiwi', 'Orange']
 ```
 * **Sort Descending:-** To sort descending, use the keyword argument reverse = True.
 ```python
-thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist = ["orange", "mango", "Kiwi", "Pineapple", "banana"]
 thislist.sort(reverse = True)
 print(thislist)
 
-Output:- ['pineapple', 'orange', 'mango', 'kiwi', 'banana']
+Output:- ['orange', 'mango', 'banana', 'Pineapple', 'Kiwi']
 ```
-```python
 
-# Reverse Order:- The reverse() method reverses the current sorting order of the elements.
+* Reverse Order:- The **reverse() method** reverses the current sorting order of the elements.
+```python
 thislist = ["banana", "Orange", "Kiwi", "cherry"]
 thislist.reverse()
 print(thislist) 
@@ -363,9 +387,8 @@ Output:- ['cherry', 'Kiwi', 'Orange', 'banana']
 ```
                         
 
-##### **List Methods**
-
-                        
+### **List Methods**
+                    
 | Method    | Description                                                                  |
 | --------- | ---------------------------------------------------------------------------- |
 | append()  | Adds an element at the end of the list                                       |
@@ -413,10 +436,9 @@ print(fruits)
 
 Output:- ['apple', 'orange', 'banana', 'cherry']
 ```
-```python
--------------------------------------------------------------------
 
-# copy():-	Returns a copy of the list
+* **copy():-**	Returns a copy of the list
+```python
 fruits = ["apple", "banana", "cherry"]
 x = fruits.copy()
 print(x)
@@ -873,6 +895,25 @@ print(list(zip(name,animal)))
 Output:- [('Snowball', 'Cat'), ('Chewy', 'Dog'), ('Bubbles', 'Fish'), ('Gruff', 'Goat')]
 ```
 
+### **Ques. How to Zip two lists**
+* Using map() + __add__ 
+```python
+test_list1 = [[1, 3], [4, 5], [5, 6]]
+test_list2 = [[7, 9], [3, 2], [3, 10]]
+
+print("The original list 1 is : " + str(test_list1))
+print("The original list 2 is : " + str(test_list2))
+
+res = list(map(list.__add__, test_list1, test_list2))
+
+print("The modified zipped list is : " + str(res))
+
+Output:- 
+The original list 1 is : [[1, 3], [4, 5], [5, 6]]
+The original list 2 is : [[7, 9], [3, 2], [3, 10]]
+The modified zipped list is : [[1, 3, 7, 9], [4, 5, 3, 2], [5, 6, 3, 10]]
+```
+
 ### **Ques. List Sorting in descending order?**
 ```python
 list = [24,55,78,64,25,12,22,11,1,2,44]
@@ -991,12 +1032,14 @@ li = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,10]
 li[:10]
 #=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
+
 ### **Ques. Remove elements in a list before  a specific index?**
 ```python
 li = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,10]
 li[15:]
 #=> [16, 17, 18, 19, 10]
 ```
+
 ### **Ques. Remove elements in a list between 2 indices?**
 ```python
 li = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,10]
