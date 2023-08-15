@@ -1,0 +1,216 @@
+### **Ques. Dictionary Methods?**
+
+| Method       | Description                                                                                                  |
+| ------------ | ------------------------------------------------------------------------------------------------------------ |
+| clear()      | Removes all the elements from the dictionary                                                                 |
+| copy()       | Returns a copy of the dictionary                                                                             |
+| fromkeys()   | Returns a dictionary with the specified keys and value.                                                      |
+| get()        | Returns the value of the specified key.                                                                      |
+| items()      | Returns a list containing a tuple for each key value pair.                                                   |
+| keys()       | Returns a list containing the dictionary's keys.                                                             |
+| pop()        | Removes the element with the specified key.                                                                  |
+| popitem()    | Removes the last inserted key-value pair.                                                                    |
+| setdefault() | Returns the value of the specified key. If the key does not exist: insert the key, with the specified value. |
+| update()     | Updates the dictionary with the specified key-value pairs.                                                   |
+| values()     | Returns a list of all the values in the dictionary.                                                          |
+
+
+* The **clear()** method removes all the elements from a dictionary.
+```python
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.clear()
+
+print(car)
+
+Output:- {}
+```
+* The **copy()** method returns a copy of the specified dictionary.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.copy()
+
+print(x)
+
+Output:- 
+{'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
+```
+* The **fromkeys()** method returns a dictionary with the specified keys and the specified value.
+```python
+# Example1:-
+x = ('key1', 'key2', 'key3')
+y = 0
+thisdict = dict.fromkeys(x, y)
+print(thisdict)
+
+Output:- ['key1': 0, 'key2': 0, 'key3': 0]
+
+# Example2:- 
+x = ('key1', 'key2', 'key3')
+thisdict = dict.fromkeys(x)
+print(thisdict)
+
+Output:- ['key1': None, 'key2': None, 'key3': None]
+```
+* The **get()** method returns the value of the item with the specified key.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.get("model")
+
+print(x)
+
+Output:- Mustang
+
+# Example2:-
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.get("price", 15000)
+
+print(x)
+
+Output:- 15000
+```
+* The **items()** method returns a view object. The view object contains the \n key-value pairs of the dictionary, as tuples in a list.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.items()
+print(x)
+
+Output:- dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+
+# example2:- 
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.items()
+car["year"] = 2018
+print(x)
+
+Output:- dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 2018)])
+```
+* The **keys()** method returns a view object. The view object contains the keys of the dictionary, as a list.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.keys()
+print(x)
+
+car["color"] = "white"
+print(x)
+
+Output:- dict_keys(['brand', 'model', 'year'])
+Output:- dict_keys(['brand', 'model', 'year', 'color'])
+```
+* The **pop()** method removes the specified item from the dictionary.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.pop("model")
+print(x)
+print(car)
+
+Output:- Mustang
+Output:- {'brand': 'Ford', 'year': 1964}
+```
+* The **popitem()** method removes the item that was last inserted into the dictionary.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.popitem()
+
+print(x)
+print(car)
+
+Output:- 
+('year', 1964)
+{'brand': 'Ford', 'model': 'Mustang'}
+```
+* The **setdefault()** method returns the value of the item with the specified key.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.setdefault("color", "White")
+y = car.setdefault("model", "Bronco")
+
+print(x)
+print(y)
+
+Output:- White
+Output:- Mustang
+```
+* The **update()** method inserts the specified items to the dictionary.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+car.update({"color": "White"})
+
+print(car)
+
+Output:- {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'White'}
+```
+* The **values()** method returns a view object. The view object contains the values of the dictionary, as a list.
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = car.values()
+
+print(x)
+
+Output:- dict_values(['Ford', 'Mustang', 1964])
+
+# Example2:-
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.values()
+
+car["year"] = 2018
+
+print(x)
+
+Output:- dict_values(['Ford', 'Mustang', 2018])
+```

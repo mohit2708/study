@@ -1,0 +1,25 @@
+### **Ques. What is Monkey Patching?**
+* The term monkey patching refers to dynamic(or run time) modifictaion of class or method.
+* A class or method can be changed at the runtime.
+```python
+class A:  
+   def hello(self):  
+      print ("The hello() function is being called") 
+      
+def monkey_f():
+    print ("monkey_f() is being called")
+
+#normal class method call   
+obj = A()
+obj.hello()
+
+#calling class method after monkey patch
+obj.hello = monkey_f
+obj.hello()
+
+Output:- 
+The hello() function is being called
+monkey_f() is being called
+```
+
+

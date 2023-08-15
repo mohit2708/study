@@ -56,8 +56,8 @@
 
 ### **Ques. What is Python?**
 * Python is a high-level, interpreted, general-purpose programming language.
-* Python is an __interpreter__ language. It means it executes the code line by line
-* It was created by __Guido van Rossum__, and released in __1991__
+* Python is an **interpreter** language. It means it executes the code line by line
+* It was created by **Guido van Rossum**, and released in **1991**
 * It is used for:
   * web development (server-side)
   * software development
@@ -99,12 +99,23 @@
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. What is the difference between .py and .pyc files?**
-* **.py** files contain the source code of a program. Whereas, **.pyc** file contains the bytecode of your program. We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run. It is only created for the files that you import.
+* **.py** files contain the source code of a program. Whereas, **.pyc** file contains the bytecode of your program. 
+* We get bytecode after compilation of **.py** file (source code). **.pyc** files are not created for all the files that you run. It is only created for the files that you import.
+**[⬆ Back to Top](#table-of-contents)**
 
+### **Ques. What is PEP 8?**
+* PEP stands for __Python Enhancement Proposal__. 
+* It is a set of rules that specify how to format Python code for maximum readability.
+* PEP8 is a document that provides various guidline to write the readable in python.
+* PEP8 describe how the developers can write the beautiful code.
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. Is indentation required in python?**
+Indentation is necessary for Python. It specifies a block of code. All code within loops, classes, functions, etc is specified within an indented block. It is usually done using four space characters. If your code is not indented necessarily, it will not execute accurately and will throw errors as well.
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. What is an Interpreted language?**
-An Interpreted language executes its statements line by line. Languages such as Python, Javascript, R, PHP, and Ruby are prime examples of Interpreted languages.
+* An Interpreted language executes its statements line by line. Languages such as Python, Javascript, R, PHP, and Ruby are prime examples of Interpreted languages.
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. What is a dynamically typed language?**
@@ -295,17 +306,21 @@ cherry
     300
     ```
 3. **NonLocal or Enclosing Scope:-** Nonlocal Variable is the variable that is defined in the nested function. It means the variable can be neither in the local scope nor in the global scope.
-    ```python
-    def func_outer():
-        x = "local"
-        def func_inner():
-            nonlocal x
-            x = "nonlocal"
-            print("inner:", x)
-        func_inner()
-        print("outer:", x)
-    func_outer()
-    ```
+```python
+def func_outer():
+    x = "local"
+    def func_inner():
+        nonlocal x
+        x = "nonlocal"
+        print("inner:", x)
+    func_inner()
+    print("outer:", x)
+func_outer()
+
+Output:-
+inner: nonlocal
+outer: nonlocal 
+```
 
 4. **Built-in Scope:-** If a Variable is not defined in local, Enclosed or global scope, then python looks for it in the built-in scope. In the Following Example, 1 from math module pi is imported, and the value of pi is not defined in global, local and enclosed. Python then looks for the pi value in the built-in scope and prints the value. Hence the name which is already present in the built-in scope should not be used as an identifier.
     ```python
@@ -418,8 +433,9 @@ output:- <class 'int'>
 ### **Ques. Type Casting/Type Conversion?**
 * The process of converting the value of one data type (integer, string, float, etc.) to another data type is called type conversion. 
 * Jab bhi hum ek data type ki value ko dusre data type ki value mai convert karte hai to usi ko hum bolte hai type conversion.
+
+* Integers
 ```python
-# Integers
 x = int(1)
 y = int(2.8)
 z = int("3")
@@ -431,21 +447,24 @@ Output:-
 1
 2
 3
-
+```
+* Floats
+```python
 # Floats
-x = int(1)
-y = int(2.8)
-z = int("3")
+x = float(1)
+y = float(2.8)
+z = float("3")
 print(x)
 print(y)
 print(z)
 
 Oytput:-
-1
-2
-3
-
-# Strings
+1.0
+2.8
+3.0
+```
+* Strings
+```python
 x = str("s1")
 y = str(2)
 z = str(3.0)
@@ -534,9 +553,9 @@ Data type of the sum: <class 'int'>
 | :------: | ------- | --------- | -------------------------------------- |
 |    =     | x = 5   | x = 5     | x = 5 <br> print(x) <br> 5             |
 |    +=    | x += 3  | x = x + 3 | x = 5 <br> x += 3 <br> print(x) <br> 8 |
+|    -=    | x -= 3  | x = x - 3 | x = 5 <br> x -= 3 <br> print(x) <br> 2 |
 
 ```python	
--=	x -= 3	x = x - 3	
 *=	x *= 3	x = x * 3	
 /=	x /= 3	x = x / 3	
 %=	x %= 3	x = x % 3	
@@ -602,7 +621,12 @@ if ( b not in list ):
  print("b is NOT present in given list")
 else:
   print("b is in given list")
+
+Output:-
+a is in given list
+b is NOT present in given list
 ```
+
 * **Identity operators** evaluate whether the value being given is of a specific type or class. These operators are commonly used to match the data type of a variable.
 1. **is operator:-** The is operator returns true if the variables on either side of the operator point to the same object. Otherwise, it returns false.
 ```python
@@ -870,12 +894,7 @@ Output:-
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-### **Ques. What is PEP 8?**
-* PEP stands for __Python Enhancement Proposal__. 
-* It is a set of rules that specify how to format Python code for maximum readability.
-* PEP8 is a document that provides various guidline to write the readable in python.
-* PEP8 describe how the developers can write the beautiful code.
-**[⬆ Back to Top](#table-of-contents)**
+
 
 ### **Ques. How to get Id()?**
 id() function takes a single parameter object.
@@ -913,9 +932,7 @@ Output:- True
 ```
 **[⬆ Back to Top](#table-of-contents)**
 
-### **Ques. Is indentation required in python?**
-Indentation is necessary for Python. It specifies a block of code. All code within loops, classes, functions, etc is specified within an indented block. It is usually done using four space characters. If your code is not indented necessarily, it will not execute accurately and will throw errors as well.
-**[⬆ Back to Top](#table-of-contents)**
+
 
 ### **Ques. Python Deep Copy and Shallow Copy?**
 __Deep Copy:-__ In deep copy any changes made to a copy of object do not reflect in the orginal object.

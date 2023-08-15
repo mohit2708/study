@@ -1,3 +1,4 @@
+
 ### **Ques. What is File Handling in Python?**
 * Suppose you are working on a file saved on your personal computer. If you want to perform any operation on that file like opening it, updating it or any other operation on that, all that comes under File handling.
 * Types Of File in Python
@@ -16,6 +17,7 @@
   * Tabular data:</b> csv, tsv etc
   * Configuration:</b> ini, cfg, reg etc
   
+<!-- pagebreak -->
 
 ### **Ques. Opening and Closing a File in Python?**
 **open() Function:-** This function takes two arguments. First is the filename along with its complete path, and the other is access mode. This function returns a file object.
@@ -30,8 +32,8 @@ Note:- By default, the access mode is read mode if you don't specify any mode.
 f = open("myfile.txt", "x")
 ```
 
-#### How to read file in python
-* Open a File on the Server:- The open() function returns a file object, which has a **read() method** for reading the content of the file.
+### **How to read file in python?**
+* Open a File on the Server:- The **open()** function returns a file object, which has a **read() method** for reading the content of the file.
 ```python
 file = open("demofile.txt", "r")
 print(f.read())

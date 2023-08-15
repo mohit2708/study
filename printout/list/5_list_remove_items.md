@@ -1,0 +1,61 @@
+### **Ques. Remove List Items?**
+* **remove() method:-** 
+* Remove **Specified Item** from the List using remove() method.
+* remove() method the first instance of a matching object.
+```python
+thislist = ["apple", "banana", "cherry", "banana"]
+thislist.remove("banana")
+print(thislist)
+
+Output:- ['apple', 'cherry', "banana"]
+```
+
+* If item not exist then show the error
+```python
+thislist = ["apple", "banana", "cherry", "banana"]
+thislist.remove("banana1")
+print(thislist)
+
+Output:- error item not in the list
+```
+
+* **pop() method:-** The pop() method **removes the specified index**.
+* if you do not specify the index, the pop() method **removes the last item**.
+```python
+thislist = ["apple", "banana", "cherry"]
+thislist.pop(1)
+print(thislist)
+
+Output:- ['apple', 'cherry']
+```
+```python
+thislist = ["apple", "banana", "cherry"]
+thislist.pop()
+print(thislist)
+
+Output:- ['apple', 'banana']
+```
+* **del() method:-** The del keyword also **removes the specified index.**
+* The del keyword can also **delete the list completely.**
+```python
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print(thislist)
+
+Output:- ['banana', 'cherry']
+```
+```python
+thislist = ["apple", "banana", "cherry"]
+del thislist
+print(thislist) #this will cause an error because you have succsesfully deleted "thislist".
+
+Output:- Error
+```
+* **clear() method:-** The clear() method **empties the list.**
+```python
+thislist = ["apple", "banana", "cherry"]
+thislist.clear()
+print(thislist)
+
+Output:- []
+```
