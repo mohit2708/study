@@ -1,0 +1,64 @@
+### **Ques. Remove Dictionary Items?**
+* Removing item using **pop()** methods.
+* The **pop()** method removes the item with the specified key name:
+```python
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+print(thisdict)
+
+Output:- {'brand': 'Ford', 'year': 1964}
+```
+* Removing item using **popitem()** methods.
+* method removes the last inserted item (in versions before 3.7, a random item is removed instead).
+```python
+thisdict =	{
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+thisdict.popitem()
+print(thisdict)
+
+Output:-  {'brand': 'Ford', 'model': 'Mustang'}
+```
+* Using **del** methods removes the item with the specified key name.
+* If we can not difine the key name del method delete the dictionary completely. 
+```python
+thisdict =	{
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+del thisdict["model"]
+print(thisdict)
+
+Output:-  {'brand': 'Ford', 'year': 1964}
+--------------------------------------------------------------------------------
+# The Removing item using del methods keyword can also delete the dictionary completely.
+thisdict =	{
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+del thisdict
+print(thisdict)
+
+Output:-  this will cause an error because "thisdict" no longer exists.
+```
+
+* The Removing item using **clear()** methods method empties the dictionary.
+```python
+thisdict =	{
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+thisdict.clear()
+print(thisdict)
+
+Output:-  {}
+```
