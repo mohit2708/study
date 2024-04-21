@@ -19,6 +19,11 @@ print(list[::2])    # Output:- [9, 6, 7, 1]
 print(list[::-2])   # Output:- [4, 3, 4, 3]
 print(list[::-1])   # Output:- [4, 1, 3, 7, 4, 6, 3, 9]  #reverse the List using slice
 ```
+```python
+list = [1,2,3,4,5,6,7,8,9]
+print(list[4::])        # output: - [5, 6, 7, 8, 9]
+print(list[:4:])        # output: - [1, 2, 3, 4]
+```
 
 * Accessing elements from a multi-dimensional list
 ```python

@@ -1,4 +1,164 @@
+### **Ques. What is Laravel?**
+* Laravel is free open source “PHP framework” based on MVC design pattern.
+* It is created by **Taylor Otwell**
+* The first version of laravel is released on 9 June 2011.
+* The latest version of Laravel is **10.0.4 / 2 March 2023**
+**[⬆ Back to Top](#table-of-contents)**
 
+### **Ques. What is the Features of Laravel?**
+* Inbuilt CRSF (cross-site request forgery ) Protection.
+* Inbuilt paginations
+* middleware
+* Eloquent ORM
+* Query builder available
+* Reverse Routing
+* Restful Controllers
+* Migration
+* Database Seeding/Database Migration
+* Autamatic Pagination
+* Unit Testing
+* Homestead
+* Query builder 
+* Route caching 
+* IOC (Inverse of Control) Container Or service container.
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. What are pros and cons of using Laravel Framework?**
+#### Pros of using Laravel Framework
+1. Laravel framework has in-built lightweight blade template engine to speed up compiling task and create layouts with dynamic content easily.<br>
+2. Hassles code reusability.<br>
+3. Eloquent ORM with PHP active record implementation<br>
+4. Built in command line tool “Artisan” for creating a code skeleton , database structure and build their migration
+#### Cons of using laravel Framework 
+1. Development process requires you to work with standards and should have real understanding of programming<br>
+2. Laravel is new framework and composer is not so strong in compare to npm (for node.js), ruby gems and python pip.<br>
+3. Development in laravel is not so fast in compare to ruby on rails.<br>
+4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task.
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. What are available databases supported by Laravel?**
+* PostgreSQL
+* SQL Server
+* SQLite
+* MySQL
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. What are the steps to install Laravel with composer?**
+Laravel installation steps:-
+* Download composer from https://getcomposer.org/download (if you don’t have a composer on your system)
+* Open cmd
+* Goto your htdocs folder.
+* C:\xampp\htdocs> composer create-project laravel/laravel projectname
+```php
+If you install some particular version, then you can use
+composer create-project laravel/laravel project_name "5.6"
+If you did not mention any particular version, then it will install with the latest version.
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+### Ques. What is composer?
+* Composer is the package manager for the framework.
+* It helps in adding new packages from the huge community into your laravel application.
+* Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you Laravel utilizes Composer to manage its dependencies.
+* It is an application-level package manager for PHP. It provides a standard format for managing PHP software dependencies and libraries.
+Example:-
+```php
+composer requires laravel/passport
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+### **Ques. What is the templating engine used in Laravel?**
+* The templating engine used in Laravel is __Blade__.
+* __Displaying data__ If you want to print the value of a variable, then you can do so by simply enclosing the variable within the curly brackets.<br>
+__Syntax:-__
+```php
+{{$variable}};  
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+### Ques. How to put Laravel applications in maintenance mode?
+Laravel applications can be put into maintenance mode using the below command:
+```php
+php artisan down
+```
+And can put the application again on live using the below command:
+```php
+php artisan up
+```
+
+### Ques. What is Component?
+* A component is a piece of code, which we can reuse in any blade template. It’s something similar to sections, layouts, and includes.
+* For example, we use the same header for each template, so we can create a Header component, which we can reuse.
+```php
+# How to Make Component
+php artisan make:component Header
+
+# We can also make components with in subdirectories like:
+php artisan make:component Forms/Button
+```
+* This command makes two files in your laravel project.
+  * One PHP file is created with the name of Header.php inside **app/http/View/Components** directory.
+  * And another HTML file is created with the name of header.blade.php inside **resources/views/components/** directory.
+
+* This syntax is used to rendered component in HTML file:
+```php
+# Syntex:-
+<x-ComponentName/>
+```
+* Step 1: First we place some HTML code in the component header.blade.php file.
+```php
+<div>
+<h1> Header Component </h1>
+</div>
+```
+* Step 2: Now create a users.blade.php view file in the resource folder, in which we can use the header component.
+```php
+<x-header />
+<h1>User Page</h1>
+```
+
+* **Pass Data in Laravel Components:-**
+* To pass data to balde component using below syntax: <x-alert type="error" :message="$message"/>
+* Add code in header.php file inside app/http/View/Components/ directory.
+```php
+<?php
+namespace App\View\Components;
+use Illuminate\View\Component;
+
+class Header extends Component
+{
+  /**
+  * The alert type.
+  *
+  * @var string
+  */
+  public $type;
+  public $message;
+
+  public function __construct($type, $message)
+  {
+      $this->type = $type;
+      $this->message = $message;
+  }
+}
+```
+* Now add this **$title** variable in **header.blade.php** component file to show passed data.
+```php
+<div class="alert alert-{{ $type }}">
+    {{ $message }}
+</div>
+```
+
+
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. What is a Route?
+* A route is basically an endpoint specified by a URI (Uniform Resource Identifier). It acts as a pointer in Laravel application.
+* Most commonly, a route simply points to a method on a controller and also dictates which HTTP methods are able to hit that URI.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. Why use Route?
+Routes are stored inside files under the /routes folder inside the project's root directory. By default, there are a few different files corresponding to the different "sides" of the application ("sides" comes from the hexagonal architecture methodology).
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Events in laravel?
@@ -42,7 +202,7 @@ Artisan is the command-line tool for Laravel to help the developer build the app
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What are named routes in Laravel?
-Named routes allow referring to routes when generating redirects or Urls more comfortably. <br>You can specify named routes by chaining the name method onto the route denition:
+Named routing is another amazing feature of Laravel framework. Named routes allow referring to routes when generating redirects or Urls more comfortably. <br>You can specify named routes by chaining the name method onto the route denition:
 ```php
 Route::get('user/profile', function () {
      // 

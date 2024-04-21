@@ -2,6 +2,22 @@
 ```php
 Route::get('/customer/destroy/{id}', [App\Http\Controllers\Admin\CustomerController::class, 'destroy'])->name('customer.destroy');
 ```
+
+
+### in controller
+```php
+public function destroy($id){
+	try{  
+		Customer::where('id', $id)->delete();	
+		$user = User::where('id', $id)->firstorfail()->delete();
+		return redirect('customer/list')->with('success', 'Customer deleted successfully!');
+	}catch (Exception $e) {
+		Log::error($e->getMessage(), $e->getTrace());
+	}
+}
+
+```
+
 ### Delete with bootstrap model
 ```php
 # in blade file
@@ -36,17 +52,4 @@ function confirm_delete(id){
 	$("#delete_confirm").modal();
 }
 </script>
-```
-
-```php
-# in controller
-public function destroy($id){
-	try{  
-		Customer::where('id', $id)->delete();	
-		return redirect('customer/list')->with('success', 'Customer deleted successfully!');
-	}catch (Exception $e) {
-		Log::error($e->getMessage(), $e->getTrace());
-	}
-}
-
 ```

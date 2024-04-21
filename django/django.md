@@ -40,6 +40,10 @@ https://www.javatpoint.com/django-interview-questions-and-answers -- 1
 |       |                                                                                                         |
 |       |                                                                                                         |
 
+
+### **Ques. What is virtual Enviroment**
+* A virtual environment is like a separate space wherein we can install our project requirements which is completely isolated from the global installations.
+
 ### **Ques. What is Django?**
 * Django—pronounced “Jango,”. Django is a free and open source and server-side web application framework written in Python.
 * Django follows the MVT (Model View Template) pattern which is based on the Model View Controller architecture.
