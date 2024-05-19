@@ -61,3 +61,28 @@ def get_db() -> Generator:   #new
     finally:
         db.close()
 ```
+
+
+### Create the env file
+* install the package
+```python
+pip install python-dotenv
+```
+* add code in .env file
+```python
+MY_SQL_USER=root
+MY_SQL_PASSWORD=
+MY_SQL_SERVER=localhost
+MY_SQL_PORT=
+MY_SQL_DATABASE=profile_fastapi
+```
+
+### Install alembic
+* install package
+```python
+pip install alembic
+```
+* Initialize Alembic:
+```python
+alembic init alembic
+```

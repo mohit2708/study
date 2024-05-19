@@ -706,6 +706,36 @@ Output:-
 * * * * *
 ```
 
+### Sort multidimensional array by name
+```php
+<?php
+
+$abc = [
+    ["name" => "mohit", "age" => 30],
+    ["name" => "abhinav", "age" => 36],
+    ["name" => "rohit", "age" => 25]
+];
+
+// Bubble sort by "name" key
+$n = count($abc);
+for ($i = 0; $i < $n - 1; $i++) {
+    for ($j = 0; $j < $n - $i - 1; $j++) {
+        if ($abc[$j]["name"] > $abc[$j + 1]["name"]) {
+            // Swap $abc[$j] and $abc[$j+1]
+            $temp = $abc[$j];
+            $abc[$j] = $abc[$j + 1];
+            $abc[$j + 1] = $temp;
+        }
+    }
+}
+print_r($abc);
+// Print the sorted array
+foreach ($abc as $person) {
+    echo "Name: " . $person["name"] . ", Age: " . $person["age"] . "\n";
+}
+?>
+
+```
 
 ```php
 <?php
@@ -1338,3 +1368,4 @@ echo "<pre>";
 print_r($minV);
 echo "<br />";
 print_r($maxV);
+

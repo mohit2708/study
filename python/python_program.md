@@ -2,6 +2,7 @@
 
 |  No.  | Questions                                                                                                |
 | :---: | -------------------------------------------------------------------------------------------------------- |
+|   1   | [Hello World](#ques-print-hello-world)                                                                   |
 |   1   | [swap two variables](#swap-two-variables)                                                                |
 |   2   | [check if a number is Even or odd](#program-to-check-if-a-number-is-even-or-odd)                         |
 |       | [To Check if a String is a Palindrome](#To-Check-if-a-String-is-a-Palindrome)                            |
@@ -14,20 +15,10 @@
 |       | [How to reverse a sentence in Python input by User?](#How-to-reverse-a-sentence-in-Python-input-by-User) |
 |       | [Count number of characters in a string](#count-number-of-characters-in-a-string)                        |
 |       | [convert a list to string](#program-to-convert-a-list-to-string)                                         |
+|       | [Interchange first and last elements in a list](#ques-interchange-first-and-last-elements-in-a-list)     |
 
 
-### **Ques. find the single number of the list?**
-```python
-mylist = [1,2,2,3,3,4,5,5,5,6,6,6,6]
-new_list = []
-for num in mylist:
-    if(mylist.count(num) == 1):
-        new_list.append(num)
 
-print(new_list)
-
-Output:-[1, 4]
-```
 
 
 ### **Ques. Print Hello World?**
@@ -93,6 +84,8 @@ P = P ^ Q
 print ("The Value of P after swapping: ", P)  
 print ("The Value of Q after swapping: ", Q)
 ```
+
+
 
 ### **Ques. Program to check if a number is Even or odd?**
 ```python
@@ -714,4 +707,23 @@ Output:-
 *
 ```
 
+### Sort multidimensional array by name
+```python
+abc = [
+    {"name": "mohit", "age": 30},
+    {"name": "abhinav", "age": 36},
+    {"name": "rohit", "age": 25}
+]
 
+# Bubble sort by "name" key
+n = len(abc)
+for i in range(n - 1):
+    for j in range(0, n - i - 1):
+        if abc[j]["name"] > abc[j + 1]["name"]:
+            # Swap elements
+            abc[j], abc[j + 1] = abc[j + 1], abc[j]
+print(abc)
+# Print the sorted array
+for person in abc:
+    print("Name: {}, Age: {}".format(person["name"], person["age"]))
+```

@@ -21,13 +21,18 @@ pip install fastapi
 
 # You will also need an ASGI server, for production such as Uvicorn or Hypercorn.
 pip install "uvicorn[standard]"
+
+pip uninstall uvicorn fastapi
+pip install uvicorn fastapi
+pip install --upgrade uvicorn fastapi
 ```
 
 
 ### Create a file main.py with:
 ```python
-from typing import Union
 from fastapi import FastAPI
+from typing import Union
+from enum import Enum
 
 app = FastAPI()
 
@@ -48,6 +53,27 @@ async def put():
 async def first_page_function():
     return "Hello my first page url"
 
+
+# Enum
+# include package - from enum import Enum
+class foodEnum(str, Enum):
+    fruits = "fruits"
+    vagitable = "Vagitable"
+    dairy = "Dairy"
+
+@app.get("/foods/{food_name}")
+def getFoods(food_name:foodEnum):
+    if food_name == foodEnum.vagitable:
+        return {"food_name": food_name }
+    if food_name == foodEnum.fruits:
+        return{
+            "food_name": food_name
+        }
+    else:
+        return{
+            "food_name": food_name
+        }
+
 # Path Parameter    
 @app.get("/items")
 def list_item():
@@ -56,6 +82,55 @@ def list_item():
 @app.get("/items/{item_id}")
 def list_item(item_id: int):
     return {"message": f"Hello, list item id {item_id} route!"}
+
+
+fake_item_db = [{"item_name":"Foo"},{"item_name":"asdgf"},{"item_name":"Foqwro"},{"item_name":"Fozxvo"}]
+
+@app.get("/items/fake_item_db")
+def list_items(skip:int = 0, limit:int = 10):
+    return fake_item_db[skip : skip + limit]
+
+@app.get("/items/{item_id}")
+def get_item(item_id, q: Optional[str]=None, short: bool = False):
+# def get_item(item_id, q:str | None = None):
+    item = {"item_id": item_id}
+    if q:
+        item.update( {"item_id":item_id, "q":q})
+    if not short:
+        item.update(
+            {"description": "This is an amazing item that has a long description"}
+        )
+    return item
+    return {"item_id":item_id}
+
+
+@app.get("/user/{user_id}/items/{item_id}")
+async def multipal_parameter(user_id: int, item_id: str, q: Union[str, None] = None, short: bool = False):
+    item = {"item_id": item_id, "owner_id":user_id}
+    if q:
+        item.update( {"q":q})
+    if not short:
+        item.update(
+            {"description": "This is an amazing item that has a long description"}
+        )
+    return item
+```
+* Response Body
+```python
+class Item(BaseModel):
+    name : str
+    description : Optional[str] = None
+    price : float
+    tax : Union[float, None] = None
+
+@app.post("/items")
+async def create_items(item: Item):
+    # return item
+    item_dict = item.dict()
+    if item.tax:
+        price_with_tax = item.price + item.tax
+        item_dict.update({"price_with_tax": price_with_tax})
+    return item_dict
 ```
 
 ### Run the server with:
