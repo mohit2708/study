@@ -62,60 +62,6 @@ Constraints are used to specify the rules concerning data in the table. It can b
 * __PRIMARY KEY__ - Uniquely identifies each record in a table.
 * __FOREIGN KEY__ - Ensures referential integrity for a record in another table.
 
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. What Is Primary Key?**
-* The PRIMARY KEY constraint uniquely identifies each record in a database table. It must contain unique values. A Primary Key column cannot have Null values.
-* A table can have only one primary key, which may consist of single or multiple fields. When multiple fields are used as a primary key, they are called a composite key.<br>
-__Create Primary Key:-__ <br>
-__Type 1.__<br>
-```sql
-CREATE TABLE emp
-     (
-Emp_ID INT primary key,
-Emp_name Varchar(100),
-Emp_Sal Decimal (10,2)
-      )
-```
-__Type 2.__
-```sql
-CREATE TABLE emp
-      (
-Emp_ID INT,
-Emp_name Varchar(100),
-Emp_Sal Decimal (10,2),
-primary key (emp_id)
-       )
-```
-__Delete primary Key__
-```sql
-ALTER TABLE CUSTOMERS DROP PRIMARY KEY;
-```
-__Add primary Key__
-```sql
-ALTER TABLE table_name ADD PRIMARY KEY (Id)
-```
-
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. What Is Unique Key?**
-* A unique key is a set of one or more than one fields/columns of a table that uniquely identify each record in a database table.
-* The Unique and Primary Key constraints both provide a guarantee for a column or set of columns.
-* A Primary Key consist automatically has a unique constraint define on it.
-
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. What Is Foreign Key?**
-* A foreign key is a key used to link two tables together. This is something called a reference key.
-* Foreign key is a column or a combination of columns whose values match a primary key in a different table.
-* The relationship between two tables matches the primary key in one of the tables with a foreign key in the second table.
-
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. Difference between Primary Key & Unique Key?**
-| Primary Key                                                                                                       | Unique Key                                                           |
-| :---------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------- |
-| A table can have only one primary key                                                                             | A table can have more than one unique key                            |
-| It does not allow null values                                                                                     | Allows null values                                                   |
-| Primary key Can be made foreign key into another table                                                            | In SQL server, unique key Can be made foreign key into another table |
-| By default it adds a clustered index                                                                              | By default it adds a unique non-clustered index                      |
-| We can generate ID automatically with the help of auto increment field. Primary key support auto increment value. | Unique constraint does not support auto increment value.             |
 
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -126,7 +72,7 @@ ALTER TABLE table_name ADD PRIMARY KEY (Id)
 | Primary key uniquely identified  a record in the table | Foreign key is a field in the table that is primary key in another table |
 | It does not allow null values                          | Allows null values                                                       |
 | Duplicate not allowed                                  | Duplicate allowed                                                        |
-|                                                        | Foreign key do not automatically create an index.                        |
+| Primary key support auto increment value               | Foreign key do not automatically create an index.                        |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### **Ques. Difference between Delete, Truncate & Drop?**
@@ -277,32 +223,7 @@ Result:-
 ```
 
 
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. What Is Union & Union All?**
-__Ans.__ Both UNION and UNION ALL Operator combine rows from result sets into a single result set. 
-1. **UNION:-** 
-* The union operator combines the results of two or more select statements by removing duplicate rows.
-* The columns and the data types must be the same in select statements.
-```sql
-Select Column1, Column2, Column3 from Table A
-UNION
-Select Column1, Column2, Column3 from Table B
-```
-2. **UNION ALL:-**
-* The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL
-```sql
-Select Column1, Column2, Column3 from Table A
-UNION ALL
-Select Column1, Column2, Column3 from Table B
-```
 
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. Difference between Union & Union All?**
-| Union                                                     | Union All                                     |
-| :-------------------------------------------------------- | :-------------------------------------------- |
-| Union removes duplicate rows.                             | Union All does not remove the duplicate rows. |
-| Union uses a distinct sort                                | Union All does not use a distinct sort        |
-| Union can’t work with a column that has a text data type. | Union All can work with all data type column. |
 
 3. **Intersect:-** 
 * The intersect opertor returns the common records from two or more select statements.
@@ -865,14 +786,24 @@ incorporating data from the related tables.
 
 
 ### **Ques. What is ACID property?**
+### **Ques. What is SQL TRANSACTIONS**
+* Transactions group a set of tasks into a single execution unit. Each transaction begins with a specific job and ends when all the tasks in the group successfully completed. If any of the tasks fail, the transaction fails. Therefore, a transaction has only two results: success or failure.
+* Example of a transaction to transfer $150 from account A to account B:
+```php
+1. read(A)
+2. A:= A – 150
+3. write(A)
+4. read(B)
+5. B:= B + 150
+6. write(B)
+```
 * ACID property is used to ensure that the data transactions are processed reliably in a database system.
 * A single logical operation of a data is called transaction.
 * ACID is an acronym for Atomicity, Consistency, Isolation, and Durability. 
 
-
-__Atomicity:__<br>
-* It requires that each transaction is all or nothing. It means if one part of the transaction fails, the entire transaction fails and the database state is left unchanged.
-* A transaction consists of many steps. When all the steps in a transaction get completed, it will get reflected in DB or if any step fails, all the transactions are rolled back.
+* **Atomicity: -** 
+  * It requires that each transaction is all or nothing. It means if one part of the transaction fails, the entire transaction fails and the database state is left unchanged.
+  * A transaction consists of many steps. When all the steps in a transaction get completed, it will get reflected in DB or if any step fails, all the transactions are rolled back.
 __Consistency:__
 * The consistency property ensures that the data must meet all validation rules. In simple words you can say that your transaction never leaves your database without completing its state.
 * The database will move from one consistent state to another, if the transaction succeeds and remain in the original state, if the transaction fails.
@@ -889,8 +820,8 @@ available for all other transactions on a permanent basis
 1.  What are types of locks?
 2. Sheared lock: When a shared lock is applied on data item, other transactions can only read the
 item, but can&#39;t write into it.
-2. Exclusive lock: When an exclusive lock is applied on data item, other transactions can&#39;t read or
+1. Exclusive lock: When an exclusive lock is applied on data item, other transactions can&#39;t read or
 write into the data item.
-16. How to delete duplicate record from a table?
+1.  How to delete duplicate record from a table?
 SQL&gt;DELETE FROM EMP WHERE ROWID NOT IN (SELECT MAX (ROWID) FROM EMP GROUP BY
 ROLL)
