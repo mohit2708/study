@@ -30,7 +30,8 @@
 **[⬆ Back to Top](#table-of-contents)**
 
 ### **Ques. What is Sql?**
-* SQL is stands for structure query language. It is a database language used for database creation, deletion, fetching rows and modifying rows etc.
+* SQL is stands for structure query language. 
+* It is a database language used for database creation, deletion, fetching rows and modifying rows etc.
 * It is a kind of ANSI standard language, used with all database. 
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -64,29 +65,101 @@ Constraints are used to specify the rules concerning data in the table. It can b
 
 
 
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. Difference between Primary Key & Foreign Key?**
-| Primary Key                                            | Foreign Key                                                              |
-| :----------------------------------------------------- | :----------------------------------------------------------------------- |
-| A table can have only one primary key                  | A table can have more than one foreign key                               |
-| Primary key uniquely identified  a record in the table | Foreign key is a field in the table that is primary key in another table |
-| It does not allow null values                          | Allows null values                                                       |
-| Duplicate not allowed                                  | Duplicate allowed                                                        |
-| Primary key support auto increment value               | Foreign key do not automatically create an index.                        |
-
-**[⬆ Back to Top](#table-of-contents)**
-### **Ques. Difference between Delete, Truncate & Drop?**
-| Delete                                                | Truncate                                                       | Drop                  |
-| :---------------------------------------------------- | :------------------------------------------------------------- | :-------------------- |
-| Delete is a DML command                               | Truncate is DDL command                                        |                       |
-| We can use where clause in delete command             | We cannot use where clause with truncate                       |                       |
-| Delete statement is used to delete a row from a table | Truncate statement is used to remove all the row from a table  | Remove table and data |
-| You can rollback data after using delete statement    | It is not possible to rollback after using TRUNCATE statement. | Can’t rollback        |
-| Delete is slower                                      | Truncate is faster                                             |                       |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. **What Is Joins?**
-SQL Joins are used to combine rows from two or more tables.
+* MySQL JOINS are used with SELECT statement.
+* It is used to retrieve data from multiple tables. It is performed whenever you need to fetch records from two or more tables.
+
+#### Many types of MySQL joins:
+* **INNER JOIN:-**  The MySQL Inner Join is used to returns only those results from the tables that **match** the specified condition and hides other rows and columns.
+```sql
+Customers table:                                      
++----+----------+-----+-----------+----------+        
+| ID | NAME     | AGE | ADDRESS   | SALARY   |        
++----+----------+-----+-----------+----------+        
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |        
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |        
+|  3 | kaushik  |  23 | Kota      |  2000.00 |        
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |        
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |   
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+Order table:
++-----+---------------------+-------------+--------+
+|OID  | DATE                | CUSTOMER_ID | AMOUNT |
++-----+---------------------+-------------+--------+
+| 101 | 2009-11-20 00:00:00 |           2 |   1560 |
+| 103 | 2008-05-20 00:00:00 |           4 |   2060 |
++-----+---------------------+-------------+--------+
+
+SELECT customers.name, customers.age, customers.salary, order.date FROM customers INNER JOIN order ON customers.id = order.CUSTOMER_ID;
++----------+-----+---------+---------------------+
+| NAME     | AGE | SALARY  |   DATE              | 
++----------+-----+---------+---------------------+
+| Khilan   |  25 | 1500.00 | 2009-11-20 00:00:00 |        
+| Chaitali |  25 | 6500.00 | 2008-05-20 00:00:00 |     
++----------+-----+---------+---------------------+
+```
+
+* **Left JOIN:-** The LEFT JOIN keyword returns all records from the left table (table1), and the matching records (if any) from the right table (table2).
+```sql
+CUSTOMERS Table
++----+----------+-----+-----------+----------+ 
+| ID | NAME     | AGE | ADDRESS   | SALARY   |
++----+----------+-----+-----------+----------+
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |
+|  3 | kaushik  |  23 | Kota      |  2000.00 |
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+
+Orders Table
++-----+---------------------+-------------+--------+
+| OID | DATE                | CUSTOMER_ID | AMOUNT |
++-----+---------------------+-------------+--------+
+| 102 | 2009-10-08 00:00:00 |           3 |   3000 |
+| 100 | 2009-10-08 00:00:00 |           3 |   1500 |
+| 101 | 2009-11-20 00:00:00 |           2 |   1560 |
+| 103 | 2008-05-20 00:00:00 |           4 |   2060 |
++-----+---------------------+-------------+--------+
+
+SQL> SELECT  ID, NAME, AMOUNT, DATEFROM CUSTOMERS LEFT JOIN ORDERS
+   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+
+Result:-
++----+----------+--------+---------------------+
+| ID | NAME     | AMOUNT | DATE                |
++----+----------+--------+---------------------+
+|  1 | Ramesh   |   NULL | NULL                |
+|  2 | Khilan   |   1560 | 2009-11-20 00:00:00 |
+|  3 | kaushik  |   3000 | 2009-10-08 00:00:00 |
+|  3 | kaushik  |   1500 | 2009-10-08 00:00:00 |
+|  4 | Chaitali |   2060 | 2008-05-20 00:00:00 |
+|  5 | Hardik   |   NULL | NULL                |
+|  6 | Komal    |   NULL | NULL                |
+|  7 | Muffy    |   NULL | NULL                |
++----+----------+--------+---------------------+
+```
+
+* **Right JOIN:-** The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records (if any) from the left table (table1).
+```sql
++-------+----+                  +-------+----+  
+| ID    |NAME|                  | ID    |NAME|
++-------+----+
+|  1001 | A  |
+|  1002 | B  |
+|  1003 | C  |
+|  1004 | D  |
++-------+----+
+
+```
+
+
 ```sql
 Customers table:                                      
 +----+----------+-----+-----------+----------+        
@@ -129,54 +202,9 @@ Result:
 +----+----------+-----+--------+
 ```
 
+
+
 ### **Ques. Types of Joins?**
-
-__Left Joins :-__ Returns all rows from the left table, even if there are no matches in the right table.<br>
-Table 1 − CUSTOMERS Table
-```sql
-+----+----------+-----+-----------+----------+ 
-| ID | NAME     | AGE | ADDRESS   | SALARY   |
-+----+----------+-----+-----------+----------+
-|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
-|  2 | Khilan   |  25 | Delhi     |  1500.00 |
-|  3 | kaushik  |  23 | Kota      |  2000.00 |
-|  4 | Chaitali |  25 | Mumbai    |  6500.00 |
-|  5 | Hardik   |  27 | Bhopal    |  8500.00 |
-|  6 | Komal    |  22 | MP        |  4500.00 |
-|  7 | Muffy    |  24 | Indore    | 10000.00 |
-+----+----------+-----+-----------+----------+
-```
-Table 2 − Orders Table
-```sql
-+-----+---------------------+-------------+--------+
-| OID | DATE                | CUSTOMER_ID | AMOUNT |
-+-----+---------------------+-------------+--------+
-| 102 | 2009-10-08 00:00:00 |           3 |   3000 |
-| 100 | 2009-10-08 00:00:00 |           3 |   1500 |
-| 101 | 2009-11-20 00:00:00 |           2 |   1560 |
-| 103 | 2008-05-20 00:00:00 |           4 |   2060 |
-+-----+---------------------+-------------+--------+
-```
-```sql
-SQL> SELECT  ID, NAME, AMOUNT, DATE
-   FROM CUSTOMERS
-   LEFT JOIN ORDERS
-   ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
-
-Result:-
-+----+----------+--------+---------------------+
-| ID | NAME     | AMOUNT | DATE                |
-+----+----------+--------+---------------------+
-|  1 | Ramesh   |   NULL | NULL                |
-|  2 | Khilan   |   1560 | 2009-11-20 00:00:00 |
-|  3 | kaushik  |   3000 | 2009-10-08 00:00:00 |
-|  3 | kaushik  |   1500 | 2009-10-08 00:00:00 |
-|  4 | Chaitali |   2060 | 2008-05-20 00:00:00 |
-|  5 | Hardik   |   NULL | NULL                |
-|  6 | Komal    |   NULL | NULL                |
-|  7 | Muffy    |   NULL | NULL                |
-+----+----------+--------+---------------------+
-```
 
 ```sql
 SQL> SELECT  ID, NAME, AMOUNT, DATE
@@ -242,24 +270,7 @@ SELECT column1 , column2 , ... columnN FROM table_name
 ```
 
 
-**[⬆ Back to Top](#table-of-contents)**
-### **What is View?**
-* A view can contain all rows of a table or select rows from a table. A view can be created from one or many tables which depends on the written SQL query to create a view
-* It is a kind of logical table, having no own data.
-* A view is a virtual table which consists of a subset of data contained in a table. Views are not virtually present, and it takes less space to store. View can have data of one or more tables combined, and it is depending on the relationship.
 
-__Syntax:-__
-```sql
-         Create view view_name
-         As
-        Select column1, column2
-        From  table_name  
-       Where [condition];
-```
-__Show view__
-```sql
-SELECT * FROM CUSTOMERS_VIEW;
-```
 
 **[⬆ Back to Top](#table-of-contents)**
 ### **What is Index?**

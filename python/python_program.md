@@ -85,8 +85,6 @@ print ("The Value of P after swapping: ", P)
 print ("The Value of Q after swapping: ", Q)
 ```
 
-
-
 ### **Ques. Program to check if a number is Even or odd?**
 ```python
 # 1 Option

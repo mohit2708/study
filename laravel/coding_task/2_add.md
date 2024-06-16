@@ -3,10 +3,7 @@
 $offuser                = new Model; 
 $offuser->offuser_name  = $request->off_name;;
 $offuser->save();
-```
-
-
-
+`
 
 # Project
 
@@ -42,6 +39,10 @@ public function store(Request $request){
             'phone_number' => 'required|min:10|max:15',
             'password' => 'required|string|min:6',
             'confirm_password' => 'required|min:6|same:password',
+        ],[
+            'first_name.required' => 'Name field is required.',
+            'email.required' => 'Email field is required.',
+            'email.email' => 'Email field must be email address.'
         ]);
         $save_customer                  = new Model;
         $save_customer->first_name      = $request->first_name;
@@ -72,6 +73,16 @@ public function store(Request $request){
                 <label>First Name:<span style="color:red">*<span></label>
                 <input type="text" class="form-control" id="first_name" name="first_name"
                     placeholder="Enter your first name">
+
+                <!-- Way 2: Display Error Message -->
+                @error('first_name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+                 <!-- Way 3: Display Error Message -->
+                @if ($errors->has('first_name'))
+                    <span class="text-danger">{{ $errors->first('first_name') }}</span>
+                @endif
+
             </div>
         </div>
         <div class="col-6">
