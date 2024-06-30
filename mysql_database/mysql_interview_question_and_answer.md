@@ -375,15 +375,7 @@ SELECT * FROM emp WHERE marks IN (89,73)
 +----+----------+--------+
 ```
 
-### **Ques. Difference between Group By And Order By?**
-__Group By:-__ It is used to group our result sets of tables in a database and is often used with Count, Sum, avg etc. 
-```sql
-Ex:- Select COUNT(state), country from emp group by country.
-```
-__Order By:-__ It changes only order in our result set i.e sorting
-```sql
-Ex:- Select COUNT(state), country from emp order by country_id..
-```
+
 
 ### **List of Mysql storage Engines/Table Type?**
 Mysql ne apni requirment ke according alag-alag table type diye hai.
@@ -524,14 +516,11 @@ INSERT INTO saxena VALUES
 INSERT INTO saxena VALUES
         (7844, 'TURNER', 'SALESMAN',  7698,'8-SEP-1981',  1500,    0, 30);
 INSERT INTO saxena VALUES
-        (7876, 'ADAMS',  'CLERK',     7788,
-        '12-JAN-1983', 1100, NULL, 20);
+        (7876, 'ADAMS',  'CLERK',     7788, '12-JAN-1983', 1100, NULL, 20);
 INSERT INTO saxena VALUES
-        (7900, 'JAMES',  'CLERK',     7698,
-        '3-DEC-1981',   950, NULL, 30);
+        (7900, 'JAMES',  'CLERK',     7698, '3-DEC-1981',   950, NULL, 30);
 INSERT INTO saxena VALUES
-        (7902, 'FORD',   'ANALYST',   7566,
-      '3-DEC-1981',   3000, NULL, 20);
+        (7902, 'FORD',   'ANALYST',   7566, '3-DEC-1981',   3000, NULL, 20);
 INSERT INTO saxena VALUES
         (7934, 'MILLER', 'CLERK',7782,'23-JAN-1982', 1300, NULL, 40);
 ```
@@ -577,10 +566,6 @@ VALUES
 ('value1','value2','value3',...);
 ```
 
-### **Rename Table**
-```sql
-RENAME TABLE tbl_name TO new_tbl_name
-```
 ### Ques. How to copy a table in another table?
 ```sql
 CREATE TABLE EMP1 AS (SELECT * FROM EMP); //constraint will not copied.
@@ -671,11 +656,7 @@ No
 select GETDATE();
 ```
 
-### **Row delete?**
-```sql
-delete from table_name where ID=01;
-delete from table_name where ID IN(2,6);
-```
+
 
 ### **How to Find Duplicate values in a Table?**
 ```sql

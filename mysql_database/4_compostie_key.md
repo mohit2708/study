@@ -1,4 +1,5 @@
 ### **Ques. What is Composite Key?**
+* Composite key is combination of two or more columns that can uniquely identify each row in the table.
 * composite key is also a primary key, but the difference is that it is made by the combination of more than one column to identify the particular row in the table.
 * A composite key cannot be null.
 ```sql
