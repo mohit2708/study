@@ -28,9 +28,41 @@ public function register(Request $request) {
 }
 
 
-
 public function register(Request $request){
-    $validator = Validator::make($request->all(), [
+    $validator = $this->validateRegistration($request);
+
+    if ($validator->fails()) {
+        return response()->json(['errors' => $validator->errors()], 422);
+    }
+
+    try {
+        DB::beginTransaction();
+
+        // Create a new customer
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'phone' => $request->phone_number,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        $userdetails = UserDetail::create([
+            'user_id' => $user->id,
+            'additional_phone' => $request->additional_phone
+        ]);
+
+        DB::commit();
+
+        return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return response()->json(['error' => 'Registration failed', 'message' => $e->getMessage()], 500);
+    }
+}
+
+public function validateRegistration(Request $request){
+    return Validator::make($request->all(), [
         'first_name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users',
         // 'password' => [
@@ -60,18 +92,6 @@ public function register(Request $request){
         ],
         'confirm_password' => 'required|string|same:password',
     ]);
-
-    if ($validator->fails()) {
-        return response()->json(['errors' => $validator->errors()], 422);
-    }
-
-    // Create a new customer
-    $user = User::create([
-        'first_name' => $request->first_name,
-        'email' => $request->email,
-        'password' => Hash::make($request->password),
-    ]);
-
-    return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
 }
+
 ```

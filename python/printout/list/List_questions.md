@@ -1,3 +1,118 @@
+|  No.  | Questions                                                                                        |
+| :---: | ------------------------------------------------------------------------------------------------ |
+|       | [Find the Length of a List?](#find-the-length-of-a-list)                                         |
+|       | [Interchange first and last elements in a list?](#interchange-first-and-last-elements-in-a-list) |
+
+
+
+### Find the Length of a List?
+* Using **len() Function** or **length_hint** function
+```python
+li = [10, 20, 30]
+n = len(li)
+print("The length of list is: ", n)
+
+Output:- The length of list is:  3
+```
+```python
+from operator import length_hint
+test_list = [1, 4, 5, 7, 8]
+list_len_hint = length_hint(test_list)
+print("Length of list using length_hint() is : " + str(list_len_hint))
+
+Output:- Length of list using length_hint() is : 5
+```
+
+
+* Finding length of list using loop
+```python
+test_list = [1, 4, 5, 7, 8]
+counter = 0
+for i in test_list:
+	counter = counter + 1
+print("Length of list using naive method is : " + str(counter))
+
+Output:- Length of list using naive method is : 5
+```
+
+
+### Interchange first and last elements in a list?
+* **Approach #1:** Find the length of the list and simply swap the first element with (n-1)th element.
+```python
+def swapList(newList):
+    size = len(newList)
+    
+    # Swapping 
+    temp = newList[0]
+    newList[0] = newList[size - 1]
+    newList[size - 1] = temp
+    
+    return newList
+    
+# Driver code
+newList = [12, 35, 9, 56, 24]
+
+print(swapList(newList))
+
+Output:- [24, 35, 9, 56, 12]
+```
+* **Approach #2:** The last element of the list can be referred as list[-1]. Therefore, we can simply swap list[0] with list[-1].
+```python
+def swapList(newList):
+    
+    newList[0], newList[-1] = newList[-1], newList[0]
+
+    return newList
+    
+# Driver code
+newList = [12, 35, 9, 56, 24]
+print(swapList(newList))
+
+Output:- [24, 35, 9, 56, 12]
+```
+
+* **Approach #3:** Using * operand.
+```python
+# Example:
+list = [1, 2, 3, 4]
+
+a, *b, c = list
+
+print(a)
+print(b)
+print(c)
+
+Output:-
+1
+[2, 3]
+4
+```
+```python
+def swapList(list):
+    
+    start, *middle, end = list
+    list = [end, *middle, start]
+    
+    return list
+
+newList = [12, 35, 9, 56, 24]
+
+print(swapList(newList))
+
+Output:- [24, 35, 9, 56, 12]
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ### **Ques. Difference between List and Tuples in Python?**
 | List                                                                                                         | Tuples                                                                                        |
 | :----------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |

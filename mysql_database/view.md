@@ -16,6 +16,7 @@ __Show view__
 SELECT * FROM view_name;
 ```
 
+#### Alter view
 * CREATE OR REPLACE VIEW Syntax
 ```sql
 CREATE OR REPLACE VIEW view_name AS
@@ -24,6 +25,7 @@ FROM table_name
 WHERE condition;
 ```
 
+#### deleted view
 * A view is **deleted** with the **DROP VIEW statement**.
 ```sql
 DROP VIEW view_name
