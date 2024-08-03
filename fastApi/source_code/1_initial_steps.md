@@ -1,5 +1,5 @@
 ### Step 1:-
-* creaet virtual enviroment 
+* creaet virtual enviroment
 * type cammand in cmd
 ```python
 python -m venv env_crud

@@ -75,6 +75,60 @@ class Role(Base):
 ```
 
 
+### Sava data in two table
+```python
+# user table
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey
+from datetime import datetime
+from sqlalchemy.orm import relationship, Session
+from database.connection import Base
+from passlib.context import CryptContext
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True, index=True)
+    role_id = Column(Integer, ForeignKey('roles.id'))  # Define foreign key relationship
+    role = relationship("Role", back_populates="users")  # Define relationship with Role model
+    first_name = Column(String(255), nullable = True)
+    last_name = Column(String(255))
+    user_name = Column(String(255), unique=True, index=True)
+    email = Column(String(255), nullable=False, unique=True, index=True)
+    password = Column(String(255))
+    deleted_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    user_details = relationship("UserDetails", back_populates="user", uselist=False, cascade="all, delete") # Define relationship with UserDetails
+```
+```python
+# user details table
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey
+from datetime import datetime
+from sqlalchemy.orm import relationship, Session
+from database.connection import Base
+from passlib.context import CryptContext
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True, index=True)
+    role_id = Column(Integer, ForeignKey('roles.id'))  # Define foreign key relationship
+    role = relationship("Role", back_populates="users")  # Define relationship with Role model
+    first_name = Column(String(255), nullable = True)
+    last_name = Column(String(255))
+    user_name = Column(String(255), unique=True, index=True)
+    email = Column(String(255), nullable=False, unique=True, index=True)
+    password = Column(String(255))
+    deleted_at = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    user_details = relationship("UserDetails", back_populates="user", uselist=False, cascade="all, delete") # Define relationship with UserDetails
+```
+
+
+
 ### Genrate alembic
 ```python
 alembic revision --autogenerate -m "create user and blog table migrations"  #analyzes tables and creates a migration file

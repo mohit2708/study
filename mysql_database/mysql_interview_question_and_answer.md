@@ -1,5 +1,21 @@
 ### Table of Contents
 
+|  No.  | [Mysql Commomn Questions](./1_mysql.md)                                               |
+| :---: | ------------------------------------------------------------------------------------- |
+|       | [What is database?](./1_mysql.md#ques-What-is-database)                               |
+|       | [what is sql?](./1_mysql.md#ques-What-is-Sql)                                         |
+|       | [What Is DBMS?](./1_mysql.md#Ques-What-is-DBMS)                                       |
+|       | [What Is RDBMS?](./1_mysql.md#Ques-What-is-RDBMS)                                     |
+|       | [Difference between DBMS & RDBMS?](./1_mysql.md#Ques-Difference-between-DBMS-&-RDBMS) |
+
+|  No.  | [User Management](./1_user_management.md)                   |
+| :---: | ----------------------------------------------------------- |
+|       | [Create Databse user?](./1_user_management.md#create-user-) |
+|       | [Show Databse user?](./1_user_management.md#show-users-)    |
+|       | [Show Current user?](./1_user_management.md#sh)    |
+
+
+
 |  No.  | Questions                                                                                           |
 | :---: | --------------------------------------------------------------------------------------------------- |
 |       | [What is database?](#ques-What-is-database)                                                         |
@@ -68,19 +84,6 @@ SELECT column1 , column2 , ... columnN FROM table_name
    * These are creating by default when DML statement like, INSERT, UPDATE, and DELETE statement are executed. They are also created when a SELECT statement that returns just one row is executed.
    * Implicit cursors are automatically created by oracle whenever an SQL statement is executed, when there is no explicit cursor for the statement. Programmers cannot control the implicit cursor and the information in it.
 
-**[⬆ Back to Top](#table-of-contents)**
-### **What is Trigger?**
-* • Trigger  are set of structure Query language (SQL) statement that perform particular task. They invoke specific event (after Insert,u,d – before I,u,d)
-* Database triggers are sets of commands that get executed when an event (Before Insert, After Insert, On Update, on delete of a row) occurs on a table.
-* Triggers are special type of stored procedures that are defined to execute automatically in place or after data modification.
-* Trigger allows you to execute a batch of SQL code an insert, update or delete command is execute against a specific table.
-```sql
-CREATE OR REPLACE TRIGGERRESTRICT_EMP
-BEFORE INSERT ON EMP
-BEGIN
-RAISE_APPLICATION_ERROR(-20987,’INSERT MAT KAR NAHI HOGA’);
-END;
-```
 
 ### Difference between WHERE and HAVING in SQL?
 | Having                                                           | Where                                                                      |
