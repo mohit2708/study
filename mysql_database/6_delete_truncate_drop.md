@@ -1,16 +1,18 @@
 **[⬆ Back to Top](#table-of-contents)**
-* **Truncate**
-* A truncate SQL statement is used to remove all rows (complete data) from a table.
-```sql
-TRUNCATE TABLE table_name;
-```
-
-### **Delete:-**
-* Row delete example
+### **Delete**
+* DELETE is a DML(Data Manipulation Language) command and is used when we specify the row (tuple) that we want to remove or delete from the table or relation. The DELETE command can contain a WHERE clause.
 ```sql
 delete from table_name where ID=01;
 delete from table_name where ID IN(2,6);
 ```
+
+### **Truncate**
+* A truncate SQL statement is used to remove all rows (complete data) from a table.
+* TRUNCATE is a DDL(Data Definition Language) command and is used to delete all the rows or tuples from a table. Unlike the DELETE command, the TRUNCATE command does not contain a WHERE clause.
+```sql
+TRUNCATE TABLE table_name;
+```
+
 
 ### **Ques. Difference between Delete, Truncate & Drop?**
 | Delete                                                | Truncate                                                       | Drop                  |

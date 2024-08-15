@@ -135,8 +135,6 @@ drop database database_name;
 ```
 
 
-
-
 ### Create Table
 * SQL CREATE TABLE statement is used to create table in a database.
 ```sql

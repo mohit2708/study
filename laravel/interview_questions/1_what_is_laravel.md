@@ -48,12 +48,14 @@ Laravel installation steps:-
 * Download composer from https://getcomposer.org/download (if you don’t have a composer on your system)
 * Open cmd
 * Goto your htdocs folder.
-* **C:\xampp\htdocs> composer create-project laravel/laravel projectname**
 ```php
-If you install some particular version, then you can use
-composer create-project laravel/laravel project_name "8.0"
-If you did not mention any particular version, then it will install with the latest version.
+C:\xampp\htdocs> composer create-project laravel/laravel projectname
 ```
+* If you install some particular version, then you can use
+```php
+composer create-project laravel/laravel project_name "8.0"
+```
+* If you did not mention any particular version, then it will install with the latest version.
 
 
 

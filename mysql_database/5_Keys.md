@@ -7,8 +7,8 @@
 |       | [Foreign Key ALTER?](#defining-foreign-key-using-alter)                                           |
 |       | [DROP Foreign Key?](#drop-a-foreign-key-from-the-table)                                           |
 |       | [Unique Key?](#unique-key)                                                                        |
-|       | [ALTER unique key?](#alter-unique-key)                                                                        |
-|       | [Drop unique key?](#drop-unique-key)                                                                        |
+|       | [ALTER unique key?](#alter-unique-key)                                                            |
+|       | [Drop unique key?](#drop-unique-key)                                                              |
 |       | [Composite Key?](#composite-key)                                                                  |
 |       | [Difference between Primary Key & Unique Key?](#ques-difference-between-primary-key--foreign-key) |
 |       | [Difference between Primary Key & Foreign Key?](#ques-difference-between-primary-key--unique-key) |

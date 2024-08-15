@@ -8,27 +8,55 @@
 |       | [What Is RDBMS?](./1_mysql.md#Ques-What-is-RDBMS)                                     |
 |       | [Difference between DBMS & RDBMS?](./1_mysql.md#Ques-Difference-between-DBMS-&-RDBMS) |
 
-|  No.  | [User Management](./1_user_management.md)                   |
-| :---: | ----------------------------------------------------------- |
-|       | [Create Databse user?](./1_user_management.md#create-user-) |
-|       | [Show Databse user?](./1_user_management.md#show-users-)    |
-|       | [Show Current user?](./1_user_management.md#sh)    |
+|  No.  | [User Management](./1_user_management.md)                                                                 |
+| :---: | --------------------------------------------------------------------------------------------------------- |
+|       | [Create Databse user?](./1_user_management.md#create-user-)                                               |
+|       | [Show Databse user?](./1_user_management.md#show-users-)                                                  |
+|       | [Show Current user?](./1_user_management.md#show-current-user)                                            |
+|       | [Grant Privileges to the MySQL New User?](./1_user_management.md#grant-privileges-to-the-mysql-new-user-) |
+|       | [Show Privileges?](./1_user_management.md#show-privileges)                                                |
+|       | [REVOKE Privileges?](./1_user_management.md#revoke-privileges)                                            |
+|       | [User Password Change?](./1_user_management.md#user-password-change)                                      |
+|       | [Drop User?](./1_user_management.md#drop-user)                                                            |
+
+
+|  No.  | [Databse](./3_Database.md)                            |
+| :---: | ----------------------------------------------------- |
+|       | [Create Database?](./3_Database.md#create-database)   |
+|       | [Show Databases?](./3_Database.md#show-databases)     |
+|       | [SELECT Databases?](./3_Database.md#select-database-) |
+|       | [DROP Databases?](./3_Database.md#drop-database-)     |
+
+
+|  No.  | [Tables](./4_Tables.md)                                                         |
+| :---: | ------------------------------------------------------------------------------- |
+|       | [Create TABLE?](./4_Tables.md#create-table)                                     |
+|       | [ALTER Table?](./4_Tables.md#alter-table)                                       |
+|       | [Change Datatype from alter cmd?](./4_Tables.md#change-datatype-from-alter-cmd) |
+|       | [DROP column in table?](./4_Tables.md#drop-column-in-table)                     |
+|       | [RENAME column in table?](./4_Tables.md#rename-column-in-table)                 |
+|       | [RENAME table name?](./4_Tables.md#rename-table-name)                           |
+|       | [TRUNCATE table?](./4_Tables.md#truncate-table)                                 |
+
+|  No.  | [Keys](./5_Keys.md)                                                                                          |
+| :---: | ------------------------------------------------------------------------------------------------------------ |
+|       | [Primary Key?](./5_Keys.md#primary-key)                                                                      |
+|       | [Add primary Key?](./5_Keys.md#add-primary-key)                                                              |
+|       | [Delete primary Key?](./5_Keys.md#delete-primary-key)                                                        |
+|       | [Foreign Key?](./5_Keys.md#foreign-key)                                                                      |
+|       | [Foreign Key ALTER?](./5_Keys.md#defining-foreign-key-using-alter)                                           |
+|       | [DROP Foreign Key?](./5_Keys.md#drop-a-foreign-key-from-the-table)                                           |
+|       | [Unique Key?](./5_Keys.md#unique-key)                                                                        |
+|       | [ALTER unique key?](./5_Keys.md#alter-unique-key)                                                            |
+|       | [Drop unique key?](./5_Keys.md#drop-unique-key)                                                              |
+|       | [Composite Key?](./5_Keys.md#composite-key)                                                                  |
+|       | [Difference between Primary Key & Unique Key?](./5_Keys.md#ques-difference-between-primary-key--foreign-key) |
+|       | [Difference between Primary Key & Foreign Key?](./5_Keys.md#ques-difference-between-primary-key--unique-key) |
 
 
 
-|  No.  | Questions                                                                                           |
-| :---: | --------------------------------------------------------------------------------------------------- |
-|       | [What is database?](#ques-What-is-database)                                                         |
-|       | [what is sql?](#ques-What-is-Sql)                                                                   |
-|       | [What Is DBMS?](#Ques-What-is-DBMS)                                                                 |
-|       | [What Is RDBMS?](#Ques-What-is-RDBMS)                                                               |
-|       | [What Is RDBMS?](#Ques-What-is-RDBMS)                                                               |
-|       | [Difference between DBMS & RDBMS?](#Ques-Difference-between-DBMS-&-RDBMS)                           |
-|       | [What Is Primary Key?](#ques-What-Is-primary-Key)                                                   |
-|       | [What Is Unique Key?](#ques-What-Is-Unique-Key)                                                     |
-|       | [What Is Foreign Key?](#ques-What-Is-Foreign Key)                                                   |
-|       | [Difference between Primary Key & Unique Key?](#ques-Difference-between-Primary-Key-&-Unique-Key)   |
-|       | [Difference between Primary Key & Foreign Key?](#ques-Difference-between-Primary-Key-&-Foreign-Key) |
+
+
 |       | [Difference between Delete, Truncate & Drop?](#ques-Difference-between-Delete,-Truncate-&-Drop)     |
 |       | [What Is Joins?](#ques-What-Is-Joins)                                                               |
 |       | [Types of Joins?](#ques-Types-of-Joins)                                                             |
@@ -37,19 +65,46 @@
 |       | [What is Index?](#ques-What-is-index)                                                               |
 |       |
 
+|  No.  | interview_Questions_answers                                                                             |
+| :---: | ------------------------------------------------------------------------------------------------------- |
+|       | [Difference between CHAR and VARCHAR data types?](#ques-difference-between-char-and-varchar-data-types) |
+|       | [What are Constraints in SQL?](#ques-what-are-constraints-in-sql)                                       |
 
 
-**[⬆ Back to Top](#table-of-contents)**
+|  No.  | [Sql Query questions](./sql_query_questions.md)                                                                                                                    |
+| :---: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|       | [How to create a new MySQL user account in MySQL?](./sql_query_questions.md#ques-how-to-create-a-new-mysql-user-account-in-mysql)                                  |
+|       | [Check version of the sql?](./sql_query_questions.md#ques-check-version-of-the-sql)                                                                                |
+|       | [How to find **Nth** highest salary from a table?](./sql_query_questions.md#ques-how-to-find-nth-highest-salary-from-a-table)                                      |
+|       | [Top 5 Salery?](./sql_query_questions.md#ques-top-5-salery)                                                                                                        |
+|       | [Top Salery?](./sql_query_questions.md#ques-top-salery)                                                                                                            |
+|       | [How to Find Duplicate values in a Table?](./sql_query_questions.md#how-to-find-duplicate-values-in-a-table)                                                       |
+|       | [Replace a Column Values from 'male' to 'female' and 'female' to 'male'?](./sql_query_questions.md#replace-a-column-values-from-male-to-female-and-female-to-male) |
+
+<!-- ![asdf](./img/mohit_pic.jpg){width=600 height=500} -->
+
+### Ques. **Difference between **CHAR** and **VARCHAR** data types?
+* **CHAR data** type is used to store **fixed-length** character strings. When VARCHAR data type is used to store **variable-length** character strings.
+* char char occupies all the space and if space is remaining, then it fill all the blank space with "space". But in case of varchar, It takes only the required length & release remaining.
+```sql
+Char -> 10      | R | A | M | space | space | sapce | space | space | space | space |
+Varchar -> 10   | R | A | M |   |   |   |   |   |   |   |
+| R | A | M |
+```
+* varchar is better than Char in term of space. 
+* char perform is better than varchar.
+* Char max 256 characters, varchar 65535 characters.
+
+
 ### **Ques. What are Constraints in SQL?**
 Constraints are used to specify the rules concerning data in the table. It can be applied for single or multiple fields in an SQL table during the creation of the table or after creating using the ALTER TABLE command. The constraints are:<br>
-* __NOT NULL__ - Restricts NULL value from being inserted into a column.
-* __CHECK__ - Verifies that all values in a field satisfy a condition.
-* __DEFAULT__ - Automatically assigns a default value if no value has been specified for the field.
-* __UNIQUE__ - Ensures unique values to be inserted into the field.
-* __INDEX__ - Indexes a field providing faster retrieval of records.
-* __PRIMARY KEY__ - Uniquely identifies each record in a table.
-* __FOREIGN KEY__ - Ensures referential integrity for a record in another table.
-
+* **NOT NULL** - Restricts NULL value from being inserted into a column.
+* **CHECK** - Verifies that all values in a field satisfy a condition.
+* **DEFAULT** - Automatically assigns a default value if no value has been specified for the field.
+* **UNIQUE** - Ensures unique values to be inserted into the field.
+* **INDEX** - Indexes a field providing faster retrieval of records.
+* **PRIMARY KEY** - Uniquely identifies each record in a table.
+* **FOREIGN KEY** - Ensures referential integrity for a record in another table.
 
 
 

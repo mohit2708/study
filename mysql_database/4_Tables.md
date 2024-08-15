@@ -1,3 +1,15 @@
+
+|  No.  | Tables                                                             |
+| :---: | ------------------------------------------------------------------ |
+|       | [Create TABLE?](#create-table)                                     |
+|       | [ALTER Table?](#alter-table)                                       |
+|       | [Change Datatype from alter cmd?](#change-datatype-from-alter-cmd) |
+|       | [DROP column in table?](#drop-column-in-table)                     |
+|       | [RENAME column in table?](#rename-column-in-table)                 |
+|       | [RENAME table name?](#rename-table-name)                           |
+|       | [TRUNCATE table?](#truncate-table)                                 |
+
+
 ### CREATE TABLE
 ```sql
 use database_name;

@@ -1,6 +1,14 @@
 
-
-## **User Management**
+|  No.  | User Management                                                                     |
+| :---: | ----------------------------------------------------------------------------------- |
+|       | [Create Databse user?](#create-user-)                                               |
+|       | [Show Databse user?](#show-users-)                                                  |
+|       | [Show Current user?](#show-current-user)                                            |
+|       | [Grant Privileges to the MySQL New User?](#grant-privileges-to-the-mysql-new-user-) |
+|       | [Show Privileges?](#show-privileges)                                                |
+|       | [REVOKE Privileges?](#revoke-privileges)                                            |
+|       | [User Password Change?](#user-password-change)                                      |
+|       | [Drop User?](#drop-user)                                                            |
 
 ### **Create User:-**
 ```sql
@@ -10,7 +18,7 @@ CREATE USER username@hostname IDENTIFIED BY 'password';
 CREATE USER username IDENTIFIED BY 'password'; 
 ```
 
-#### **Show Users:-**
+#### **Show all Users:-**
 ```sql
 select user from mysql.user;
 +---------+
@@ -20,7 +28,7 @@ select user from mysql.user;
 | mohits4 |
 +---------+
 ```
-* Show Current User
+#### Show Current User
 ```sql
 SELECT USER();
 OR
