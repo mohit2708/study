@@ -1,14 +1,40 @@
 
-|  No.  | Tables                                                             |
-| :---: | ------------------------------------------------------------------ |
-|       | [Create TABLE?](#create-table)                                     |
-|       | [ALTER Table?](#alter-table)                                       |
-|       | [Change Datatype from alter cmd?](#change-datatype-from-alter-cmd) |
-|       | [DROP column in table?](#drop-column-in-table)                     |
-|       | [RENAME column in table?](#rename-column-in-table)                 |
-|       | [RENAME table name?](#rename-table-name)                           |
-|       | [TRUNCATE table?](#truncate-table)                                 |
+|  No.  | Tables                                                                                           |
+| :---: | ------------------------------------------------------------------------------------------------ |
+|       | [Types of SQL Commands/subsets of SQL?](#types-of-sql-commandssubsets-of-sql)                    |
+|       | [Create TABLE?](#create-table)                                                                   |
+|       | [ALTER Table?](#alter-table)                                                                     |
+|       | [Change Datatype from alter cmd?](#change-datatype-from-alter-cmd)                               |
+|       | [DROP column in table?](#drop-column-in-table)                                                   |
+|       | [TRUNCATE table?](#truncate)                                                                     |
+|       | [RENAME column in table?](#rename-column-in-table)                                               |
+|       | [RENAME table name?](#rename-table-name)                                                         |
+|       | [What is delete?](#delete)                                                                       |
+|       | [Difference between Delete, Truncate & Drop?](#ques-difference-between-delete-truncate--drop)    |
+|       | [Difference b/w DROP and TRUNCATE statements?](#ques-difference-bw-drop-and-truncate-statements) |
 
+
+
+
+### Types of SQL Commands/subsets of SQL?
+* DDL (Data Definition Language):
+  * **CREATE:** Creates a new table or database.
+  * **ALTER:** Modifies an existing database object.
+  * **DROP:** Deletes an entire table, database, or other objects.
+  * **TRUNCATE:** Removes all records from a table, deleting the space allocated for the records.
+* DML (Data Manipulation Language):
+  * **SELECT:** Retrieves data from the database.
+  * **INSERT:** Adds new data to a table.
+  * **UPDATE:** Modifies existing data within a table.
+  * **DELETE:** Removes data from a table.
+* DCL (Data Control Language):
+  * **GRANT:** Gives users access privileges to the database.
+  * **REVOKE:** Removes access privileges given with the GRANT command.
+* TCL (Transaction Control Language):
+  * **COMMIT:** Saves all changes made in the current transaction.
+  * **ROLLBACK:** Restores the database to the last committed state.
+  * **SAVEPOINT:** Sets a savepoint within a transaction.
+  * **SET TRANSACTION:** Places a name on a transaction.
 
 ### CREATE TABLE
 ```sql
@@ -55,7 +81,7 @@ ADD new_column_name column_definition
 
 * ADD a column in the table
 ```sql
-ALTER TABLE employee_table ADD cus_age varchar(40) NOT NULL;  
+ALTER TABLE employee_table ADD cus_age varchar(40) NOT NULL;
 
 DESCRIBE employee_table;
 +------------+-------------+------+-----+---------+----------------+
@@ -135,6 +161,13 @@ ALTER TABLE employee_table MODIFY COLUMN unique_id4 VARCHAR(40) NULL;
 ALTER TABLE employee_table DROP COLUMN unique_id4;
 ```
 
+### Truncate
+* A truncate SQL statement is used to remove all rows (complete data) from a table.
+* TRUNCATE is a DDL(Data Definition Language) command and is used to delete all the rows or tuples from a table. Unlike the DELETE command, the TRUNCATE command does not contain a WHERE clause.
+```sql
+TRUNCATE TABLE table_name;
+```
+
 ### RENAME column in table
 * syntex
 ```sql
@@ -153,3 +186,31 @@ ALTER TABLE employee_table RENAME TO emp_table;
 OR
 RENAME table emp_tables TO employee_tables;
 ```
+
+### **Delete**
+* DELETE is a DML(Data Manipulation Language) command and is used when we specify the row (tuple) that we want to remove or delete from the table or relation. The DELETE command can contain a WHERE clause.
+```sql
+delete from table_name where ID=01;
+delete from table_name where ID IN(2,6);
+```
+
+
+
+### **Ques. Difference between Delete, Truncate & Drop?**
+| Delete                                                | Truncate                                                       | Drop                  |
+| :---------------------------------------------------- | :------------------------------------------------------------- | :-------------------- |
+| Delete is a DML command                               | Truncate is DDL command                                        |                       |
+| We can use where clause in delete command             | We cannot use where clause with truncate                       |                       |
+| Delete statement is used to delete a row from a table | Truncate statement is used to remove all the row from a table  | Remove table and data |
+| You can rollback data after using delete statement    | It is not possible to rollback after using TRUNCATE statement. | Can’t rollback        |
+| Delete is slower                                      | Truncate is faster                                             |                       |
+
+
+### **Ques. Difference b/w DROP and TRUNCATE statements?**
+* **Drop Table:-**
+  * Table structure will be dropped
+  * Relationship will be dropped
+  * Integrity constraints will be dropped
+  * Access privileges will also be dropped
+* **TRUNCATE Table:-**
+  * On the other hand when we TRUNCATE a table, the table structure remains the same, so you will not face any of the above problems.

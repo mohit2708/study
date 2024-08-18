@@ -8,16 +8,16 @@
 |       | [What Is RDBMS?](./1_mysql.md#Ques-What-is-RDBMS)                                     |
 |       | [Difference between DBMS & RDBMS?](./1_mysql.md#Ques-Difference-between-DBMS-&-RDBMS) |
 
-|  No.  | [User Management](./1_user_management.md)                                                                 |
+|  No.  | [User Management](./2_user_management.md)                                                                 |
 | :---: | --------------------------------------------------------------------------------------------------------- |
-|       | [Create Databse user?](./1_user_management.md#create-user-)                                               |
-|       | [Show Databse user?](./1_user_management.md#show-users-)                                                  |
-|       | [Show Current user?](./1_user_management.md#show-current-user)                                            |
-|       | [Grant Privileges to the MySQL New User?](./1_user_management.md#grant-privileges-to-the-mysql-new-user-) |
-|       | [Show Privileges?](./1_user_management.md#show-privileges)                                                |
-|       | [REVOKE Privileges?](./1_user_management.md#revoke-privileges)                                            |
-|       | [User Password Change?](./1_user_management.md#user-password-change)                                      |
-|       | [Drop User?](./1_user_management.md#drop-user)                                                            |
+|       | [Create Databse user?](./2_user_management.md#create-user-)                                               |
+|       | [Show Databse user?](./2_user_management.md#show-users-)                                                  |
+|       | [Show Current user?](./2_user_management.md#show-current-user)                                            |
+|       | [Grant Privileges to the MySQL New User?](./2_user_management.md#grant-privileges-to-the-mysql-new-user-) |
+|       | [Show Privileges?](./2_user_management.md#show-privileges)                                                |
+|       | [REVOKE Privileges?](./2_user_management.md#revoke-privileges)                                            |
+|       | [User Password Change?](./2_user_management.md#user-password-change)                                      |
+|       | [Drop User?](./2_user_management.md#drop-user)                                                            |
 
 
 |  No.  | [Databse](./3_Database.md)                            |
@@ -28,15 +28,22 @@
 |       | [DROP Databases?](./3_Database.md#drop-database-)     |
 
 
-|  No.  | [Tables](./4_Tables.md)                                                         |
-| :---: | ------------------------------------------------------------------------------- |
-|       | [Create TABLE?](./4_Tables.md#create-table)                                     |
-|       | [ALTER Table?](./4_Tables.md#alter-table)                                       |
-|       | [Change Datatype from alter cmd?](./4_Tables.md#change-datatype-from-alter-cmd) |
-|       | [DROP column in table?](./4_Tables.md#drop-column-in-table)                     |
-|       | [RENAME column in table?](./4_Tables.md#rename-column-in-table)                 |
-|       | [RENAME table name?](./4_Tables.md#rename-table-name)                           |
-|       | [TRUNCATE table?](./4_Tables.md#truncate-table)                                 |
+|  No.  | [Tables](./4_Tables.md)                                                                                       |
+| :---: | ------------------------------------------------------------------------------------------------------------- |
+|       | [Types of SQL Commands/subsets of SQL?](./4_Tables.md#types-of-sql-commandssubsets-of-sql)                    |
+|       | [Create TABLE?](./4_Tables.md#create-table)                                                                   |
+|       | [ALTER Table?](./4_Tables.md#alter-table)                                                                     |
+|       | [Change Datatype from alter cmd?](./4_Tables.md#change-datatype-from-alter-cmd)                               |
+|       | [DROP column in table?](./4_Tables.md#drop-column-in-table)                                                   |
+|       | [TRUNCATE table?](./4_Tables.md#truncate)                                                                     |
+|       | [RENAME column in table?](./4_Tables.md#rename-column-in-table)                                               |
+|       | [RENAME table name?](./4_Tables.md#rename-table-name)                                                         |
+|       | [What is delete?](./4_Tables.md#delete)                                                                       |
+|       | [Difference between Delete, Truncate & Drop?](./4_Tables.md#ques-difference-between-delete-truncate--drop)    |
+|       | [Difference b/w DROP and TRUNCATE statements?](./4_Tables.md#ques-difference-bw-drop-and-truncate-statements) |
+
+
+
 
 |  No.  | [Keys](./5_Keys.md)                                                                                          |
 | :---: | ------------------------------------------------------------------------------------------------------------ |
@@ -56,10 +63,15 @@
 
 
 
+|  No.  | [Keys](./7_joins.md)                              |
+| :---: | ------------------------------------------------- |
+|       | [What Is Joins?](./7_joins.md#ques-What-Is-Joins) |
+
+
+
+
 
 |       | [Difference between Delete, Truncate & Drop?](#ques-Difference-between-Delete,-Truncate-&-Drop)     |
-|       | [What Is Joins?](#ques-What-Is-Joins)                                                               |
-|       | [Types of Joins?](#ques-Types-of-Joins)                                                             |
 |       | [What Is Union & Union All?### What is View](#ques-What-Is-Union-&-Union-All)                       |
 |       | [What is View?](#ques-What-is-View)                                                                 |
 |       | [What is Index?](#ques-What-is-index)                                                               |
@@ -374,25 +386,6 @@ Rename Datatype
 ALTER TABLE LALU MODIFY (MOBILE NUMBER(15));
 
 
-
-
-
-
-
-### **Ques. What are the subsets of SQL?**
-* Data definition language(DDL)
-  * Create
-  * Alter
-  * Drop
-  * Rename
-  * Truncate
-* Data manipulation language(DML)
-  * Insert
-  * Update
-  * Delete
-* Data control language(DCL)
-  * Grant: It gives a privilege to user.
-  * Revoke: It takes back privileges granted from user.
 
 
 

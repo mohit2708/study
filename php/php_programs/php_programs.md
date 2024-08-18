@@ -1,165 +1,52 @@
 ### Table of Contents
 
+|  No.  | [Swap Number](./swap_program.md)                                                                |
+| :---: | -------------------------------------------------------------------------- |
+|   1   | [Swap Number with temporary variable?](./swap_program.md#swap-number-with-temporary-varibale)                                               |
+|   2   | [Swap Number Without Third Variable?](./swap_program.md#Swap-Number-Without-Third-Variable) |
+
+
+|  No.  | [Reverse Program](./reverse_program.md)                                                                  |
+| :---: | -------------------------------------------------------------------------- |
+|   1   | [Reverse String?](./reverse_program.md#Reverse-String)                                         |
+|   2   | [Revers number?](./reverse_program.md#Revers-number)                                           |
+
+
+
+|  No.  | Prime Programs                                                                  |
+| :---: | -------------------------------------------------------------------------- |
+|   1   | [Check the Prime Number or not?](#Check-the-Prime-Number-or-not)           |
+|   2   | [Print the prime number?](#Print-the-prime-number)                         |
+
+
+
+|  No.  | Other Programs                                                                  |
+| :---: | -------------------------------------------------------------------------- |
+|   1   | [Match the Two words same or not?](./other_program.md#match-the-two-words-same-or-not)           |
+
+
+|  No.  | Array Programs                                                                  |
+| :---: | -------------------------------------------------------------------------- |
+|   1   | [Print even number between 1 to 100?](./array_program.md#print-even-number-between-1-to-100)           |
+
+
+
 |  No.  | Questions                                                                  |
 | :---: | -------------------------------------------------------------------------- |
-|   1   | [Swap Number?](#Swap-Number)                                               |
-|   2   | [Swap Number Without Third Variable?](#Swap-Number-Without-Third-Variable) |
-|   3   | [Reverse String?](#Reverse-String)                                         |
-|   4   | [Revers number?](#Revers-number)                                           |
-|   5   | [Check the Prime Number or not?](#Check-the-Prime-Number-or-not)           |
-|   6   | [Print the prime number?](#Print-the-prime-number)                         |
 |   9   | [Find The Number Even Or Odd?](#Find-The-Number-Even-Or-Odd)               |
 |   7   | [Fibonacci Number print?](#Fibonacci-Number-print)                         |
 |   8   | [Print The Matrix?](#Print-The-Matrix)                                     |
 |  10   | [Highest Value in the array?](#Highest-Value-in-the-array)                 |
 |       | [String Pattern](#string-Pattern)                                          |
 |       | [Highest Value in the array?](#Highest-Value-in-the-array)                 |
-
 |       | [Find the largest first, second, third, fourth and fifth largest number from the array](#find-the-largest-first-second-third-fourth-and-fifth-largest-number-from-the-array) |
 
 
-### **Swap Number?**
-```php
-function abc($a,$b){
-    echo "Value of a: $a</br>";
-    echo "Value of b: $b</br>";
-    $temp=$a;
-    $a=$b;
-    $b=$temp;
-    echo "Value of a: $a</br>";
-    echo "Value of b: $b</br>";
-}
-$n1 = 4;
-$n2 = 2;
-abc ($n1,$n2);
-```
-**[⬆ Back to Top](#table-of-contents)**
 
-### **Swap Number Without Third Variable?**
-```php
-$a = 5;
-$b = 9;
 
-$a =  $a + $b;  // 5 + 6 = 11
-$b = $a - $b;   // 11 - 6 = 5
-$a = $a - $b;  // 11 - 5 = 6
 
-echo $a . ',' . $b;
-```
-**[⬆ Back to Top](#table-of-contents)**
 
-### **Reverse String?**
-```php
-$s = 'mohit saxena';		
-$l = strlen($s);
-for($i=$l-1; $i>=0; $i--){
-    echo $s[$i];
-}
 
-Output:- anexas tihom
-
---------------------------------------------------------------------
-# 2 Option
-$str = 'Mohit Saxena';
-$length = strlen($str);
-
-$rev = '';
-for($i = $length-1; $i >= 0; $i--) {
-    $rev .= $str[$i]; 
-}
-echo $rev;
-
-Output:- anexaS tihoM
-```
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Revers number?**
-```php
-# Type 1st:-
-$num = 2039;
-$revnum = 0;
-while ($num != 0){
-    $revnum = $revnum * 10 + $num % 10;
-    $num = (int)($num / 10); 
-} 
-echo "Reverse number: $revnum";
-
---------------------------------------------------------------------------
-# Type 2nd:-
-
-$num = 23456;  
-$revnum = 0;  
-while ($num > 1){  
-    $rem = $num % 10;  
-    $revnum = ($revnum * 10) + $rem;  
-    $num = ($num / 10);   
-}  
-echo "Reverse number of 23456 is: $revnum";  
-```
-**[⬆ Back to Top](#table-of-contents)**
-
-### Match the Two words same or not
-```php
-function check_name($str1,$str2)
-{
-    $first = str_split($str1);
-            sort($first);
-            $first_name=implode($first);
-
-    $second = str_split($str2);
-            sort($second);
-            $second_name=implode($second);
-    
-    if($first_name==$second_name){
-        return "Match";
-    }else{
-        return "Do not Match";
-    }              
- }
-
-$result= check_name('mohit','himt');
-echo $result;
-```
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Check the Prime Number or not?**
-```php
-function IsPrime($n){
-    for($x=2; $x<$n; $x++){
-        if($n %$x ==0){
-            return 0;
-        }
-        return 1;
-    }  
-    $a = IsPrime(7);  
-    if ($a==0)  
-        echo 'This is not a Prime Number.....'."\n";  
-    else  
-        echo 'This is a Prime Number..'."\n";
-}
-Output :-  This is a Prime Number..
-```
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Print the prime number?**
-```php
-function primeno($n){
-    for($i=1;$i<=$n;$i++){  //numbers to be checked as prime
-        $counter = 0; 
-        for($j=1;$j<=$i;$j++){ //all divisible factors
-            if($i % $j==0){
-                $counter++;
-            }
-        }
-        if($counter==2){
-            echo $i." is Prime <br/>";
-        }
-    }
-}
-
-primeno(100);
-```
-**[⬆ Back to Top](#table-of-contents)**
 
 ### **Find The Number Even Or Odd?**
 ```php 
@@ -814,14 +701,7 @@ Output:- 12
     ?> 
     ```
 
-```php
-<?php
-for ($i=2; $i<=100; $i+=2)		//Find all even numbers between 1 to 100
-{
-	echo $i." ";
-} 
-?>
-```
+
 
 ```php
 <?php 
