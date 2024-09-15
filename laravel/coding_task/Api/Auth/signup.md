@@ -35,6 +35,23 @@ public function register(Request $request){
         return response()->json(['errors' => $validator->errors()], 422);
     }
 
+    $existingUserByEmail = User::where('email', $request->email)->first();
+    $existingUserByPhone = User::where('phone', $request->phone)->first();
+    if($existingUserByPhone){
+        return response()->json([
+            'success' => false,
+            'message' => 'Phone Number already exist.',
+            'status' => 400,
+        ], 400);
+    }
+    if($existingUserByEmail){
+        return response()->json([
+            'success' => false,
+            'message' => 'Email already exist.',
+            'status' => 400,
+        ], 400);
+    }
+
     try {
         DB::beginTransaction();
 
@@ -54,7 +71,35 @@ public function register(Request $request){
 
         DB::commit();
 
-        return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
+        $userWithDetails = User::join('user_details', 'users.id', '=', 'user_details.user_id')
+            ->select('users.first_name','users.last_name','users.phone','users.phone_verified_at','users.email', 'user_details.additional_phone','users.created_by',
+                    'user_details.address', 'user_details.state', 'user_details.city', 'user_details.zip')
+            ->where('users.id', $user->id)
+            ->first();
+            
+            // Create token
+            $credentials = [
+                'phone'     => $request->phone,
+                'password'  =>$request->password
+            ];
+
+            try {
+                // Attempt to authenticate the user and generate a token
+                if (!$token = JWTAuth::attempt($credentials)) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Login credentials are invalid.',
+                    ], 400);
+                }            
+            } catch (JWTException $e) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Could not create token.',
+                ], 500);
+            }
+            $userWithDetails['token'] = $token;
+
+        return response()->json(['success' => true,'status' => 200,'message' => 'User registered successfully', 'user' => $userWithDetails], 200);
     } catch (\Exception $e) {
         DB::rollBack();
         return response()->json(['error' => 'Registration failed', 'message' => $e->getMessage()], 500);

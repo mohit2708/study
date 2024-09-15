@@ -128,6 +128,7 @@ sudo apt install unzip
 ### Set permission
 ```aws
 sudo chmod -R 777 /var/www
+sudo chmod -R 777 /home/oceanside/storage/logs/
 ls -l
 ```
 sudo chmod -R 777 /var/www/html/storage

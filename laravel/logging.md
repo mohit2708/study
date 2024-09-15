@@ -22,5 +22,5 @@ Log::debug($message);
 
 
 Log::channel('payload_logs')->info("device ID: {$getDeviceId}");
- Log::channel('payload_logs')->info("device notification api successfully!!\n");
+Log::channel('payload_logs')->info("device notification api successfully!!\n");
 ```

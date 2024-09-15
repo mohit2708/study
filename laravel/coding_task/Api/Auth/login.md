@@ -12,8 +12,10 @@ use JWTAuth;
  */
 public function login(Request $request)
 {
-    $credentials = $request->only('email', 'password');
-    $loginDetails = User::where('email',$credentials['email'])->first();
+    $credentials = [
+            'phone' => $request->phone,
+            'password' => $request->password
+        ];
 
     //valid credential
     $validator = Validator::make($credentials, [
@@ -24,32 +26,42 @@ public function login(Request $request)
         return response()->json(['error' => $validator->messages(), 'status' => 442], 422);
     }
 
+    $loginDetails = User::where('phone', $credentials['phone'])->first();
+    if (!$loginDetails) {
+        return response()->json([
+            'success' => false,
+            'message' => 'No user found with this phone number.',
+        ], 404);
+    }
+
     //Creat token
     try {
-        // $token = Auth::attempt($credentials);
+        // Attempt to authenticate the user and generate a token
         if (!$token = JWTAuth::attempt($credentials)) {
             return response()->json([
                 'success' => false,
                 'message' => 'Login credentials are invalid.',
-                'status' => 401
-            ], 401);
-        }
-        //Token created, return with success response and jwt token
-        $loginDetails['success'] = true;
-        $loginDetails['token'] = $token;
-        return response()->json([
-            'loginDetails' => $loginDetails,
-            'status' => 200
-        ]);
-        
+                'status' => 400
+            ], 400);
+        }            
     } catch (JWTException $e) {
-    return $credentials;
         return response()->json([
             'success' => false,
             'message' => 'Could not create token.',
-            'status' => 500
         ], 500);
-    }        
-    
+    }
+
+    $password_verified = $loginDetails->password_verified == 1 ? true : false;
+
+    if($loginDetails->phone_verified_at){
+        $loginDetails['token'] = $token;
+        return response()->json(['success' => true,'status' => 200,'phone_verified'=>true,'password_verified'=>$password_verified,'message' => 'User get successfully!','loginDetails' => $loginDetails,
+        ],200);
+    }else{
+        $this->sentOtpOnPhone($request);
+        $loginDetails['token'] = $token;
+        return response()->json(['success' => true,'status' => 200,'phone_verified'=>false,'password_verified'=>$password_verified,'message' => 'Otp has been sent on register phone number!','loginDetails' => $loginDetails,
+        ],200);            
+    }    
 }
 ```

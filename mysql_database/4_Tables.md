@@ -147,6 +147,10 @@ ALTER TABLE employee_table
 | cus_age          | varchar(40) | NO   |     | NULL    |                |
 +------------------+-------------+------+-----+---------+----------------+
 ```
+* Add enum column
+```sql
+ALTER TABLE table_name ADD field_name enum('0','1') NOT NULL DEFAULT '0' after password;
+```
 
 
 ### Change Datatype from alter cmd

@@ -1,3 +1,10 @@
+
+|  No.  | Tables                                   |
+| :---: | ---------------------------------------- |
+|       | [update data by DB?](#update-data-by-db) |
+|       | [update data in two table?](#update-data-in-two-table) |
+
+
 ### update data by DB
 ```php
 DB::table('table_name')
@@ -5,7 +12,29 @@ DB::table('table_name')
     ->update(['cal_add_job' => 1,'cal_add_job' => 1]);
 ```
 
+### update data in two table?
+```php
+    public function update(Request $request){
+    	$update_customer = Customer::where('id', $request->update_customer_id)->first();
+    	if ($update_customer) {
+		    $update_customer->first_name 		= trim($request->first_name);
+		    $update_customer->last_name 		= trim($request->last_name);
+		    $update_customer->save();
 
+		    $update_advance_booking = AdvanceBooking::where('customer_id', $update_customer->id)->first();
+		    if ($update_advance_booking) {
+		    	$update_advance_booking->plan_name 		= $request->duration;
+	            $update_advance_booking->remaining_days = ($request->days < $request->used_days) ? 0 : $request->remaining_days;
+	            $update_advance_booking->save();
+		    }           
+            
+		}
+		else {
+		    return response()->json(['error' => 'User not found.'], 404);
+		}
+		return redirect('customer/list')->with('success', 'Customer Update successfully!');
+    }
+```
 
 # Project
 

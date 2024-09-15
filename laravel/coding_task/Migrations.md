@@ -11,6 +11,7 @@ public function up()
             $table->unsignedBigInteger('location_id')->nullable();
             $table->integer('added_by')->nullable();
             $table->text('states')->nullable();
+            $table->longText('exceptionlog')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->time('start_time')->nullable();

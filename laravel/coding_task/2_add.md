@@ -1,9 +1,17 @@
 ### insert data by model
 ```php
 $offuser                = new Model; 
-$offuser->offuser_name  = $request->off_name;;
+$offuser->offuser_name  = $request->off_name;
 $offuser->save();
-`
+```
+
+```php
+DB::table('users')
+    ->updateOrInsert(
+        ['email' => 'john@example.com', 'name' => 'John'], // matching record
+        ['votes' => '2']    // update record
+    );
+```
 
 # Project
 

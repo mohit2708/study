@@ -13,8 +13,9 @@
 ### **Create User:-**
 ```sql
 CREATE USER username@hostname IDENTIFIED BY 'password';  
-
+```
 * The hostname is optional then
+```sql
 CREATE USER username IDENTIFIED BY 'password'; 
 ```
 

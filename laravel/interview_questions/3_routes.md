@@ -1,8 +1,26 @@
+### **List Methods**
+                    
+| S.N | Questions                                                    |
+| --- | ------------------------------------------------------------ |
+|     | [What is a Route?](#ques-what-is-a-route)                    |
+|     | [Named Routes?](#named-routes)                               |
+|     | [Accessing the Current Route?](#accessing-the-current-route) |
+|     | [Route Caching?](#route-caching) |
+|     | [Cross-Origin Resource Sharing (CORS)?](#cross-origin-resource-sharing-cors) |
+
+
+
+
+
+
+
+
+
 ### Ques. What is a Route?
 * A route is basically an endpoint specified by a URI (Uniform Resource Identifier).
 * We create the routes of the website in **web.php** and **APIs routes** in api.php inside the **routes folder**.
 * The route is a way of creating a request URL for your application.
-*  These routes are assigned to the web middleware group, providing features like session state and CSRF protection.
+* These routes are assigned to the web middleware group, providing features like session state and CSRF protection.
 ```php
 Route::get('/', function (){      
     return view ('welcome');
@@ -73,7 +91,7 @@ Route::fallback(function () {
 });
 
 # OR
-Route::fallback('/create-payment', [ControllerName::class]);\
+Route::fallback('/create-payment', [ControllerName::class]);
 # under controlle class 
 public function __invoke(){
     return view();
@@ -81,6 +99,9 @@ public function __invoke(){
 ```
 
 ### Rate Limiting?
+* Rate Limiting in Laravel is a feature used to control the number of requests a client can make to your application within a specified time frame.
+* Laravel’s rate limiting feature is implemented using middleware. You can define rate limits based on various parameters such as routes, IP addresses, or users. If a client exceeds the defined limit, Laravel will automatically respond with a 429 Too Many Requests HTTP status code.
+  
 * Go to **App\Providers\RouteServiceProvider** and write the code
 ```php
 protected function configureRateLimiting()
@@ -110,7 +131,36 @@ $name = Route::currentRouteName(); // string
 $action = Route::currentRouteAction(); // string
 ```
 
+### Route Caching?
+* Route Caching in Laravel is a performance optimization technique that allows you to cache the routes of your application. 
+* Laravel compiles all the routes into a single file and stores them in a cache, which significantly speeds up route registration by eliminating the need to parse the routes on every request.
+* This command generates a cached file located at **bootstrap/cache/routes-v7.php** (or a similar version-based filename). Once cached, Laravel loads the routes from this file, making route resolution much faster.
 
+```php
+php artisan route:cache
+```
+* **Clear the Route Cache**: If you need to clear the cached routes (for example, after modifying the routes), you can use the command:
+```php
+php artisan route:clear
+```
+
+### Cross-Origin Resource Sharing (CORS)
+* Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers.
+* CORS allows you to manage these cross-origin requests, defining which external domains can interact with your Laravel application.
+* Laravel's CORS settings are defined in the **config/cors.php** configuration file.
+* example-
+```php
+return [
+    'paths' => ['api/*'],           //Specifies the routes for which CORS is applied (e.g., ['api/*'] for all API routes).
+    'allowed_methods' => ['*'],     // Specifies which HTTP methods are allowed (e.g., ['GET', 'POST']). Using ['*'] allows all methods.
+    'allowed_origins' => ['*'],     // Specifies which origins (domains) are allowed to make requests (e.g., ['https://example.com']). Using ['*'] allows all origins.
+    'allowed_origins_patterns' => [], // 
+    'allowed_headers' => ['*'],     // pecifies which headers are allowed in the request (e.g., ['Content-Type', 'X-Requested-With']). Using ['*'] allows all headers.
+    'exposed_headers' => [],        // Specifies which headers can be exposed to the browser (empty array by default).
+    'max_age' => 0,                 // Indicates how long the results of a preflight request can be cached.
+    'supports_credentials' => false, // if set to true, it allows credentials (like cookies, authorization headers, or TLS client certificates) to be included in cross-origin requests.
+];
+```
 
 ### CSRF TOKEN?
 * Laravel automatically generates a CSRF "token" for each active user session managed by the application.
