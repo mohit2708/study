@@ -56,7 +56,7 @@ sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
 ```
 
-### **Ques. Check String?**
+### Ques. Check String?
 * The **in** operator will return **True** if a string contains a substring.
 * we can use the keyword **in**.
 ```python
@@ -81,7 +81,7 @@ print("expensive" not in txt)
 output:- True
 ```
 
-### **Ques. Slicing Strings?**
+### Ques. Slicing Strings?
 * We can return a range of characters by using the slice syntax.
 * Specify the start index and the end index, separated by a colon, to return a part of the string.
 ```python

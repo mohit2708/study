@@ -36,6 +36,30 @@ DB::table('table_name')
     }
 ```
 
+```php
+public function changePasswordWithoutAjax(Request $request){
+        // dd($request->all());
+        try {
+        $request->validate([
+            'new_password' => 'required|string|min:6',
+            'confirm_password' => 'required_with:new_password|same:new_password|min:6',
+        ]);
+
+        // Update the user's password
+        $user = User::find($request->user_id);
+        if (!$user) {
+            return response()->json(['success' => false, 'message' => 'User not found']);
+        }
+        User::whereId($request->user_id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+        return redirect('user/list')->with('success', 'Password changed successfully!');
+        }catch (Exception $e) {
+            Log::error($e->getMessage(), $e->getTrace());
+        }
+    }
+```
+
 # Project
 
 ```php

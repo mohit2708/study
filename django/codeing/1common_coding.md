@@ -23,7 +23,7 @@ urlpatterns = [
 ]
 ```
 
-### url 2nd type of calling views in app file.
+### Url 2nd type of calling views in app file.
 ```python
 from django.contrib import admin
 from django.urls import path

@@ -4,14 +4,7 @@
 
 |  No.  | Questions                                                                                                                           |
 | :---: | ----------------------------------------------------------------------------------------------------------------------------------- |
-|   1   | [What is the PHP?](#Ques-What-is-the-PHP)                                                                                           |
-|   2   | [Which is the latest version of PHP?](#Ques-Which-is-the-latest-version-of-PHP)                                                     |
-|   3   | [What Type of Framework in Php?](#Ques-What-Type-of-Framework-in-Php)                                                               |
-|   4   | [What Type of CMS(Content Management System) in Php?](#Ques-What-Type-of-CMSContent-Management-System-in-Php)                       |
 |   5   | [Difference between Php4 and php5?](#Ques-Difference-between-Php4-and-php5)                                                         |
-|   6   | [Full Form of LAMP?](#Ques-Full-Form-of-LAMP)                                                                                       |
-|   7   | [Full Form of WAMP?](#Ques-Full-Form-of-WAMP)                                                                                       |
-|   8   | [Full Form of XAMPP?](#Ques-Full-Form-of-XAMPP)                                                                                     |
 |   9   | [What is Constant?](#Ques-What-is-Constant)                                                                                         |
 |  10   | [What is Variable?](#Ques-What-is-Variable)                                                                                         |
 |  11   | [Difference between Constant And Variable?](#Ques-Difference-between-Constant-And-Variable)                                         |
@@ -42,44 +35,6 @@
 |  32   | [What is Constructor?](#Ques-What-is-Constructor)                                                                                   |
 |  33   | [What is Destructor?](#Ques-What-is-Destructor)                                                                                     |
 |       | [What does isset() function?](#ques-What-does-isset()-function)                                                                     |
-
-### **Ques. What is the PHP?**
-* PHP is an open source server side scripting language used to develop dynamic websites. PHP  stands for Hypertext Preprocessor , also stood for Personal Home Page. It was created by Rasmus lerdorf in 1995 . It is free software released under the PHP license.
-* PHP is an acronym for "PHP: Hypertext Pre-processor" And Old name of PHP personal home page. 
-* Rasmus Lerdorf is known as the father of PHP. 1994
-* PHP is a server side scripting language/s/w/tool commonly used for web applications. And PHP has many framework and CMS for creating a website.
-* PHP is a widely-used, open source scripting language. And server side scripting language.
-* PHP it is used to manage dynamic content, databases, session tracking, even build entire e-commerce sites.
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. Which is the latest version of PHP?**
-The latest stable version of PHP is 8.2 released on __________.
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. What Type of Framework in Php?**
-Cakephp, Laravel, Codeigniter, Yii 2, Zend Framework, Phalcon, Slim, FuelPhp, Phpixie, etc
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. What Type of CMS(Content Management System) in Php?**
-Wordpress, Joomla, Magento, Drupal, etc
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. Full Form of LAMP?**
-Linux Apache MySql and Php.
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. Full Form of WAMP?**
-Windows Apache MySql And Php.
-**[⬆ Back to Top](#table-of-contents)**
-
-### **Ques. Full Form of XAMPP?**
-X-OS, Apache Mysql Php Perl<br>
-X: Any of the different operating system(Windows, Linux, Mac OS X), to be read as “cross”, meaning cross-platform.<br>
-Apache(HTTP Server)<br>
-Mysql(Database)<br>
-PHP<br>
-Perl<br>
-**[⬆ Back to Top](#table-of-contents)**
 
 
 ### **Ques. What is Constant?**
