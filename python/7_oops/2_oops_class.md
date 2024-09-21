@@ -1,4 +1,8 @@
-### **Ques.  What is Class?**
+|  No.  | [Class]()                              |
+| :---: | -------------------------------------- |
+|       | [What is Class?](#ques--what-is-class) |
+
+### Ques.  What is Class?
 * The class is a collection of objects.
 * It is a logical entity that has some specific attributes and methods.
 * To define a class in Python, you can use the class keyword, followed by the class name and a colon. Inside the class, an __init__ method has to be defined with def. This is the initializer that you can later use to instantiate objects. It's similar to a constructor in Java. __init__ must always be present! It takes one argument: self, which refers to the object itself. Inside the method, the pass keyword is used as of now, because Python expects you to type something there.
@@ -16,8 +20,7 @@ class ClassName:
 mohit = ClassName()
 print(mohit)
 ```
-
-__Example 1__
+* **Example 1**
 ```python
 class Person:
   def __init__(self, name, age):
@@ -29,8 +32,7 @@ p1 = Person("John", 36)
 print(p1.f_name)
 print(p1.age)
 ```
-
-__Example__
+* **Example 2**
 ```python
 class Dog:
 

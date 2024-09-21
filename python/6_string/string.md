@@ -3,11 +3,11 @@
 
 |  No.  | Questions                                                                                                                        |
 | :---: | -------------------------------------------------------------------------------------------------------------------------------- |
-|       | [Python Strings](#Python-Strings)                                                                                                |
-|       | [Assign String to a Variable](#Assign-String-to-a-Variable)                                                                      |
-|       | [Multiline Strings](#Multiline-Strings)                                                                                          |
-|       | [Check String](#Check-String)                                                                                                    |
-|       | [Slicing Strings](#Slicing-Strings)                                                                                              |
+|       | [Python Strings](#ques-python-strings)                                                                                                |
+|       | [Assign String to a Variable](#ques-assign-string-to-a-variable)                                                                      |
+|       | [Multiline Strings](#ques-multiline-strings)                                                                                          |
+|       | [Check String](#ques-Check-String)                                                                                                    |
+|       | [Slicing Strings](#ques-Slicing-Strings)                                                                                              |
 |       | [Modify Strings](#Modify-Strings)                                                                                                |
 |       | [String Concatenation](#String-Concatenation)                                                                                    |
 |       | [Format - Strings](#Format-Strings)                                                                                              |
@@ -24,15 +24,12 @@
 |       | [program to count the frequency of each character](#ques-program-to-count-the-frequency-of-each-character)                       |
 |       | [Looping Through a String](#Looping-Through-a-String)                                                                            |
 |       | [Reversed the String](#ques-Reversed-the-String)                                                                                 |
-|       |                                                                                                                                  |
-|       |                                                                                                                                  |
-|       |                                                                                                                                  |
 
-### **Ques. Python Strings?**
+### Ques. Python Strings?
 * Once a string object has been created, it cannot be changed. "Modifying" that string creates a whole new object in memory.
 * 'hello' is the same as "hello".
 
-### **Ques. Assign String to a Variable?**
+### Ques. Assign String to a Variable?
 ```python
 a = "Hello"
 print(a)
@@ -40,7 +37,7 @@ print(a)
 Output:- Hello
 ```
 
-### **Ques. Multiline Strings?**
+### Ques. Multiline Strings?
 * You can assign a multiline string to a variable by using three quotes:
 ```python
 a = """Lorem ipsum dolor sit amet,
@@ -103,7 +100,7 @@ print(b[:-1])
 Output:- Hello, World
 ```
 
-### **Ques. Modify Strings?**
+### Ques. Modify Strings?
 * **Upper Case:-** it method returns the string in upper case:
 ```python
 b = "Hello, World!"
@@ -143,7 +140,7 @@ print(a.strip())
 Output:- Hello, World!
 ``` 
 
-### **String Concatenation**
+### String Concatenation
 * To concatenate, or combine, two strings we can use the **plus(+)** operator.
 ```python
 a = "Hello"
@@ -164,7 +161,7 @@ print(c)
 Output:- Hello World 
 ```
 
-### **Format Strings**
+### Format Strings
 ```python
 # String Format:- As we learned in the Python Variables chapter, we cannot combine strings and numbers like this.
 age = 36
@@ -206,7 +203,7 @@ print(myorder.format(quantity, itemno, price))
 Output:- I want to pay 49.95 dollars for 3 pieces of item 567
 ```
  
-### **Ques. What is an f-string and how do you use it?**
+### Ques. What is an f-string and how do you use it?
 New in python 3.6, f-strings make string interpolation really easy. Using f-strings is similar to using format(). and F-strings are denoted by an f before the opening quote.
 ```python
 name = 'Mohit'
@@ -216,7 +213,7 @@ print(f'Hello. My name is {name} and I like {food}.')
 Output:- Hello. My name is Mohit and I like Tea.
 ```
 
-### **Ques. Escape Characters?**
+### Ques. Escape Characters?
 * An escape character is a backslash \ followed by the character you want to insert.
 ```python
 txt = "We are the so-called \"Vikings\" from the north."
@@ -278,7 +275,7 @@ Output:- Hello
 ```
 
 
-### **Ques. How would you confirm that 2 strings have the same identity?**
+### Ques. How would you confirm that 2 strings have the same identity?
 The **is** operator returns True if 2 names point to the same location in memory.
 ```python
 animals           = ['python','gopher']
@@ -299,7 +296,7 @@ True
 False
 ```
 
-### **Ques. Check if each word in a string begins with a capital letter?**
+### Ques. Check if each word in a string begins with a capital letter?
 The **istitle()** function checks if each word is capitalized.
 ```python
 print( 'The Hilton'.istitle() ) #=> True
@@ -307,7 +304,7 @@ print( 'The dog'.istitle() ) #=> False
 print( 'sticky rice'.istitle() ) #=> False
 ```
 
-### **Ques. When would you use rfind()?**
+### Ques. When would you use rfind()?
 * **rfind()** is like find() but it starts searching from the right of a string and return the first matching substring.
 ```python
 story = 'The price is right said Bob. The price is right.'
@@ -316,15 +313,15 @@ story.rfind('is')
 Output:- 39
 ```
 
-### **Ques. Count the number of a specific character in a string?**
-* <b>count()</b> will return the number of occurrences of a specific character.
+### Ques. Count the number of a specific character in a string?
+* **count()** will return the number of occurrences of a specific character.
 ```python
 print('The first president of the organization..'.count('o')) # 3
 
 Output:- 3
 ```
 
-### **Ques. find the length / Count number of characters in a string**
+### Ques. find the length / Count number of characters in a string
 * To get the length of a string, use the **len()** function.
 ```python
 a = "Hello, World!"
@@ -358,7 +355,7 @@ print("Total number of characters in a string: " + str(count));
 Output:- 19
 ```
 
-### **Ques. Remove vowels from a string?**
+### Ques. Remove vowels from a string?
 ```python
 string = 'Hello mohit saxena'
 vowels = ('a','e','i','o','u')
@@ -376,7 +373,7 @@ Output:- Hll mht sxn
 
 
 
-### **Ques. Extract numbers from string?**
+### Ques. Extract numbers from string?
 ```python
 new_string = "Germany26China47Australia88"
  
@@ -403,7 +400,7 @@ Output:- Find number in string: [89, 94]
 
 
 
-### **Ques. Find repeated characters in a string python?**
+### Ques. Find repeated characters in a string python?
 ```python
 string = "Great responsibility";  
   
@@ -425,7 +422,7 @@ i
 ```
 
 
-### **Ques. program to count the frequency of each character?**
+### Ques. program to count the frequency of each character?
 ```python
 # using "in" operater
 str1 = input ("Enter the string: ")
@@ -449,7 +446,7 @@ Enter the string: Hello My name is Mohit Saxena
 ```
 
 
-### **Ques. Looping Through a String?**
+### Ques. Looping Through a String?
 ```python
 for x in "Mohit":
   print(x) 
@@ -462,7 +459,7 @@ i
 t  
 ```
 
-### **Ques. Reversed the String?**
+### Ques. Reversed the String?
 * Using slice method and through function
 ```python
 txt = "Hello World"[::-1]

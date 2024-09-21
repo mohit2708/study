@@ -1,4 +1,10 @@
-### **Ques. What is Object?**
+|  No.  | [Class]()                                                                                     |
+| :---: | --------------------------------------------------------------------------------------------- |
+|       | [What is Object?](#ques-what-is-object)                                                       |
+|       | [Delete the Object?](#ques-delete-the-object)                                                 |
+|       | [Counting the Number of objects of a Class?](#ques-counting-the-number-of-objects-of-a-class) |
+
+### Ques. What is Object?
 * The object is an entity that has state and behavior. It may be any real-world object like the mouse, keyboard, chair, table, pen, etc.
 * **For example:** if you have an employee class, then it should contain an attribute and method, i.e. an email id, name, age, salary, etc.
   
@@ -46,7 +52,7 @@ After modifying the object properties
 
 
 
-### **Ques. Delete the Object?**
+### Ques. Delete the Object?
 We can delete the properties of the object or object itself by using the del keyword. Consider the following example.
 ```python
 class Employee:  
