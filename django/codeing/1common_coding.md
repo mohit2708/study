@@ -1,28 +1,3 @@
-### **urls setting**
-```python
-======project urls.py=====
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('authentication.urls')),
-    path('accounts/', include('accounts.urls')),
-]
-=========crete urls.py file in your app======
-from django.contrib import admin
-from django.urls import path
-from . import views
-
-urlpatterns = [
-	path('', views.home, name='home'),
-    path('create', views.stinsert, name='create1'),
-    path('edit/<int:id>', views.edit),  
-    path('update/<int:id>', views.update, name='update'),
-    path('delete/<int:id>', views.delete_st),
-]
-```
-
 ### Url 2nd type of calling views in app file.
 ```python
 from django.contrib import admin

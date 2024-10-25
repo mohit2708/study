@@ -75,14 +75,6 @@ php artisan make:migration create_users_table
 ### Ques. What are service providers? 
 Service Providers are central place where all laravel application is bootstrapped . Your application as well all Laravel core services are also bootstrapped by service providers.<br> All service providers extend the Illuminate\Support\ServiceProvider class. Most service providers contain a register and a boot method. Within the register method, you should only bind things into the service container. You should never attempt to register any event listeners, routes, or any other piece of functionality within the register method.
 
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. Explain Laravel’s service container? 
-One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel.<br> __Dependency injection__ is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is dependency injection in Laravel? 
-In software engineering, dependency injection is a technique whereby one object supplies the dependencies of another object. A dependency is an object that can be used (a service). An injection is the passing of a dependency to a dependent object (a client) that would use it. The service is made part of the client’s state.[1] Passing the service to the client, rather than allowing a client to build or nd the service, is the fundamental requirement of the pattern.<br>
-You can do dependency injection via Constructor, setter and property injection.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What are Laravel Contract’s?
@@ -272,13 +264,6 @@ In order to install Laravel, make sure your server meets the following requireme
 * Ctype PHP Extension
 * JSON PHP Extension
 
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. List some Aggregates methods provided by query builder in Laravel?
-* count() 
-* max() 
-* min() 
-* avg() 
-* sum()
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. How to check request is ajax or not?
@@ -375,13 +360,8 @@ class User extends Eloquent{
  protected $table="my_user_table";
 
 } 
-List some Aggregates methods provided by query builder in Laravel ?
-Posted by Sharad Jaiswal
-• count()
-• max()
-• min()
-• avg()
-• sum()
+
+
 • Class − This is a programmer-defined data type, which includes local functions as well as local data. You can think of a class as a template for making many instances of the same kind (or class) of object.
 • Object − An individual instance of the data structure defined by a class. You define a class once and then make many objects that belong to it. Objects are also known as instance.
 • Member Variable − These are the variables defined inside a class. This data will be invisible to the outside of the class and can be accessed via member functions. These variables are called attribute of the object once an object is created.

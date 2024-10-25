@@ -11,7 +11,7 @@
 
 
 **[⬆ Back to Top](#table-of-contents)**
-### **Ques. What is database?**
+### Ques. What is database?
 * A database is an organized collection of data, stored and retrieved digitally from a remote or local computer system. Databases can be vast and complex, and such databases are developed using fixed design and modeling approaches.
 * Database is nothing but an organized form of data for easy access, storing, retrieval and managing of data. 
 * This is also known as structured form of data which can be accessed in many ways.

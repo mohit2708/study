@@ -10,12 +10,6 @@
 
 
 
-
-
-
-
-
-
 ### Ques. What is a Route?
 * A route is basically an endpoint specified by a URI (Uniform Resource Identifier).
 * We create the routes of the website in **web.php** and **APIs routes** in api.php inside the **routes folder**.

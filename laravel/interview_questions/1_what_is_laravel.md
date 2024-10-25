@@ -1,10 +1,13 @@
-|  No.  | Questions                                                                                                       |
-| :---: | --------------------------------------------------------------------------------------------------------------------------------------- |
-|       | [What is laravel?](#ques-what-is-laravel)                                                                         |
-|       | [What is the Features of Laravel?](#ques-what-is-the-features-of-laravel)                                         |
-|       | [What are pros and cons of using Laravel Framework?](#ques-what-are-pros-and-cons-of-using-laravel-framework)     |
-|       | [What are available databases supported by Laravel?](#ques-what-are-available-databases-supported-by-laravel)     |
-|       | [What are the steps to install Laravel with composer?](#ques-what-are-the-steps-to-install-laravel-with-composer) |
+|  No.  | Questions                                                                                                                                     |
+| :---: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+|       | [What is laravel?](#ques-what-is-laravel)                                                                                                     |
+|       | [What is the Features of Laravel?](#ques-what-is-the-features-of-laravel)                                                                     |
+|       | [What are pros and cons of using Laravel Framework?](#ques-what-are-pros-and-cons-of-using-laravel-framework)                                 |
+|       | [What are available databases supported by Laravel?](#ques-what-are-available-databases-supported-by-laravel)                                 |
+|       | [What are the steps to install Laravel with composer?](#ques-what-are-the-steps-to-install-laravel-with-composer)                             |
+|       | [What is the templating engine used in Laravel?](#ques-what-is-the-templating-engine-used-in-laravel)                                         |
+|       | [How to put Laravel applications in maintenance mode?](#ques-how-to-put-laravel-applications-in-maintenance-mode)                             |
+|       | [List some Aggregates methods provided by query builder in Laravel?](#ques-list-some-aggregates-methods-provided-by-query-builder-in-laravel) |
 
 ### **Ques. What is Laravel?**
 * Laravel is free open source “PHP framework” based on MVC design pattern.
@@ -69,10 +72,10 @@ composer create-project laravel/laravel project_name "8.0"
 
 ### **Ques. What is the templating engine used in Laravel?**
 * The templating engine used in Laravel is __Blade__.
-* __Displaying data__ If you want to print the value of a variable, then you can do so by simply enclosing the variable within the curly brackets.<br>
-__Syntax:-__
+* **Displaying data** If you want to print the value of a variable, then you can do so by simply enclosing the variable within the **curly brackets.**
+* **Syntax:-**
 ```php
-{{$variable}};  
+{{$variable}}
 ```
 
 ### Ques. How to put Laravel applications in maintenance mode?
@@ -84,3 +87,10 @@ And can put the application again on live using the below command:
 ```php
 php artisan up
 ```
+
+### Ques. List some Aggregates methods provided by query builder in Laravel?
+* count() 
+* max() 
+* min() 
+* avg() 
+* sum()

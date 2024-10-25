@@ -1,3 +1,64 @@
+|  No.  | [Questions]()                                                                                                              |
+| :---: | -------------------------------------------------------------------------------------------------------------------------- |
+|       | [Add two digit of decimal on focus out?](#add-two-digit-of-decimal-on-focus-out)                                           |
+|       | [Add two digit of decimal on from the back side in run time?](#add-two-digit-of-decimal-on-from-the-back-side-in-run-time) |
+
+
+### Add two digit of decimal on focus out
+```javascript
+<input type="text" class="two-digits valid" id="custome_price" inputmode="numeric" pattern="[0-9]*" name="custome_price" placeholder="00.00" aria-invalid="false">
+
+$(document).ready(function() {
+    $('#custome_price').on('blur', function () {
+        let input = $(this).val();
+        
+        // Remove any non-digit characters, allowing only one decimal point
+        input = input.replace(/[^0-9.]/g, '');
+        
+        // Only format if there's a valid number entered
+        if (input && !isNaN(input)) {
+            // Convert the value to a number and format it to 2 decimal places
+            let formattedValue = parseFloat(input).toFixed(2);
+            $(this).val(formattedValue);
+        }
+    });
+
+    // Allow input but do not format until blur (when focus leaves the input)
+    $('#custome_price').on('input', function () {
+        let input = $(this).val();
+        
+        // Remove any non-digit characters except for the first decimal point
+        input = input.replace(/[^0-9.]/g, '');
+
+        // Prevent entering more than one decimal point
+        if ((input.match(/\./g) || []).length > 1) {
+            input = input.substring(0, input.length - 1); // Remove extra decimal points
+        }
+
+        $(this).val(input);
+    });
+});
+```
+### Add two digit of decimal on from the back side in run time
+```javascript
+$(document).ready(function() {
+    $('#custome_price').on('input', function() {
+        let inputValue = $(this).val();
+        // Remove any non-numeric characters
+        inputValue = inputValue.replace(/\D/g, '');
+        
+        if (inputValue.length > 0) {
+            // Convert the number to two decimal places
+            let formattedValue = (inputValue / 100).toFixed(2);
+            $(this).val(formattedValue);
+        } else {
+            $(this).val('');
+        }
+    });
+});
+```
+
+
 ### Start Date and end date bootstrap calendar.
 ```javascript
 function populateEndDate() {

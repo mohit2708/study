@@ -1,19 +1,3 @@
-#### **Create virtual enviroment**
-* create the folder and open the cmd
-```python
-python -m venv virtual-name
-OR
-pip install virtualenv  # Install the package.
-virtualenv MyFirstApp
-MyFirstApp\scripts\activate
-```
-
-#### **Activated virtual enviroment**
-```pyhton
-cd virtual-name\Scripts
-d:\mohit\virtual-name\Scripts> activate
-```
-
 ### install fastapi
 * we have install two packages/library **fastapi** and **uvicorn**
 ```python

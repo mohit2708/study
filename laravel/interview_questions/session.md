@@ -13,6 +13,7 @@ use Session;
  
 // Via the global "session" helper...
 session(['key' => 'value']);
+session(['location_id' => $input['location']]);
 ```
 
 ##### Retrieving All Session Data: -
@@ -29,6 +30,19 @@ $value = $request->session()->get('key', 'default');
 $value = $request->session()->get('key', function () {
     return 'default';
 });
+
+//OR in blade file
+@if(Session::has('location_id'))
+<div class="alert alert-danger">
+  {{ Session::get('location_id')}}
+</div>
+@endif
+
+@if(session('location_id'))
+    <p>Your current location is: {{ session('location_id') }}</p>
+@else
+    <p>No location found in session.</p>
+@endif
 ```
 
 ```php
@@ -55,4 +69,9 @@ if ($request->session()->exists('users')) {
 if ($request->session()->missing('users')) {
     // ...
 }
+```
+
+### Destroy session
+```php
+session()->forget('location');
 ```

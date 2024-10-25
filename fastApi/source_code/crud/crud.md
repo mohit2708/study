@@ -1,5 +1,4 @@
 
-
 ## Database
 ### Config.py
 * **install sqlalchemy** -> sql orm hai
