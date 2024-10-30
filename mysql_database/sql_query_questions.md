@@ -232,8 +232,6 @@ mysql> DELETE FROM employee WHERE id IN ( SELECT id FROM employee GROUP BY id HA
 
 
 
-
-
 ### Add foreign key?
 ```sql
 ALTER TABLE `bookings` ADD CONSTRAINT `advance_bookings_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -549,17 +547,17 @@ select * from empdata;
 ```sql
 UPDATE empdata
 SET GENDER = CASE
-                WHEN GENDER='male' THEN 'female'
-                WHEN GENDER='female' THEN 'male'
-             END;
+    WHEN GENDER='male' THEN 'female'
+    WHEN GENDER='female' THEN 'male'
+    END;
 
 OR
              
 UPDATE EMPDATA 
 SET gender = CASE 
-                gender WHEN 'male' THEN 'female' 
-                        WHEN 'female' THEN 'male'
-                ELSE gender
+    gender WHEN 'male' THEN 'female' 
+            WHEN 'female' THEN 'male'
+    ELSE gender
 END;
 
 
