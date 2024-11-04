@@ -1,5 +1,5 @@
 ### Hash Password
-* Using bcrypt
+#### Using bcrypt
 ```python
 import bcrypt # for hashed password
 
@@ -34,7 +34,8 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db.refresh(db_user)
     return db_user
 ```
-* Using passlib
+
+#### Using passlib
 ```python
 from passlib.context import CryptContext
 

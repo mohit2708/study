@@ -1,17 +1,3 @@
-### install fastapi
-* we have install two packages/library **fastapi** and **uvicorn**
-```python
-pip install fastapi
-
-# You will also need an ASGI server, for production such as Uvicorn or Hypercorn.
-pip install "uvicorn[standard]"
-
-pip uninstall uvicorn fastapi
-pip install uvicorn fastapi
-pip install --upgrade uvicorn fastapi
-```
-
-
 ### Create a file main.py with:
 ```python
 from fastapi import FastAPI
