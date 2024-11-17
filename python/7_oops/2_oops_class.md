@@ -1,25 +1,25 @@
-|  No.  | [Class]()                              |
-| :---: | -------------------------------------- |
-|       | [What is Class?](#ques--what-is-class) |
+|  No.  | [Class]()                                                                                        |
+| :---: | ------------------------------------------------------------------------------------------------ |
+|       | [What is Class?](#ques--what-is-class)                                                           |
+|       | [Accessing the attributes value different ways?](#accessing-the-attributes-value-different-ways) |
+|       | [Change the value of the attribute?](#change-the-value-of-the-attribute)                         |
+|       | [What is __init_ _ Method?](#ques--what-is-init-method)                                        |
 
 ### Ques.  What is Class?
+* Class is a template/blueprint/prototype for creating objects.
+* class is a collection of attributes and method.
 * The class is a collection of objects.
 * It is a logical entity that has some specific attributes and methods.
 * To define a class in Python, you can use the class keyword, followed by the class name and a colon. Inside the class, an __init__ method has to be defined with def. This is the initializer that you can later use to instantiate objects. It's similar to a constructor in Java. __init__ must always be present! It takes one argument: self, which refers to the object itself. Inside the method, the pass keyword is used as of now, because Python expects you to type something there.
 
 ```python
-class ClassName:     
-<statement-1>     
-            .     
-            .      
-<statement-N>
+class Student:
+    name = "mohit"
+
+obj1 = Student()
+print(obj1.name)
 ```
 
-* **Instantiating object**
-```python
-mohit = ClassName()
-print(mohit)
-```
 * **Example 1**
 ```python
 class Person:
@@ -60,7 +60,11 @@ Skippy is 12 year(s) old.
 Filou is 8 year(s) old.
 ```
 
-* we have shown two ways of accessing the values of those attributes. One, by directly using the class name and the other by using an object(class instance). Assigning a class to a variable is known as object instantiation.
+### Accessing the attributes value different ways?
+
+* we have shown two ways of accessing the values of those attributes.
+    1. One, by directly using the **class name** and the other by 
+    2. using an **object(class instance)**. Assigning a class to a variable is known as object instantiation.
 ```python
 class Scaler:
     Course1 = 'Python'
@@ -78,6 +82,8 @@ Python
 Java
 C++
 ```
+
+### Change the value of the attribute?
 
 * If we change the value of the attribute using the class name, then it would change across all the instances of that class. While if we change the value of an attribute using class instance(object instantiation), it would only change the value of the attribute in that instance only.
 ```python
@@ -101,4 +107,19 @@ AI
 Using class instance would not reflect the changes to other instances
 Machine Learning
 Machine Learning
+```
+
+### Ques.  What is __init__ Method?
+* **__init__** is a constructor method in Python and is automatically called to allocate memory when a new object/instance is created.
+* All classes have a function called __init__() function, which is always excuted when the object is being initiated.
+* Python always calls init function whatever you create them or not.
+
+```python
+class Student:
+   def __init__(self, fname, lname):
+       self.firstname = fname
+       self.lastname = lname
+       print("My name is " + self.firstname + " " + self.lastname)
+# creating a new object
+stu1 = Student("Mohit", "Saxena") #output:- My name is Mohit Saxena
 ```

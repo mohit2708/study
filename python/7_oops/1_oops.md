@@ -2,7 +2,6 @@
 | :---: | ---------------------------------------------------------------------------------------------- |
 |       | [Object-Oriented Programming (OOPS)?](#object-oriented-programming-oops)                       |
 |       | [What is the use of self in Python?](#ques-what-is-the-use-of-self-in-python)                  |
-|       | [What is __init_ _ Method?](#ques--what-is-init-method)                                        |
 |       | [What is pass in Python?](#ques-what-is-pass-in-python)                                        |
 |       | [What is break, continue and pass in Python?](#ques-what-is-break-continue-and-pass-in-python) |
 |       | [What is the super() Function?](#ques-what-is-the-super-function)                              |
@@ -12,7 +11,8 @@
 |       | [What is Concrete Method?](#ques-what-is-concrete-method)                                      |
 
 ### Object-Oriented Programming (OOPS)
-Main Concepts of Object-Oriented Programming (OOPs) 
+* Object-oriented programming (OOP) is a programming style that organizes code around objects, rather than functions and logic.
+* Main Concepts of Object-Oriented Programming (OOPs) 
 * [Class](#ques-What-is-Class)
 * [Objects](#ques-What-is-Object)
 * Polymorphism
@@ -22,21 +22,10 @@ Main Concepts of Object-Oriented Programming (OOPs)
   
 
 ### Ques. What is the use of self in Python?
+* The Self parameter is a reference to the current instance of the class, and is used to access varibales that belongs to the class.
 * Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python. It binds the attributes with the given arguments. self is used in different places and often thought to be a keyword. But unlike in C++, self is not a keyword in Python.
 
-### Ques.  What is __init__ Method?
-**__init__** is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created. All classes have a __init__ method associated with them. It helps in distinguishing methods and attributes of a class from local variables.
 
-```python
-class Student:
-   def __init__(self, fname, lname, age, section):
-       self.firstname = fname
-       self.lastname = lname
-       self.age = age
-       self.section = section
-# creating a new object
-stu1 = Student("Sara", "Ansh", 22, "A2")
-```
 
 ### Ques. What is pass in Python?
 * The pass keyword represents a null operation in Python.
@@ -70,6 +59,7 @@ print(current)    # output => 0
 
 
 ### Ques. What is the super() Function?
+* Super() method is used to access method of the parant class.
 * The **super** function returns a temporary object of the parent class that allows us to call a parent class method inside a child class method.
 * **Benefits** of using the super() function.
   * We are not required to remember or specify the parent class name to access its methods.

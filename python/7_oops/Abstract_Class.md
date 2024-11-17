@@ -29,17 +29,25 @@ class <Abstract_Class_Name>(ABC):
 from abc import ABC, abstractmethod
 class Father(ABC):
     @abstractmethod
-    def disp(self):
+    def disp(self,a,b):
         pass
 
     def show(self):
         print("concreate class")
 
 class child(Father):
-    def disp(self):
-        print("child class")
+    def disp(self,a,b):
+        print(a+b)
+        print("defining abstrat class")
+
+class child2(Father):
+    def disp(self,a,b):
+        print(a*b)
         print("defining abstrat class")
 c = child()
-c.disp()
+c.disp(10,50)
 c.show()
+
+c2 = child2()
+c2.disp(10,30)
 ```

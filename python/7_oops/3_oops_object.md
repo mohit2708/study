@@ -13,7 +13,7 @@ class car:
     a = "mohit"
     def __init__(self,modelname, year):  
         self.modelname = modelname  
-        self.year = year  
+        self.year = year
     def display(self):  
         print(self.modelname,self.year)  
   
@@ -53,22 +53,28 @@ After modifying the object properties
 
 
 ### Ques. Delete the Object?
-We can delete the properties of the object or object itself by using the del keyword. Consider the following example.
+We can delete the properties of the object or object itself by using the del keyword.
+* Deleting the property of object
 ```python
-class Employee:  
-  id = 10  
-  name = "John"  
-  def display(self):  
-    print("ID: %d \nName: %s" % (self.id, self.name))  
-      # Creating a emp instance of Employee class  
-      emp = Employee()  
-  
-      # Deleting the property of object  
-      del emp.id  
+class Student:
+    def __init__(self,name):
+        self.name = name
 
-      # Deleting the object itself  
-      del emp  
-      emp.display()
+obj = Student("mohit")
+print(obj.__dict__)   # Output:- {'name': 'mohit'}
+del obj.name
+print(obj.__dict__)   # Output:- {}
+```
+* Deleting the object itself
+```python
+class Student:
+    def __init__(self,name):
+        self.name = name
+
+obj = Student("mohit")
+print(obj.__dict__)   # Output:- {'name': 'mohit'}
+del obj
+print(obj.__dict__)   # Output:- ERROR!
 ```
 
 ### Ques. Counting the Number of objects of a Class?
@@ -86,4 +92,59 @@ e2 = Employee()
 print("The number of Employee:", Employee.count)
 
 Output:- The number of employee: 3
+```
+
+### Ques. other example:
+```python
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+    
+    def get_avg(self):
+        sum = 0
+        lgh = len(self.marks) 
+        for val in self.marks:
+            sum = sum+val
+            avg = sum/lgh
+        print("my name is",self.name,"and my marks is", avg)
+#  + self.name + " and my marks is " + avg          
+# creating a new object
+stu1 = Student("Mohit", [97,98,96])
+stu1.get_avg()
+
+stu1.name = "saxena"
+stu1.get_avg()
+
+Output:-
+my name is Mohit and my marks is 97.0
+my name is saxena and my marks is 97.0
+```
+### Ques. 
+
+```python
+class Account:
+    def __init__(self, acc_no, bal):
+        self.acc_no = acc_no
+        self.bal = bal
+    
+    def debit(self, amount):
+        self.bal -= amount
+        print("debited amount is ", amount, "my bal is", self.finalAmount())
+    
+    def credit(self,amount):
+        self.bal += amount
+        print("credit amount is ", amount, "my bal is", self.finalAmount())
+        
+    def finalAmount(self):
+        return self.bal
+    
+# creating a new object
+stu1 = Account(564654,10000)
+stu1.debit(900)
+stu1.credit(800)
+
+Output:-
+debited amount is  900 my bal is 9100
+credit amount is  800 my bal is 9900
 ```

@@ -1,13 +1,12 @@
 ### Table of Contents
 
-|  No.  | Questions                                                                                           |
-| :---: | --------------------------------------------------------------------------------------------------- |
-|       | [What is database?](#ques-What-is-database)                                                         |
-|       | [what is sql?](#ques-What-is-Sql)                                                                   |
-|       | [What Is DBMS?](#Ques-What-is-DBMS)                                                                 |
-|       | [What Is RDBMS?](#Ques-What-is-RDBMS)                                                               |
-|       | [What Is RDBMS?](#Ques-What-is-RDBMS)                                                               |
-|       | [Difference between DBMS & RDBMS?](#Ques-Difference-between-DBMS-&-RDBMS)                           |
+|  No.  | Questions                                                                |
+| :---: | ------------------------------------------------------------------------ |
+|       | [What is database?](#ques-What-is-database)                              |
+|       | [what is sql?](#ques-what-is-sql)                                        |
+|       | [What Is DBMS?](#Ques-What-is-DBMS)                                      |
+|       | [What Is RDBMS?](#what-is-rdbms)                                         |
+|       | [Difference between DBMS & RDBMS?](#ques-difference-between-dbms--rdbms) |
 
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -17,7 +16,7 @@
 * This is also known as structured form of data which can be accessed in many ways.
 **[⬆ Back to Top](#table-of-contents)**
 
-### **Ques. What is Sql?**
+### Ques. What is Sql?
 * SQL is stands for structure query language. 
 * It is a database language used for database creation, deletion, fetching rows and modifying rows etc.
 * It is a kind of ANSI standard language, used with all database. 

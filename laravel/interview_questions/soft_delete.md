@@ -61,6 +61,20 @@ OR
 $post = Post::withTrashed()->find($id);
 $post->restore();
 ```
+```php
+$trash_user = User::withTrashed()
+    ->where('email', 'asf@safg.vasF')
+    ->where('role_id', '4')
+    ->first();
+
+if ($trash_user) {
+    $trash_user->restore();
+} else {
+    // Optionally handle the case where the user isn't found
+    echo "User not found or not trashed.";
+}
+
+```
 
 
 

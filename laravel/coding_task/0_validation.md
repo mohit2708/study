@@ -3,6 +3,7 @@
 $validator = Validator::make($credentials, [
     'first_name'    => 'required|string|max:255',
     'email'         => 'required|string|email|max:255|unique:users',
+    'phone_number'  => 'required|unique:users,phone',   # phone number already exist.
     'password'      => 'required|string|min:6|max:50'
     'password' => [
                 'required',

@@ -25,11 +25,13 @@ The architect is John Doe
 ```
 
 #### Types Of Inheritance?
-1. [Single inheritance](#Single-Inheritance)
-2. Multiple Inheritance
-3. Multilevel inheritance
-4. Hierarchical Inheritance
-5. Hybrid Inheritance
+- [**Ques What is Inheritance?**](#ques-what-is-inheritance)
+  - [Types Of Inheritance?](#types-of-inheritance)
+    - [Single Inheritance:-](#single-inheritance-)
+    - [Multiple Inheritance:-](#multiple-inheritance-)
+    - [Multi-Level Inheritance:-](#multi-level-inheritance-)
+    - [Hierarchical Inheritance:-](#hierarchical-inheritance-)
+    - [Hybrid Inheritance:-](#hybrid-inheritance-)
 ##### Single Inheritance:-
 * In single inheritance, a child class inherits from a single-parent class. Here is one child class and one parent class.
 ```python

@@ -3,11 +3,11 @@
 
 |  No.  | Questions                                                                                                                        |
 | :---: | -------------------------------------------------------------------------------------------------------------------------------- |
-|       | [Python Strings](#ques-python-strings)                                                                                                |
-|       | [Assign String to a Variable](#ques-assign-string-to-a-variable)                                                                      |
-|       | [Multiline Strings](#ques-multiline-strings)                                                                                          |
-|       | [Check String](#ques-Check-String)                                                                                                    |
-|       | [Slicing Strings](#ques-Slicing-Strings)                                                                                              |
+|       | [Python Strings](#ques-python-strings)                                                                                           |
+|       | [Assign String to a Variable](#ques-assign-string-to-a-variable)                                                                 |
+|       | [Multiline Strings](#ques-multiline-strings)                                                                                     |
+|       | [Check String](#ques-Check-String)                                                                                               |
+|       | [Slicing Strings](#ques-Slicing-Strings)                                                                                         |
 |       | [Modify Strings](#Modify-Strings)                                                                                                |
 |       | [String Concatenation](#String-Concatenation)                                                                                    |
 |       | [Format - Strings](#Format-Strings)                                                                                              |
@@ -465,6 +465,15 @@ t
 txt = "Hello World"[::-1]
 print(txt)
 ```
+```python
+str = input("enter the string: ") # sky is blue
+split = str.split()
+split = split[::-1]
+finalstr = " ".join(split)
+print(finalstr)
+
+Output:- blue is sky
+```
 * using reversed() function
 ```python
 string = "Hello, World!"
@@ -472,6 +481,7 @@ print("".join(reversed(string)))
 
 Output:- !dlroW ,olleH
 ```
+
 * Using Function
 ```python
 def my_function(x):
