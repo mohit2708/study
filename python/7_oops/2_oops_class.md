@@ -11,6 +11,7 @@
 * The class is a collection of objects.
 * It is a logical entity that has some specific attributes and methods.
 * To define a class in Python, you can use the class keyword, followed by the class name and a colon. Inside the class, an __init__ method has to be defined with def. This is the initializer that you can later use to instantiate objects. It's similar to a constructor in Java. __init__ must always be present! It takes one argument: self, which refers to the object itself. Inside the method, the pass keyword is used as of now, because Python expects you to type something there.
+* **Example:-** Email is a class and headding, particiant, attachment is object
 
 ```python
 class Student:

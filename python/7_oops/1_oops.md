@@ -23,8 +23,32 @@
 
 ### Ques. What is the use of self in Python?
 * The Self parameter is a reference to the current instance of the class, and is used to access varibales that belongs to the class.
-* Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python. It binds the attributes with the given arguments. self is used in different places and often thought to be a keyword. But unlike in C++, self is not a keyword in Python.
+* Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python.
+```python
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
 
+  def myfunc(self):
+    print("Hello my name is " + self.name)
+
+p1 = Person("Mohit", 36)
+p1.myfunc()     # Output:- Hello my name is Mohit
+```
+* We can give any name in place of self but first parameter is compulsory.
+```python
+class Person:
+  def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+  def myfunc(abc):
+    print("Hello my name is " + abc.name)
+
+p1 = Person("John", 36)
+p1.myfunc()
+```
 
 
 ### Ques. What is pass in Python?

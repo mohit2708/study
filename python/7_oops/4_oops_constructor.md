@@ -1,14 +1,31 @@
 ### **Ques. What is a constructor in Python?**
 * Constructors are special function/method which is automatically called when an object is created.
+* and first parameter is self always.
 * In Python the __init__() method is called the constructor and is always called when an object is created.
 * A constructor is called only once at the time of creation an object.
 * if two object are created for a class, the constructer will be called once for each instance.
+* jab hum koi __init__ function pass nahi karte the class ke ander tab defalt constructor call hota hai(python ka inbuild constructor).
 * **Types of Constructors:-**
   * Default Constructor
   * Non-parametrized constructor
   * Parameterized constructor
 
 **Types of constructors:**
+
+#### Default Constructor:- 
+* The default constructor is not present in the source py file. 
+```python
+class Employee:
+
+    def display(self):
+        print('Inside Display')
+
+emp = Employee()
+emp.display()
+
+Output:-Inside Display
+```
+
 1. **default constructor/Non-Parameterized Constructor:** The default constructor is a simple constructor which doesn’t accept any arguments. Its definition has only one argument which is a reference to the instance being constructed.
 ```python
 class Shot:
@@ -29,6 +46,29 @@ Output:-
 This is a default constructor
 Constructor in Python
 ```
+
+* A constructor without any arguments is called a non-parameterized constructor. This type of constructor is used to initialize each object with default values.
+```python
+class Company:
+
+    # no-argument constructor
+    def __init__(self):
+        self.name = "Mohit"
+        self.address = "Greater Noida"
+
+    # a method for printing data members
+    def show(self):
+        print('Name:', self.name, 'Address:', self.address)
+
+# creating object of the class
+cmp = Company()
+
+# calling the instance method using the object
+cmp.show()
+
+Output:- Name: Mohit Address: Greater Noida
+```
+
 2. **parameterized constructor:** constructor with parameters is known as parameterized constructor. The parameterized constructor takes its first argument as a reference to the instance being constructed known as self and the rest of the arguments are provided by the programmer.
 ```python
 class Triangle:
@@ -50,17 +90,7 @@ print(obj.height)       # 14
 obj.areaOfTriangle()    # Area of triangle: 35.0
 ```
 
-d. Why used constructor?
-e. Advantage of constructor
-
-
-### Ques. What is Constructor?
-* Syntax of a constructor
-```python
-def __init__(self):
-    # body of the constructor
-```
-* Example:-
+* Example2:-
 ```python
 class Student:
     # constructor
@@ -85,45 +115,6 @@ All variables initialized
 Hello, my name is Emma
 ```
 
-
-#### Default Constructor:- 
-* The default constructor is not present in the source py file. 
-```python
-class Employee:
-
-    def display(self):
-        print('Inside Display')
-
-emp = Employee()
-emp.display()
-
-Output:-Inside Display
-```
-
-#### Non-parametrized constructor
-* A constructor without any arguments is called a non-parameterized constructor. This type of constructor is used to initialize each object with default values.
-```python
-class Company:
-
-    # no-argument constructor
-    def __init__(self):
-        self.name = "Mohit"
-        self.address = "Greater Noida"
-
-    # a method for printing data members
-    def show(self):
-        print('Name:', self.name, 'Address:', self.address)
-
-# creating object of the class
-cmp = Company()
-
-# calling the instance method using the object
-cmp.show()
-
-Output:- Name: Mohit Address: Greater Noida
-```
-
-#### Parameterized Constructor:-
 * A constructor with defined parameters or arguments is called a parameterized constructor. We can pass different values to each object at the time of creation using a parameterized constructor.
 * The first parameter to constructor is self that is a reference to the being constructed, and the rest of the arguments are provided by the programmer. 
 ```python
@@ -149,6 +140,11 @@ Output:-
 Emma 23 7500
 Kelly 25 8500
 ```
+
+d. Why used constructor?
+e. Advantage of constructor
+
+
 
 ### Ques. Constructor With Default Values?
 * Python allows us to define a constructor with default values. The default value will be used if we do not pass arguments to the constructor at the time of object creation.
