@@ -1,7 +1,17 @@
+|  No.  | [js Validation]()                                         |
+| :---: | --------------------------------------------------------- |
+|       | [validation only number](#validation-only-number)         |
+|       | [chracter limit in text box](#chracter-limit-in-text-box) |
+
+|  No.  | [Questions]()                                                                                     |
+| :---: | ------------------------------------------------------------------------------------------------- |
+|       | [hide the text field according to select option](#hide-the-text-field-according-to-select-option) |
+|       | [Get width and height of screen size?](#get-width-and-height-of-screen-size)                      |
 
 ## Common Validations:
 
-### Input only Number in text field you can add "only_number" class in your text field.
+### validation only number.
+* Input only Number in text field you can add "only_number" class in your text field.
 ```javascript
 $(function () {
     $(".only_number").on("input", function (e) {
@@ -14,7 +24,18 @@ $(function () {
 });
 ```
 
-### hide and text field according to select option
+### chracter limit in text box
+```javascript
+$('.char_limit').keyup(function() {
+    var len = this.value.length;
+    if (len >= 20) {
+        this.value = this.value.substring(0, 20);
+    }
+    $('#charLeft').text(20 - len);
+});
+```
+
+### hide the text field according to select option
 ```html
 <select class="form-select" aria-label="Default select example" id="duration" name="duration">
     <option value="">-- Select Duration --</option>
@@ -44,16 +65,7 @@ $(function() {
 ```
 
 
-### chracter limit in text box
-```javascript
-$('.char_limit').keyup(function() {
-    var len = this.value.length;
-    if (len >= 20) {
-        this.value = this.value.substring(0, 20);
-    }
-    $('#charLeft').text(20 - len);
-});
-```
+
 
 ### Get the data by single day(Today).
 ```javascript
@@ -200,4 +212,21 @@ function convertToAMPM(time) {
 
     return formattedTime;
 }
+```
+
+### Get width and height of screen size
+```javascript
+function getScreenSize() {
+    var screenSize = {
+        width: screen.width,
+        height: screen.height
+    };
+    return screenSize;
+}
+
+window.onload = function() {
+    var screenSize = getScreenSize();
+    alert("Screen Width: " + screenSize.width);
+    alert("Screen Height: " + screenSize.height);
+};
 ```

@@ -117,7 +117,10 @@ Bye
 * sudo systemctl restart apache2
 * sudo systemctl status apache2
 
-
+### How to check which server installed
+```aws
+netstat -tulnp
+```
 
 
 ### install unzip 

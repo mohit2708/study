@@ -13,8 +13,8 @@
 |       | [Create the routes directory](../1.7_routes.md)                                                                                |
 
 
-|  No.  | Crud Role Steps                                                                   |
-| :---: | --------------------------------------------------------------------------------- |
+|  No.  | Crud Role Steps                                                                     |
+| :---: | ----------------------------------------------------------------------------------- |
 |       | [Get Role list from the database](./1_role/list.md#get-role-list-from-the-database) |
 |       | [Get role data by ID](./1_role/list.md#get-role-data-by-id)                         |
 |       | [Role Create](./1_role/add.md#role-create)                                          |
@@ -22,8 +22,8 @@
 |       | [Role delete](./1_role/delete.md#delete-role-data-by-id)                            |
 
 
-|  No.  | Login signup Steps                                                                                                          |
-| :---: | --------------------------------------------------------------------------------------------------------------------------- |
+|  No.  | Login signup Steps                                                                                                            |
+| :---: | ----------------------------------------------------------------------------------------------------------------------------- |
 |       | [Create schmea for registraion](./2_login_signup/registration.md#create-scheme)                                               |
 |       | [Registration logic](./2_login_signup/registration.md#registration-function)                                                  |
 |       | [Registration logic with hash password](./2_login_signup/registration.md#registration-with-password)                          |
@@ -32,6 +32,19 @@
 
 |  No.  | Login with jwt Steps |
 | :---: | -------------------- |
+
+
+|  No.  | user Steps                                                                             |
+| :---: | -------------------------------------------------------------------------------------- |
+|       | [User list with particular data](./4_user/user_list.md#user-list-with-particular-data) |
+|       | [User list with full data](./4_user/user_list.md#user-list-with-full-data)             |
+
+|  No.  | image Upload                                                                                                               |
+| :---: | -------------------------------------------------------------------------------------------------------------------------- |
+|       | [install library](./4_user/image_upload.md#install-libraray)                                                               |
+|       | [image upload in folder intial phase](./4_user/image_upload.md#image-upload-in-folder-intial-phase)                        |
+|       | [image upload in databse and firstname, lastname](./4_user/image_upload.md#image-upload-in-databse-and-firstname-lastname) |
+|       | [first name and other data through request](./4_user/image_upload.md#first-name-and-other-data-through-request)            |
 
 
 
