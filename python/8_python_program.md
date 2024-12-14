@@ -562,7 +562,7 @@ Enter a string: Mohit saxena
 Number of vowels  4
 ```
 
-### **Ques. To identify if the Character is vowel or consonant?**
+### Ques. To identify if the Character is vowel or consonant?
 ```python
 def vowel_or_consonant(string):
     vowel = 'aeiouAEIOU'
@@ -582,7 +582,32 @@ if l.lower() in ('a', 'e', 'i', 'o', 'u'):
 else:
     print("Consonant")
 ```
+```python
+latter = input("Enter any latter:- ").lower()
+vowels = ['a','e','i','o','u']
+if latter in vowels:
+    print(f"{latter} is a vowel")
+else:
+    print(latter,"latter is not vowel")
+```
 
+### Ques. To check number is digit or not?
+```python
+number = input("Enter any number:- ")
+if number.isdigit():
+    print(f'{number} is digit')
+else:
+    print(f'{number} is not digit')
+```
+
+### QUes. Check leep year or not
+```python
+year = int(input("Enter any year:- "))
+if (year%4 == 0):
+    print(f'{year} is a leep year')
+else:
+    print(f'{year} is not a leep year')
+```
 
 
 
@@ -792,4 +817,34 @@ print(sum(arr))
 '''
 Output:-
 9
+```
+
+### Find Largest Element in an Array?
+```python
+arra = [10, 324, 45, 90, 9808]
+n = len(arra)
+max = arra[0]
+for i in range(1, n):
+    if arra[i] > max:
+        max = arra[i]
+print(max)
+
+Output:- 9808
+```
+
+* Using inbuild function
+```python
+arra = [10, 324, 45, 90, 9808]
+ans = max(arra)
+print(ans)
+Output:- 9808
+```
+
+* Using sort function
+```python
+arra = [10, 324, 45, 90, 9808]
+n = len(arra)
+arra.sort()
+print(arra[-1]) # 9808
+print(arr[n-1]) # 9808
 ```

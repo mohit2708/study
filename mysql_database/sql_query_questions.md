@@ -18,7 +18,9 @@
 |       | [Highest Salary Department wise?](#highest-salary-department-wise)                                                                         |
 |       | [Highest Salary Department wise with name?](#ques-find-the-highest-salary-of-each-department-with-name)                                    |
 |       | [How to find Nth highest salary from a table?](#ques-how-to-find-nth-highest-salary-from-a-table)                                          |
+|       | [Ques. Top 5 Salery?](#ques-top-5-salery)                                                                                                  |
 |       | [Replace a Column Values from 'male' to 'female' and 'female' to 'male'?](#replace-a-column-values-from-male-to-female-and-female-to-male) |
+|       | [Find Names of students whose age is greater than 21?](#find-names-of-students-whose-age-is-greater-than-21)                               |
 
 
 
@@ -439,6 +441,9 @@ SELECT salary FROM employee ORDER BY salary DESC LIMIT 4
 | BLAZE    | 2750.00 |
 +----------+---------+
 ```
+```sql
+SELECT SAL FROM(SELECT DISTINCT SAL FROM EMP WHERE SAL IS NOT NULL  ORDER BY SAL DESC)WHERE ROWNUM <6; (in oracle)
+```
 * Using sub Query
 ```sql
 
@@ -575,4 +580,9 @@ END;
 | RAKESH   | male   | MARKETING |  9645956441 | BOKARO    |
 | MOHINI   | female | SALES     |  9147844694 | Delhi     |
 +----------+--------+-----------+-------------+-----------+
+```
+
+### Find Names of students whose age is greater than 21?
+```sql
+Select field_name1, field_name2 from table_name where student_age < 21;
 ```

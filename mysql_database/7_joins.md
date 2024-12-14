@@ -61,7 +61,7 @@ Orders Table
 | 103 | 2008-05-20 00:00:00 |           4 |   2060 |
 +-----+---------------------+-------------+--------+
 
-SQL> SELECT  ID, NAME, AMOUNT, DATEFROM CUSTOMERS LEFT JOIN ORDERS
+SQL> SELECT  ID, NAME, AMOUNT, DATE FROM CUSTOMERS LEFT JOIN ORDERS
    ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
 
 Result:-

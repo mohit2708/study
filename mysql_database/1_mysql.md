@@ -22,23 +22,35 @@
 * It is a kind of ANSI standard language, used with all database. 
 
 **[⬆ Back to Top](#table-of-contents)**
-### **Ques. What Is DBMS?**
+### Ques. What Is DBMS?
 * A database management system is program that control creation, maintenance and use of a database.
 * DBMS can be termed as File Manager that manages data in a database rather than saving it in ﬁle systems.
 
 **[⬆ Back to Top](#table-of-contents)**
-### **What is RDBMS?**
+### What is RDBMS?
 RDBMS stands for Relational Database Management System. RDBMS store the data into the collection of tables, which is related by common fields between the columns of the table. It also provides relational operators to manipulate the data stored into the tables.
 
 
 **[⬆ Back to Top](#table-of-contents)**
-### **Ques. Difference between DBMS & RDBMS?**
+### Ques. Difference between DBMS & RDBMS?
 | DBMS                                          | RDBMS                                           |
 | :-------------------------------------------- | :---------------------------------------------- |
 | DBMS applications store data as file          | RDBMS applications store data in a tabular form |
 | Normalization is not present in DBMS          | Normalization is present in RDBMS               |
 | DBMS does not support distributed data hnbase | RDBMS support distributed database              |
 
+
+### Ques. Difference between **CHAR** and **VARCHAR** data types?
+* **CHAR data** type is used to store **fixed-length** character strings. When VARCHAR data type is used to store **variable-length** character strings.
+* char char occupies all the space and if space is remaining, then it fill all the blank space with "space". But in case of varchar, It takes only the required length & release remaining.
+```sql
+Char -> 10      | R | A | M | space | space | sapce | space | space | space | space |
+Varchar -> 10   | R | A | M |   |   |   |   |   |   |   |
+| R | A | M |
+```
+* varchar is better than Char in term of space. 
+* char perform is better than varchar.
+* Char max 256 characters, varchar 65535 characters.
 
 ### What is MySQL?Explain the differences between **SQL** and **MySQL**?In which language has MySQL been written?How to create a database in MySQL?Difference between **CHAR** and **VARCHAR** data types.What is the MySQL server’s default port?  ->3306
 
