@@ -7,9 +7,6 @@
 |       | [Create database?](#create-database)                                                                                                       |
 |       | [Rename database?](#rename-database)                                                                                                       |
 |       | [Delete database?](#delete-database)                                                                                                       |
-|       | [Table Create?](#create-table)                                                                                                             |
-|       | [Drop Table?](#DROP-TABLE)                                                                                                                 |
-|       | [Rename Table?](#RENAME-TABLE)                                                                                                             |
 |       | [How to copy a table in another table?](#ques-how-to-copy-a-table-in-another-table)                                                        |
 |       | [How to copy structure of a table but not data?](#ques-how-to-copy-structure-of-a-table-but-not-data)                                      |
 |       | [Delete Table?](#DELETE-TABLE)                                                                                                             |
@@ -23,6 +20,21 @@
 |       | [Find Names of students whose age is greater than 21?](#find-names-of-students-whose-age-is-greater-than-21)                               |
 
 
+|  No.  | [Database](#database)               |
+| :---: | ----------------------------------- |
+|       | [Show Database](#show-database)     |
+|       | [Create Databse](#create-databse)   |
+|       | [Rename Database](#rename-database) |
+|       | [Drop Database](#drop-database)     |
+|       | [Select Database](#select-database) |
+
+|  No.  | [Tables](#tables)                                    |
+| :---: | ---------------------------------------------------- |
+|       | [show Tables](#show-tables)                          |
+|       | [Create Tables](#create-table)                       |
+|       | [Rename Tables](#rename-table)                       |
+|       | [Delete table](#delete-table)                        |
+|       | [See the table structure](#see-the-table-structure-) |
 
 ### Demo data for execute the query
 ```sql
@@ -77,7 +89,7 @@ VALUES
 
 
 
-### **Ques. How to create a new MySQL user account in MySQL?**
+### Ques. How to create a new MySQL user account in MySQL?
 ```sql
 CREATE USER 'testuser' IDENTIFIED BY 'sample password';
 ```
@@ -121,21 +133,86 @@ ALTER USER 'testuser'@'localhost' IDENTIFIED BY 'new_password';
 select version()
 ```
 
-### **Create database**
+## Database
+
+### Show Database
 ```sql
-create database <databse_name>
+SHOW DATABASES;
 ```
 
-### **Rename database**
+### Create Databse
 ```sql
+CREATE DATABASE databasename;
+```
+
+### Rename Database
+```sql
+RENAME DATABASE old_database_name TO new_database_name
+(OR)
 ALTER DATABASE old_datbase MODIFY = new_database
 ```
 
-### **Delete database**
+### Drop Database
 ```sql
-drop database database_name;
+DROP DATABASE databasename;
 ```
 
+### Select Database
+```sql
+USE YourDatabaseName;
+```
+
+
+## TABLE Query
+
+### Show tables;
+```sql
+SHOW TABLES;
++-----------------------+
+| Tables_in_employee123 |
++-----------------------+
+| employee_table        |
++-----------------------+
+```
+
+### Create table
+```sql
+use database_name;
+```
+```sql
+CREATE TABLE table_name(  
+    id int NOT NULL AUTO_INCREMENT,  
+    name varchar(45) NOT NULL,  
+    occupation varchar(35) NOT NULL,  
+    age int NOT NULL,  
+    PRIMARY KEY (id) 
+);
+```
+
+### Rename Table
+```sql
+RENAME old_table _name To new_table_name;
+OR
+ALTER TABLE old_table_name RENAME TO new_table_name;
+```
+
+### Delete/Drop table
+```sql
+DROP TABLE table_name;
+```
+
+### See the table structure:-
+```sql
+DESCRIBE employee_table;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(45) | NO   |     | NULL    |                |
+| occupation | varchar(35) | NO   |     | NULL    |                |
+| age        | int(11)     | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+```
 
 ### Create Table
 * SQL CREATE TABLE statement is used to create table in a database.
@@ -177,19 +254,6 @@ VALUES
 ('value1','value2','value3',...);
 ```
 
-### DROP TABLE?
-* A SQL DROP TABLE statement is used to delete a table definition and all data from a table.
-```sql
-DROP TABLE "table_name";
-```
-
-### RENAME TABLE?
-* We want to change the name of the table in the SQL database.
-```sql
-RENAME old_table _name To new_table_name;
-OR
-ALTER TABLE old_table_name RENAME TO new_table_name;
-```
 
 ### Ques. How to copy a table in another table?
 ```sql

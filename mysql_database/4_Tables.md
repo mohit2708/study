@@ -14,14 +14,15 @@
 |       | [Difference b/w DROP and TRUNCATE statements?](#ques-difference-bw-drop-and-truncate-statements) |
 
 
-
+### Back to Top
 
 ### Types of SQL Commands/subsets of SQL?
 * DDL (Data Definition Language):
-  * **CREATE:** Creates a new table or database.
-  * **ALTER:** Modifies an existing database object.
-  * **DROP:** Deletes an entire table, database, or other objects.
-  * **TRUNCATE:** Removes all records from a table, deleting the space allocated for the records.
+  * **[CREATE:](#create-table)** Creates a new table or database.
+  * **[ALTER](#alter-table):** Modifies an existing database object.
+  * **[DROP](#drop-column-in-table):** Deletes an entire table, database, or other objects.
+  * **[TRUNCATE](#truncate):** Removes all records from a table, deleting the space allocated for the records.
+
 * DML (Data Manipulation Language):
   * **SELECT:** Retrieves data from the database.
   * **INSERT:** Adds new data to a table.
@@ -70,6 +71,8 @@ DESCRIBE employee_table;
 | age        | int(11)     | NO   |     | NULL    |                |
 +------------+-------------+------+-----+---------+----------------+
 ```
+
+[↑ Back to top](#back-to-top)
 
 ### ALTER Table
 ```sql
