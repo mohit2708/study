@@ -1,18 +1,20 @@
-
-|  No.  | Tables                                                                                           |
+|  No.  | [Tables](#tables)                                                                                |
 | :---: | ------------------------------------------------------------------------------------------------ |
 |       | [Types of SQL Commands/subsets of SQL?](#types-of-sql-commandssubsets-of-sql)                    |
-|       | [Create TABLE?](#create-table)                                                                   |
+|       | [show Tables](#show-tables)                                                                      |
+|       | [Create Tables](#create-table)                                                                   |
+|       | [Insert table](#insert-table)                                                                    |
+|       | [Rename Tables](#rename-table)                                                                   |
+|       | [RENAME column in table?](#rename-column-in-table)                                               |
+|       | [Delete table](#deletedrop-table)                                                                |
+|       | [DROP column in table](#drop-column-in-table)                                                    |
+|       | [Delete row from the database](#delete-row-from-the-database)                                    |
+|       | [TRUNCATE table?](#truncate)                                                                     |
+|       | [See the table structure](#see-the-table-structure-)                                             |
 |       | [ALTER Table?](#alter-table)                                                                     |
 |       | [Change Datatype from alter cmd?](#change-datatype-from-alter-cmd)                               |
-|       | [DROP column in table?](#drop-column-in-table)                                                   |
-|       | [TRUNCATE table?](#truncate)                                                                     |
-|       | [RENAME column in table?](#rename-column-in-table)                                               |
-|       | [RENAME table name?](#rename-table-name)                                                         |
-|       | [What is delete?](#delete)                                                                       |
 |       | [Difference between Delete, Truncate & Drop?](#ques-difference-between-delete-truncate--drop)    |
 |       | [Difference b/w DROP and TRUNCATE statements?](#ques-difference-bw-drop-and-truncate-statements) |
-
 
 ### Back to Top
 
@@ -26,7 +28,7 @@
 * DML (Data Manipulation Language):
   * **SELECT:** Retrieves data from the database.
   * **INSERT:** Adds new data to a table.
-  * **UPDATE:** Modifies existing data within a table.
+  * **[UPDATE](#update):** Modifies existing data within a table.
   * **DELETE:** Removes data from a table.
 * DCL (Data Control Language):
   * **GRANT:** Gives users access privileges to the database.
@@ -37,21 +39,12 @@
   * **SAVEPOINT:** Sets a savepoint within a transaction.
   * **SET TRANSACTION:** Places a name on a transaction.
 
-### CREATE TABLE
+
+
+
+### Show tables;
 ```sql
-use database_name;
-```
-```sql
-CREATE TABLE employee_table(  
-    id int NOT NULL AUTO_INCREMENT,  
-    name varchar(45) NOT NULL,  
-    occupation varchar(35) NOT NULL,  
-    age int NOT NULL,  
-    PRIMARY KEY (id)  
-);  
-```
-```sql
-# show tables
+SHOW TABLES;
 +-----------------------+
 | Tables_in_employee123 |
 +-----------------------+
@@ -59,6 +52,111 @@ CREATE TABLE employee_table(
 +-----------------------+
 ```
 
+### Create table
+```sql
+use database_name;
+```
+```sql
+CREATE TABLE table_name(  
+    id int NOT NULL AUTO_INCREMENT,  
+    name varchar(45) NOT NULL,  
+    occupation varchar(35) NOT NULL,  
+    age int NOT NULL,  
+    PRIMARY KEY (id) 
+);
+```
+```sql
+CREATE TABLE STUDENTS(
+id INT NOT NULL,  
+first_name VARCHAR (20) NOT NULL,
+age INT NOT NULL,  
+address CHAR (25),  
+PRIMARY KEY (id)  
+);  
+```
+```sql
+CREATE TABLE table_name
+(
+id int AUTO_INCREMENT primary key, 
+column_name1 data_type(size),
+column_name2 data_type(size),
+column_name3 data_type(size),
+..
+);
+```
+* Create table with **primary key**
+```sql
+CREATE TABLE Employee(  
+EmployeeID NOT NULL,  
+FirstName varchar(255) NOT NULL,  
+LastName varchar(255),  
+City varchar(255),  
+PRIMARY KEY (EmployeeID)  
+); 
+```
+
+### Insert table
+```sql
+INSERT INTO table_name
+(column1,column2,column3,...)
+VALUES
+('value1','value2','value3',...);
+```
+
+### Rename Table
+```sql
+RENAME old_table_name To new_table_name;
+OR
+RENAME table old_table_name TO new_table_name;
+OR
+ALTER TABLE old_table_name RENAME TO new_table_name;
+```
+
+### RENAME column in table
+* syntex
+```sql
+ALTER TABLE table_name CHANGE COLUMN old_name new_name column_definition [ FIRST | AFTER column_name ] 
+```
+```sql
+ALTER TABLE employee_table CHANGE COLUMN name first_name varchar(20) NOT NULL;
+```
+
+### Delete/Drop table
+```sql
+DROP TABLE table_name;
+```
+
+### DROP column in table
+```sql
+ALTER TABLE employee_table DROP COLUMN unique_id4;
+```
+
+### Delete row from the database
+* DELETE is a DML(Data Manipulation Language) command and is used when we specify the row (tuple) that we want to remove or delete from the table or relation. The DELETE command can contain a WHERE clause.
+```sql
+delete from table_name where ID=01;
+delete from table_name where ID IN(2,6);
+```
+
+### Truncate
+* A truncate SQL statement is used to remove all rows (complete data) from a table.
+* TRUNCATE is a DDL(Data Definition Language) command and is used to delete all the rows or tuples from a table. Unlike the DELETE command, the TRUNCATE command does not contain a WHERE clause.
+```sql
+TRUNCATE TABLE table_name;
+```
+
+### See the table structure:-
+```sql
+DESCRIBE employee_table;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(45) | NO   |     | NULL    |                |
+| occupation | varchar(35) | NO   |     | NULL    |                |
+| age        | int(11)     | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+```
 #### See the table structure:-
 ```sql
 DESCRIBE employee_table;
@@ -78,7 +176,7 @@ DESCRIBE employee_table;
 ```sql
 # syntex
 ALTER TABLE table_name  
-ADD new_column_name column_definition  
+ADD new_column_name datatype  
 [ FIRST | AFTER column_name ];  
 ```
 
@@ -163,46 +261,6 @@ OR
 ALTER TABLE employee_table MODIFY COLUMN unique_id4 VARCHAR(40) NULL;
 ```
 
-### DROP column in table
-```sql
-ALTER TABLE employee_table DROP COLUMN unique_id4;
-```
-
-### Truncate
-* A truncate SQL statement is used to remove all rows (complete data) from a table.
-* TRUNCATE is a DDL(Data Definition Language) command and is used to delete all the rows or tuples from a table. Unlike the DELETE command, the TRUNCATE command does not contain a WHERE clause.
-```sql
-TRUNCATE TABLE table_name;
-```
-
-### RENAME column in table
-* syntex
-```sql
-ALTER TABLE table_name  
-CHANGE COLUMN old_name new_name   
-column_definition  
-[ FIRST | AFTER column_name ] 
-```
-```sql
-ALTER TABLE employee_table CHANGE COLUMN name first_name varchar(20) NOT NULL;
-```
-
-### RENAME table name
-```sql
-ALTER TABLE employee_table RENAME TO emp_table;
-OR
-RENAME table emp_tables TO employee_tables;
-```
-
-### **Delete**
-* DELETE is a DML(Data Manipulation Language) command and is used when we specify the row (tuple) that we want to remove or delete from the table or relation. The DELETE command can contain a WHERE clause.
-```sql
-delete from table_name where ID=01;
-delete from table_name where ID IN(2,6);
-```
-
-
-
 ### **Ques. Difference between Delete, Truncate & Drop?**
 | Delete                                                | Truncate                                                       | Drop                  |
 | :---------------------------------------------------- | :------------------------------------------------------------- | :-------------------- |
@@ -221,3 +279,12 @@ delete from table_name where ID IN(2,6);
   * Access privileges will also be dropped
 * **TRUNCATE Table:-**
   * On the other hand when we TRUNCATE a table, the table structure remains the same, so you will not face any of the above problems.
+
+### UPDATE
+* UPDATE statements allow you to edit rows in a table.
+```sql
+UPDATE table_name SET some_column = some_value
+WHERE some_column = some_value;
+
+Update customer set name="mohit" where id =1;
+```

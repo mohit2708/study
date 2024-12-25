@@ -1,5 +1,5 @@
 **[⬆ Back to Top](#table-of-contents)**
-### **Ques. What Is Union & Union All?**
+### Ques. What Is Union & Union All?
 __Ans.__ Both UNION and UNION ALL Operator combine rows from result sets into a single result set. 
 1. **UNION:-** 
 * The union operator combines the results of two or more select statements by removing duplicate rows.

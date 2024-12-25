@@ -1,21 +1,17 @@
-|  No.  | Databse                                |
+|  No.  | [Database](#database)                  |
 | :---: | -------------------------------------- |
-|       | [Create Database?](#create-database)   |
-|       | [Show Databases?](#show-databases)     |
-|       | [SELECT Databases?](#select-database-) |
-|       | [DROP Databases?](#drop-database-)     |
+|       | [Show Database](#show-database)        |
+|       | [Create Databse](#create-databse)      |
+|       | [Rename Database](#rename-database)    |
+|       | [Drop/Delete Database](#drop-database) |
+|       | [Select Database](#select-database)    |
 
-### Create Database
-```sql
-CREATE DATABASE employeesdb;
-```
 
-### Show Databases
+### Show Database
 ```sql
-show databases;
+SHOW DATABASES;
 OR
 SHOW SCHEMAS;
-
 +---------------------+
 | Database            |
 +---------------------+
@@ -26,14 +22,26 @@ SHOW SCHEMAS;
 +---------------------+
 ```
 
-### SELECT Database:-
+### Create Databse
 ```sql
-USE database_name;  
+CREATE DATABASE databasename;
 ```
 
-### DROP Database:-
-```SQL
-DROP DATABASE database_name;
+### Rename Database
+```sql
+RENAME DATABASE old_database_name TO new_database_name
+(OR)
+ALTER DATABASE old_datbase MODIFY = new_database
+```
+
+### Drop Database
+```sql
+DROP DATABASE databasename;
 OR
 DROP SCHEMA database_name;
+```
+
+### Select Database
+```sql
+USE YourDatabaseName;
 ```

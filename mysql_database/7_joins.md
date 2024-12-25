@@ -3,6 +3,71 @@
 * MySQL JOINS are used with SELECT statement.
 
 #### Many types of MySQL joins:
+1. Self Join
+2. Outer Join
+3. Inner Join
+4. Left JOIN
+5. Right JOIN
+6. Full Join
+7. Cross Join 
+
+
+### Self Join
+* A self-join in SQL allows you to join a table to itself. 
+```sql
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City
+ORDER BY A.City;
+```
+
+### Outer join
+* SQL OUTER JOIN, often referred to as a full outer join, is a type of SQL JOIN operation that retrieves all records from both tables, including matching and non-matching records.
+* SQL Outer Joins allow retrieval of rows from two or more tables based on a related column.
+```sql
+SELECT column_list
+FROM table1
+FULL OUTER JOIN table2 ON table1.column = table2.column;
+```
+
+```sql
+# Example query
+employees:
+
+| employee_id | employee_name | department_id |
+| ----------- | ------------- | ------------- |
+| 1           | John Smith    | 101           |
+| 2           | Mary Johnson  | 102           |
+| 3           | Sam Brown     | 103           |
+
+departments:
+
+| department_id | department_name |
+| ------------- | --------------- |
+| 101           | HR              |
+| 102           | Finance         |
+| 104           | Marketing       |
+
+SELECT employees.employee_id, employees.employee_name, departments.department_name
+FROM employees
+FULL OUTER JOIN departments ON employees.department_id = departments.department_id;
+
+| employee_id | employee_name | department_name |
+| ----------- | ------------- | --------------- |
+| 1           | John Smith    | HR              |
+| 2           | Mary Johnson  | Finance         |
+| 3           | Sam Brown     | NULL            |
+| NULL        | NULL          | Marketing       |
+```
+
+#### When you would use it
+1. **Merging data**: When you need to combine data from two tables into a single result set while preserving all records.
+2. **Handling missing data**: In scenarios where data might be missing or incomplete in one or both tables.
+3. **Comparing data**: For data analysis, auditing, or quality control to compare and identify differences between two data sources.
+4. **Reporting exceptions**: To identify and report data discrepancies or anomalies across tables.
+
+
 ### **INNER JOIN:-**  
 * The MySQL Inner Join is used to returns only those results from the tables that **match** the specified condition and hides other rows and columns.
 ```sql

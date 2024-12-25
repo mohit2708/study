@@ -1,3 +1,6 @@
+
+
+
 ### install libraray
 ```python
 pip install python-multipart
@@ -189,4 +192,94 @@ from fastapi import FastAPI, File, UploadFile, Form
 
 async def create_upload_file(request: CustomerStore = Depends(CustomerStore.as_form), file: UploadFile = File(...), db: Session = Depends(get_db)):
 ```
+
+
+### Get full data with full image url
+```python
+@router.get("/user-list-with-all-data-with-image-url/")
+def get_user_list_with_image_url(db: Session = Depends(get_db)):
+    # Query all user records
+    users = db.query(User).all()
+        
+    '''
+    Check user list is empty or not
+    '''
+    if not users:  # Check if the users list is empty
+        return JSONResponse(
+            content={
+                "success": True,
+                "code": 200,
+                "message": "User list is empty",
+            },
+            status_code=200
+        )
+
+    '''
+    Get User Data
+    '''
+    users_list = []
+    for user in users:
+        user_dict = user.__dict__.copy()  # Copy the dictionary to avoid modifying the original object
+        user_dict.pop("_sa_instance_state", None)  # Remove SQLAlchemy's internal field
+        user_dict.pop("password", None)  # Remove the password field
+
+    # Convert datetime fields to strings
+    for key, value in user_dict.items():
+        if isinstance(value, datetime):
+            user_dict[key] = value.isoformat()  # Convert to ISO 8601 string
+    
+    # Construct the absolute path for the user's profile image
+    '''
+    1st way to get full directory
+    '''
+    # profile_image_path = Path("uploads/image/profile_image", user.image).resolve()
+    # print("full path", profile_image_path)
+    '''
+    2nd way current directory
+    '''
+    current_working_directory = Path.cwd()
+    profile_image_path = str(current_working_directory) + "/" + user.image
+
+    user_dict["profile_image_url"] = str(profile_image_path) if profile_image_path else None        
+
+    users_list.append(user_dict)
+    return JSONResponse(
+        content={
+            "success": True,
+            "code": 200,
+            "message": "Users list retrieved successfully",
+            "data": users_list
+        },
+        status_code=200  # You can change this to any valid HTTP status code
+    )
+```
+
+### Delete the row with image from the folder
+```python
+@router.delete("/delte-user-with-image/{user_id}/delete")
+def delete_user_with_image(user_id: int, db: Session = Depends(get_db)):
+    # Retrieve the user
+    get_user = db.query(User).filter(User.id == user_id).first()
+    if not get_user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    current_working_directory = Path.cwd()
+    profile_image_path = str(current_working_directory) + "/" + get_user.image
+
+    # Delete the image file if it exists
+    if(profile_image_path):
+        try:
+            os.remove(profile_image_path)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Failed to delete image: {str(e)}")
+   
+    # Delete the user from the database
+    db.delete(get_user)
+    db.commit()
+
+    return {"message": "User and image deleted successfully"}
+```
+
+
+
 

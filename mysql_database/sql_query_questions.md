@@ -4,9 +4,6 @@
 | :---: | ------------------------------------------------------------------------------------------------------------------------------------------ |
 |       | [How to add users in MySQL?](#ques-how-to-create-a-new-mysql-user-account-in-mysql)                                                        |
 |       | [Check version of the sql?](#ques-check-version-of-the-sql)                                                                                |
-|       | [Create database?](#create-database)                                                                                                       |
-|       | [Rename database?](#rename-database)                                                                                                       |
-|       | [Delete database?](#delete-database)                                                                                                       |
 |       | [How to copy a table in another table?](#ques-how-to-copy-a-table-in-another-table)                                                        |
 |       | [How to copy structure of a table but not data?](#ques-how-to-copy-structure-of-a-table-but-not-data)                                      |
 |       | [Delete Table?](#DELETE-TABLE)                                                                                                             |
@@ -20,21 +17,32 @@
 |       | [Find Names of students whose age is greater than 21?](#find-names-of-students-whose-age-is-greater-than-21)                               |
 
 
-|  No.  | [Database](#database)               |
-| :---: | ----------------------------------- |
-|       | [Show Database](#show-database)     |
-|       | [Create Databse](#create-databse)   |
-|       | [Rename Database](#rename-database) |
-|       | [Drop Database](#drop-database)     |
-|       | [Select Database](#select-database) |
+|  No.  | [Aggregate function]()                         |
+| :---: | ---------------------------------------------- |
+|       | [SUM()](#sum)                                  |
+|       | [AVG()](#avg)                                  |
+|       | [Max()](#max)                                  |
+|       | [MIN()](#min)                                  |
+|       | [COUNT()](#count)                              |
+|       | [BETWEEN()](#between)                          |
+|       | [AND](#and)                                    |
+|       | [OR](#or)                                      |
+|       | [CASE](#case)                                  |
+|       | [Aliases](#aliases)                            |
+|       | [IS NULL / IS NOT NULL](#is-null--is-not-null) |
+|       | [GROUP BY](#group-by)                          |
+|       | [HAVING](#having)                              |
+|       | [LIMIT](#limit)                                |
+|       | [ORDER BY](#order-by)                          |
+|       | [SELECT DISTINCT](#select-distinct)            |
+|       | [With](#with)                                  |
+|       | [WHERE](#where)                                |
+|       | [UPDATE](#update)                              |
 
-|  No.  | [Tables](#tables)                                    |
-| :---: | ---------------------------------------------------- |
-|       | [show Tables](#show-tables)                          |
-|       | [Create Tables](#create-table)                       |
-|       | [Rename Tables](#rename-table)                       |
-|       | [Delete table](#delete-table)                        |
-|       | [See the table structure](#see-the-table-structure-) |
+|  No.  | [Questions]()                                                                    |
+| :---: | -------------------------------------------------------------------------------- |
+|       | [Wildcard Characters/Like Characters?](#ques-wildcard-characterslike-characters) |
+
 
 ### Demo data for execute the query
 ```sql
@@ -133,127 +141,204 @@ ALTER USER 'testuser'@'localhost' IDENTIFIED BY 'new_password';
 select version()
 ```
 
-## Database
+## Aggregate function
 
-### Show Database
+### SUM()
+* SUM() is a function that takes the name of a column as an argument and returns the sum of all the values in that column.
 ```sql
-SHOW DATABASES;
+SELECT SUM(column_name) FROM table_name;
 ```
 
-### Create Databse
+### AVG()
+* AVG() is an aggregate function that returns the average value for a numeric column.
 ```sql
-CREATE DATABASE databasename;
+SELECT AVG(column_name) FROM table_name;
 ```
 
-### Rename Database
+### MAX()
+* MAX() is a function that takes the name of a column as an argument and returns the largest value in that column.
 ```sql
-RENAME DATABASE old_database_name TO new_database_name
-(OR)
-ALTER DATABASE old_datbase MODIFY = new_database
+SELECT MAX(column_name)
+FROM table_name;
 ```
 
-### Drop Database
+### MIN()
+* MIN() is a function that takes the name of a column as an argument and returns the smallest value in that column.
 ```sql
-DROP DATABASE databasename;
+SELECT MIN(column_name)
+FROM table_name;
 ```
 
-### Select Database
+### COUNT()
+* COUNT() is a function that takes the name of a column as an argument and counts the number of rows where the column is not NULL.
 ```sql
-USE YourDatabaseName;
+SELECT COUNT(column_name) FROM table_name;
+```
+
+### ROUND()
+* ROUND() is a function that takes a column name and an integer as arguments. It rounds the values in the column to the number of decimal places specified by the integer.
+```sql
+SELECT ROUND(column_name, integer) FROM table_name;
+```
+
+### BETWEEN()
+* The BETWEEN operator is used to filter the result set within a certain range. The values can be numbers, text or dates.
+```sql
+SELECT column_name(s) FROM table_name
+WHERE column_name BETWEEN value_1 AND value_2;
+```
+
+### AND
+* AND is an operator that combines two conditions. Both conditions must be true for the row to be included in the result set.
+* The MySQL AND Condition (also called the AND Operator) is used to test two or more conditions in a SELECT, INSERT, UPDATE, or DELETE statement.
+* AND condition allows you to test 2 or more conditions.
+```sql
+SELECT column_name(s)
+FROM table_name
+WHERE column_1 = value_1
+  AND column_2 = value_2;
+
+SELECT * FROM contacts
+WHERE state = 'California'
+AND contact_id > 3000;
+```
+
+### OR
+* OR is an operator that filters the result set to only include rows where either condition is true.
+```sql
+SELECT column_name
+FROM table_name
+WHERE column_name = value_1
+   OR column_name = value_2;
+```
+
+### Case
+* CASE statements are used to create different outputs (usually in the SELECT statement). It is SQL’s way of handling if-then logic.
+```sql
+SELECT column_name,
+  CASE
+    WHEN condition THEN 'Result_1'
+    WHEN condition THEN 'Result_2'
+    ELSE 'Result_3'
+  END
+FROM table_name;
+```
+
+### Aliases
+* AS is a keyword in SQL that allows you to rename a column or table using an alias.
+* Aliases are used to give a table, or a column in a table, a temporary name.
+* An alias is created with the **AS** keyword.
+```sql
+SELECT column_name AS alias_name FROM table_name;
 ```
 
 
-## TABLE Query
-
-### Show tables;
+### IS NULL / IS NOT NULL
+* IS NULL and IS NOT NULL are operators used with the WHERE clause to test for empty values.
 ```sql
-SHOW TABLES;
-+-----------------------+
-| Tables_in_employee123 |
-+-----------------------+
-| employee_table        |
-+-----------------------+
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IS NULL;
 ```
 
-### Create table
+### GROUP BY
+* GROUP BY is a clause in SQL that is only used with aggregate functions. It is used in collaboration with the SELECT statement to arrange identical data into groups.
 ```sql
-use database_name;
-```
-```sql
-CREATE TABLE table_name(  
-    id int NOT NULL AUTO_INCREMENT,  
-    name varchar(45) NOT NULL,  
-    occupation varchar(35) NOT NULL,  
-    age int NOT NULL,  
-    PRIMARY KEY (id) 
-);
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name;
 ```
 
-### Rename Table
+### HAVING
+* HAVING was added to SQL because the WHERE keyword could not be used with aggregate functions.
 ```sql
-RENAME old_table _name To new_table_name;
-OR
-ALTER TABLE old_table_name RENAME TO new_table_name;
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(*) > value;
 ```
 
-### Delete/Drop table
+### LIMIT
+* LIMIT is a clause that lets you specify the maximum number of rows the result set will have.
 ```sql
-DROP TABLE table_name;
+SELECT column_name(s)
+FROM table_name
+LIMIT number;
 ```
 
-### See the table structure:-
+### ORDER BY
+* ORDER BY is a clause that indicates you want to sort the result set by a particular column either alphabetically or numerically.
 ```sql
-DESCRIBE employee_table;
-+------------+-------------+------+-----+---------+----------------+
-| Field      | Type        | Null | Key | Default | Extra          |
-+------------+-------------+------+-----+---------+----------------+
-| id         | int(11)     | NO   | PRI | NULL    | auto_increment |
-| name       | varchar(45) | NO   |     | NULL    |                |
-| occupation | varchar(35) | NO   |     | NULL    |                |
-| age        | int(11)     | NO   |     | NULL    |                |
-+------------+-------------+------+-----+---------+----------------+
+SELECT column_name
+FROM table_name
+ORDER BY column_name ASC | DESC;
 ```
 
-### Create Table
-* SQL CREATE TABLE statement is used to create table in a database.
+### SELECT DISTINCT
+* SELECT DISTINCT specifies that the statement is going to be a query that returns unique values in the specified column(s).
 ```sql
-SQL> CREATE TABLE STUDENTS(
-id INT NOT NULL,  
-first_name VARCHAR (20) NOT NULL,
-age INT NOT NULL,  
-address CHAR (25),  
-PRIMARY KEY (id)  
-);  
-```
-```sql
-CREATE TABLE table_name
-(
-id int AUTO_INCREMENT primary key, 
-column_name1 data_type(size),
-column_name2 data_type(size),
-column_name3 data_type(size),
-..
-);
-```
-* Create table with **primary key**
-```sql
-CREATE TABLE Employee(  
-EmployeeID NOT NULL,  
-FirstName varchar(255) NOT NULL,  
-LastName varchar(255),  
-City varchar(255),  
-PRIMARY KEY (EmployeeID)  
-); 
+SELECT DISTINCT column_name
+FROM table_name;
 ```
 
-### Insert table
+### With
+* WITH clause lets you store the result of a query in a temporary table using an alias. You can also define multiple temporary tables using a comma and with one instance of the WITH keyword.
+* The WITH clause is also known as common table expression (CTE) and subquery factoring.
 ```sql
-INSERT INTO table_name
-(column1,column2,column3,...)
-VALUES
-('value1','value2','value3',...);
+WITH temporary_name AS (
+   SELECT *
+   FROM table_name)
+SELECT *
+FROM temporary_name
+WHERE column_name operator value;
 ```
 
+### WHERE
+* WHERE is a clause that indicates you want to filter the result set to include only rows where the following condition is true.
+```sql
+SELECT column_name(s)
+FROM table_name
+WHERE column_name operator value;
+```
+
+### UPDATE
+* UPDATE statements allow you to edit rows in a table.
+```sql
+UPDATE table_name SET some_column = some_value
+WHERE some_column = some_value;
+
+Update customer set name="mohit" where id =1;
+```
+
+### Ques. Wildcard Characters/Like Characters?
+* LIKE is a special operator used with the WHERE clause to search for a specific pattern in a column.
+* Wildcard characters are used with the LIKE operator. The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+  * Wildcard Characters in MySQL
+
+| Symbol | Description                        |
+| :----- | :--------------------------------- |
+| %      | Represents zero or more characters |
+| _      | Represents a single character      |
+
+##### Some Example
+| LIKE Operator                   | Description                                                                   |
+| :------------------------------ | :---------------------------------------------------------------------------- |
+| WHERE CustomerName LIKE 'a%'    | Finds any values that starts with "a"                                         |
+| WHERE CustomerName LIKE '%a'    | Finds any values that ends with "a"                                           |
+| WHERE CustomerName LIKE '%or%'  | Finds any values that have "or" in any position                               |
+| WHERE CustomerName LIKE '_r%'   | Finds any values that have "r" in the second position                         |
+| WHERE CustomerName LIKE 'a_%_%' | Finds any values that starts with "a" and are at least 3 characters in length |
+| WHERE ContactName LIKE 'a%o'    | Finds any values that starts with "a" and ends with "o"                       |
+
+```sql
+# syntex
+SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;
+
+SELECT * FROM Customers WHERE City LIKE 'ber%';
+```
+
+
+##
 
 ### Ques. How to copy a table in another table?
 ```sql
@@ -264,8 +349,6 @@ CREATE TABLE EMP1 AS (SELECT * FROM EMP); //constraint will not copied.
 ```sql
 CREATE TABLE STD AS (SELECT * FROM EMP WHERE EMPNO=-1);
 ```
-
-
 
 ### DELETE TABLE?
 * The DELETE statement is used to delete rows from a table. If you want to remove a **specific row** from a table you should use WHERE condition.
@@ -619,9 +702,7 @@ SET GENDER = CASE
     WHEN GENDER='male' THEN 'female'
     WHEN GENDER='female' THEN 'male'
     END;
-
-OR
-             
+(OR)
 UPDATE EMPDATA 
 SET gender = CASE 
     gender WHEN 'male' THEN 'female' 

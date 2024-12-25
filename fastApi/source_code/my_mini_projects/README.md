@@ -45,9 +45,13 @@
 |       | [image upload in folder intial phase](./4_user/image_upload.md#image-upload-in-folder-intial-phase)                        |
 |       | [image upload in databse and firstname, lastname](./4_user/image_upload.md#image-upload-in-databse-and-firstname-lastname) |
 |       | [first name and other data through request](./4_user/image_upload.md#first-name-and-other-data-through-request)            |
+|       | [Get full data with full image url](./4_user/image_upload.md#get-full-data-with-full-image-url)                            |
+|       | [Delete the row with image from the folder](./4_user/image_upload.md#delete-the-row-with-image-from-the-folder)            |
 
 
 
 |  No.  | Requirments Steps                                                                                           |
 | :---: | ----------------------------------------------------------------------------------------------------------- |
 |       | [create the requiments file?](../project_setup_one_to_another_system.md#project-setup-one-pc-to-another-pc) |
+|       | [Get absolute Path](../get_abslute_site_url_path.md#get-absolute-path)                                      |
+|       | [Get site Url](../get_abslute_site_url_path.md#get-site-path)                                               |
