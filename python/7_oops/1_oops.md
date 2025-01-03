@@ -9,6 +9,7 @@
 |       | [What is __str_ _ and __repr_ _?](#ques-what-is-str-and-repr)                                  |
 |       | [What is Abstract Method?](#ques-what-is-abstract-method)                                      |
 |       | [What is Concrete Method?](#ques-what-is-concrete-method)                                      |
+|       | [Difference between method and function?](#difference-between-method-and-function)             |
 
 ### Object-Oriented Programming (OOPS)
 * Object-oriented programming (OOP) is a programming style that organizes code around objects, rather than functions and logic.
@@ -154,4 +155,29 @@ class Father:
 
 obj = Father('mohit','saxena')
 obj.show_data()
+```
+
+### Difference between method and function?
+#### Function
+* A function is a block of code that performs a specific task and can be called independently from anywhere in your program.
+* It is defined using the def keyword.
+* It can take arguments (input values) and return values (output values).
+```python
+def add_numbers(x, y):
+    return x + y
+
+result = add_numbers(5, 3)
+print(result)
+```
+#### Mthod
+* A method is a function that is associated with an object or a class.
+* It is defined within a class and operates on the data or attributes of that class.
+* It is called using the dot notation on an object of the class.
+```python
+class Dog:
+    def bark(self):
+        print("Woof!")
+
+my_dog = Dog()
+my_dog.bark()
 ```
