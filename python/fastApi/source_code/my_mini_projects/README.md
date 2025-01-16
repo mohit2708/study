@@ -6,6 +6,7 @@
 |       | [install uvicorn](../1.1_install_fastapi_uvicorn.md#install-uvicorn)                                                           |
 |       | [Create main.py file with sample routes](../1.2_create_main.py_file_and_create_the_routes.md#create-a-mainpy-file-with-routes) |
 |       | [Run the server](../1.3_server_run.md#run-the-server)                                                                          |
+|       | [Run the server when main.py file in another folder](../1.3_server_run.md#run-the-server-when-mainpy-file-in-another-folder)   |
 |       | [Create the env file](../1.4_env.md)                                                                                           |
 |       | [Mysql Connectivity](../1.5_mysql_connectivity.md)                                                                             |
 |       | [create models without alembic](../1.6_model.md)                                                                               |
@@ -32,6 +33,7 @@
 
 |  No.  | Login with jwt Steps |
 | :---: | -------------------- |
+w
 
 
 |  No.  | user Steps                                                                             |
