@@ -2,6 +2,7 @@
 | :---: | -------------------------------------------------------------------------------------------------------------------------- |
 |       | [Add two digit of decimal on focus out?](#add-two-digit-of-decimal-on-focus-out)                                           |
 |       | [Add two digit of decimal on from the back side in run time?](#add-two-digit-of-decimal-on-from-the-back-side-in-run-time) |
+|       | [Date validation not select before today date](#date-validation-not-select-before-today-date)                              |
 
 
 ### Add two digit of decimal on focus out
@@ -110,6 +111,32 @@ $(document).ready(function () {
 
 ### Add and remove the text field dynamicaly using jqury.
 ```javascript
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="customcardform">
+                <div class="form-group">
+                    <label for="equipmId">Select Equipment:</label>
+                    <select class="form-control" id="equipmId">
+                        <option value="">--Select Equipment--</option>
+                        <option value="1">Equipment 1</option>
+                        <option value="2">Equipment 2</option>
+                        <option value="3">Equipment 3</option>
+                    </select>
+                    <span class="equipment_title" style="color: Red;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="equip_estimate">Estimate:</label>
+                    <input type="text" class="form-control only_number" id="equip_estimate" placeholder="Enter estimate">
+                    <span class="equipment_quantity" style="color: Red;"></span>
+                </div>
+                <button type="button" class="btn btn-primary" id="add-equipment">Add Equipment</button>
+            </form>
+        </div>
+    </div>
+</div>
+```
+```javascript
 $("#add-equipment").on("click", function () {
     productAddToTable();
 });
@@ -158,6 +185,7 @@ $("body").on("click", "#remove_div_equipment", function () {
 })
 ```
 
+
 ### Remove the second from the input type time
 ```javascript
 $(document).ready(function () {
@@ -169,4 +197,34 @@ $(document).ready(function () {
         }
     });
 });
+```
+
+
+### add/remove multiple input fields dynamically with jquery codepen
+```javascript
+https://codepen.io/led8/pen/zYYPZxj
+https://codepen.io/ahasanhabib16/pen/ZEeqoPr
+https://codepen.io/DonnaG/pen/VzJzpO
+```
+
+
+### Date validation not select before today date.
+```javascript
+<input type="date" class="valid" id="start_date" name="start_date" aria-invalid="false">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Get today's date
+        var today = new Date();
+        // Format the date to YYYY-MM-DD
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
+        var formattedDate = yyyy + '-' + mm + '-' + dd;
+
+        // Set the min attribute of the input
+        $('#start_date').attr('min', formattedDate);
+    });
+</script>
 ```

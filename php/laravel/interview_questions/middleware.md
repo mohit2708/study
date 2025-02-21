@@ -24,7 +24,11 @@ class MiddlewareName
 {
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (auth()->check() && (auth()->user()->role_id=='1' || auth()->user()->role_id=='2')) {
+            return $next($request);
+        }
+        return redirect('/admin/login');
+        // return $next($request);
     }
 }
 ```

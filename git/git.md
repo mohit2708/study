@@ -9,14 +9,8 @@
 |       | [Removing Files from the Staging Area](#removing-files-from-the-staging-area)   |
 
 
-Git:-
-* git is a **version control system.** It was created by **Linus Torvalds** in 2005, and has been **maintained** by **Junio Hamano** since then.
-* git helps you keep track of code changes.
-* git is used to collaborate on code.
-* Who made changes.
-* Syntx:
-```git
-git --version
+```python
+
 ```
 
 
@@ -26,35 +20,6 @@ git --version
 git config --global http.sslVerify false
 ```
 
-## Git configuration
-
-### Check Configure and set the Configure.
-* To check set or not
-```git
-git config user.name
-git config user.email
-```
-
-* Set the name:
-```git
-git config --global user.name "mohit-saxena"
-```
-* Set the email:
-```git
-git config --global user.email "demo@gamil.com"
-```
-* check and Set origin
-```git
-git remote -v
-PS D:\gitOcean> git remote add origin https://git.chetu.com/ChetuInc/OceansideBeachService-HOTT.git
-PS D:\gitOcean> git remote -v
-origin  https://git.chetu.com/ChetuInc/OceansideBeachService-HOTT.git (fetch)
-origin  https://git.chetu.com/ChetuInc/OceansideBeachService-HOTT.git (push)
-```
-* Check all config
-```git
-git config -list
-```
 
 ## Starting a project
 
@@ -63,18 +28,6 @@ git config -list
 git init 
 ```
 
-### Clone the project
-* Download the project by defalut in master branch
-* hum defalut branch ko change bhi kar sakte hai.
-```git
-git clone https://url.git
-# move to folder
-cd folder_name
-```
-* When we download the project for particular branch
-```git
-git clone -b branch_name remote_repo_url
-```
 
 ##
 
@@ -84,22 +37,6 @@ git clone -b branch_name remote_repo_url
 * green files are tracked file i.e add ho chuki hai
 ```git
 git status
-```
-
-### Git Adding New Files
-```git
-git add filename1.html filename2.html   # Add particular file   
-(OR) git add .                          # all Files added
-(OR) git add --all                      # all Files added
-(OR) git add -A                         # all Files added
-git add *.java                          # Add Files by Wildcard
-```
-
-### Removing Files from the Staging Area
-```git
-git rm file_name.txt
-(OR)
-git restore file_name.txt
 ```
 
 ### Create new file
@@ -116,54 +53,6 @@ git commit -m "initial commit"
 ```git
 git log
 ```
-
-### Branch
-#### Show current branch name
-```git
-git branch
-
-Output:
-* master
-```
-
-#### Show All branch name
-```git
-git branch --list
-(OR)
-git branch -r
-
-Output:-
-origin/HEAD -> origin/master
-origin/MyLaravelProject
-origin/code
-origin/copy
-```
-```git
-git branch -a
-
-Output:-
-* master
-remotes/origin/HEAD -> origin/master
-remotes/origin/MyLaravelProject
-remotes/origin/code
-remotes/origin/copy
-```
-
-#### create branch and move to checkout
-```git
-git checkout hello-world-images
-```
-
-#### Delete Branch
-```git
-git branch -d <branch name>  
-(OR)
-git branch -D <branch name>
-
-# Delete a Remote Branch
-git push origin -delete <branch name>
-```
-
 
 ### show the all file of the folder
 ```git

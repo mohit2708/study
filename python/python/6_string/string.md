@@ -37,6 +37,14 @@ print(a)
 Output:- Hello
 ```
 
+```python
+message = 'This is a string in Python'      # This is a string in Python
+message = "This is also a string"           # This is also a string
+message = "It's a string"                   # It's a string
+message = 'mohit is a "good" boy'           # mohit is a "good" boy
+```
+
+
 ### Ques. Multiline Strings?
 * You can assign a multiline string to a variable by using three quotes:
 ```python

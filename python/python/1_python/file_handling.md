@@ -1,6 +1,7 @@
 
-### **Ques. What is File Handling in Python?**
+### Ques. What is File Handling in Python?
 * Suppose you are working on a file saved on your personal computer. If you want to perform any operation on that file like opening it, updating it or any other operation on that, all that comes under File handling.
+* File handling in Python involves interacting with files on your computer to read data from them or write data to them. Python provides several built-in functions and methods for creating, opening, reading, writing, and closing files.
 * Types Of File in Python
 * Binary file
   * <b>Document files:</b> .pdf, .doc, .xls etc.
@@ -17,14 +18,50 @@
   * Tabular data:</b> csv, tsv etc
   * Configuration:</b> ini, cfg, reg etc
   
-<!-- pagebreak -->
+| Modes | Description                                                                                                                                                                                                                                |
+| :---- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| r     | Opens a file in read-only mode. The pointer of the file is at the beginning of the file. This is also the default mode.                                                                                                                    |
+| rb    | Opens a file for reading only in binary format.                                                                                                                                                                                            |
+| r+    | Opens the file for reading and writing. The pointer is at the beginning of the file.                                                                                                                                                       |
+| rb+   | Opens a file for both reading and writing in binary format.                                                                                                                                                                                |
+| w     | Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.                                                                                                         |
+| wb    | Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.                                                                                        |
+| w+    | Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.                                                                        |
+| wb+   | Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.                                                       |
+| a     | Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.                                         |
+| ab    | Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.                        |
+| a+    | Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.                  |
+| ab+   | Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing. |
+| x     | open for exclusive creation, failing if the file already exists                                                                                                                                                                            |
+| +     | open file for updating (reading and writing)                                                                                                                                                                                               |
+| b     | Opens the file in binary mode                                                                                                                                                                                                              |
+| t     | Opens the file in text mode (default)                                                                                                                                                                                                      |
 
-### **Ques. Opening and Closing a File in Python?**
-**open() Function:-** This function takes two arguments. First is the filename along with its complete path, and the other is access mode. This function returns a file object.
+### Opening a File in Python
+* This function takes two arguments. First is the filename along with its complete path, and the other is access mode. This function returns a file object.
+* To perform any file operation, the first step is to open the file. Python's built-in open() function is used to open files in various modes, such as reading, writing, and appending. The syntax for opening a file in Python is −
 ```python
-open(filename, mode)
+file = open("filename", "mode")
 ```
-Note:- By default, the access mode is read mode if you don't specify any mode. 
+
+
+```python
+#example 1
+print("hello")
+# file1 = open("C:\Users\mohits4\Desktop\mohit\study\python\python\1_python\code\example.txt", "r")
+file1 = open("example.txt", "r")
+print(file1.read())
+
+#example 2
+print("hello")
+# file1 = open("C:\Users\mohits4\Desktop\mohit\study\python\python\1_python\code\example.txt", "r")
+file1 = open("example.txt", "a")
+file1.write("Now the file has more content!")
+file1.close()
+file1 = open("example.txt", "r")
+print(file1.read())
+```
+
 
 ### **Ques. How to create a new file?**
 * create a new file:- "x" - Create - will create a file, returns an error if the file exist.
@@ -115,20 +152,7 @@ os.rmdir("myfolder")
 ```
 
 
-| Modes | Description                                                                                                                                                  |
-| :---- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| r     | Opens a file in read-only mode. The pointer of the file is at the beginning of the file. This is also the default mode.                                      |
-| rb    | Same as r mode, except this opens the file in binary mode.                                                                                                   |
-| r+    | Opens the file for reading and writing. The pointer is at the beginning of the file.                                                                         |
-| rb+   | Same as r+ mode, except this, opens the file in binary mode.                                                                                                 |
-| w     | Opens the file for writing. Overwrites the existing file and if the file is not present, then creates a new one.                                             |
-| wb    | Same as w mode, except this opens the file in binary format.                                                                                                 |
-| w+    | Opens the file for both reading and writing, rest is the same as w mode.                                                                                     |
-| wb+   | Same as w+ except this opens the file in binary format.                                                                                                      |
-| a     | Opens the file for appending. If the file is present, then the pointer is at the end of the file, else it creates a new file for writing.                    |
-| ab    | Same as a mode, except this opens the file in binary format.                                                                                                 |
-| a+    | Opens the file for appending and reading. The file pointer is at the end of the file if the file exists, else it creates a new file for reading and writing. |
-| ab+   | Same as a+ mode, except this, opens the file in binary format.                                                                                               |
+
 
 
 #### using with statement?

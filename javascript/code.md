@@ -7,6 +7,7 @@
 | :---: | ------------------------------------------------------------------------------------------------- |
 |       | [hide the text field according to select option](#hide-the-text-field-according-to-select-option) |
 |       | [Get width and height of screen size?](#get-width-and-height-of-screen-size)                      |
+|       | [Date validation not select before today date](#date-validation-not-select-before-today-date)     |
 
 ## Common Validations:
 
@@ -229,4 +230,23 @@ window.onload = function() {
     alert("Screen Width: " + screenSize.width);
     alert("Screen Height: " + screenSize.height);
 };
+```
+
+
+### Date validation not select before today date.
+```javascript
+<input type="date" class="valid" id="start_date" name="start_date" aria-invalid="false">
+
+<script>
+    // Get today's date
+    const today = new Date();
+    // Format the date to YYYY-MM-DD
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    const yyyy = today.getFullYear();
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
+
+    // Set the min attribute of the input
+    document.getElementById('start_date').setAttribute('min', formattedDate);
+</script>
 ```
