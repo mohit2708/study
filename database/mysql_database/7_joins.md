@@ -1,5 +1,5 @@
 ## Ques. **What Is Joins?**
-* It is used to retrieve data from multiple tables. It is performed whenever you need to fetch records from two or more tables.
+* Joins is used to retrieve data from multiple tables. It is performed whenever you need to fetch records from two or more tables.
 * MySQL JOINS are used with SELECT statement.
 
 #### Many types of MySQL joins:

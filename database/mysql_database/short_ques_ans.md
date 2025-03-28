@@ -11,19 +11,9 @@
 
 
 
-
-
-
 ### Alter command
 
 
-### Aggregate function
-##### AVG()
-* AVG() is an aggregate function that returns the average value for a numeric column.
-```sql
-SELECT AVG(column_name)
-FROM table_name;
-```
 
 ##### MAX()
 * MAX() is a function that takes the name of a column as an argument and returns the largest value in that column.
@@ -193,11 +183,6 @@ FROM table_name;
 
 SELECT DISTINCT specifies that the statement is going to be a query that returns unique values in the specified column(s).
 
-SUM
-SELECT SUM(column_name)
-FROM table_name;
-
-SUM() is a function that takes the name of a column as an argument and returns the sum of all the values in that column.
 
 UPDATE
 UPDATE table_name

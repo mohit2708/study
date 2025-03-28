@@ -1,21 +1,25 @@
 ### Table of Contents
 
-|  No.  | Questions                                                                                                |
-| :---: | -------------------------------------------------------------------------------------------------------- |
-|   1   | [Hello World](#ques-print-hello-world)                                                                   |
-|   2   | [swap two variables](#ques-swap-two-variables)                                                           |
-|   3   | [check if a number is Even or odd](#ques-program-to-check-if-a-number-is-even-or-odd)                    |
-|   4   | [Print the even number and odd number](#print-the-even-number-and-odd-number)                            |
-|   5   | [Check Prime Number Or Not?](#ques-check-prime-number-or-not)                                            |
-|   6   | [Prime Number Print between lower to upper?](#ques-prime-number-print-between-lower-to-upper)            |
-|       | [Reverse string?](#ques-reverse-string)                                                                  |
-|       | [How to reverse a word sentence](#ques-how-to-reverse-a-word-sentence)                                   |
-|       | [Reverse a Number](#ques-reverse-a-number)                                                               |
-|       | [To Check if a String is a Palindrome](#ques-to-check-if-a-string-is-a-palindrome)                       |
-|       | [To Check if a Number is a Palindrome](#ques-to-check-if-a-number-is-a-palindrome)                       |
-|       | [Find the Factorial of a Number](#ques-find-the-factorial-of-a-number)                                   |
-|       | [find Fibonacci series up to n](#ques-find-fibonacci-series-up-to-n)                                     |
-|       | [check number is an Armstrong number or not](#ques-check-number-is-an-armstrong-number-or-not)           |
+|  No.  | Questions                                                                                      |
+| :---: | ---------------------------------------------------------------------------------------------- |
+|   1   | [Hello World](#ques-print-hello-world)                                                         |
+|   2   | [swap two variables](#ques-swap-two-variables)                                                 |
+|   3   | [check if a number is Even or odd](#ques-program-to-check-if-a-number-is-even-or-odd)          |
+|   4   | [Print the even number and odd number](#print-the-even-number-and-odd-number)                  |
+|   5   | [Check Prime Number Or Not?](#ques-check-prime-number-or-not)                                  |
+|   6   | [Prime Number Print between lower to upper?](#ques-prime-number-print-between-lower-to-upper)  |
+|   7   | [Reverse string?](#ques-reverse-string)                                                        |
+|   8   | [How to reverse a word sentence](#ques-how-to-reverse-a-word-sentence)                         |
+|   9   | [Reverse a Number](#ques-reverse-a-number)                                                     |
+|  10   | [To Check if a String is a Palindrome](#ques-to-check-if-a-string-is-a-palindrome)             |
+|  11   | [To Check if a Number is a Palindrome](#ques-to-check-if-a-number-is-a-palindrome)             |
+|       | [Find the Factorial of a Number](#ques-find-the-factorial-of-a-number)                         |
+|       | [find Fibonacci series up to n](#ques-find-fibonacci-series-up-to-n)                           |
+|       | [check number is an Armstrong number or not](#ques-check-number-is-an-armstrong-number-or-not) |
+|       | [list Sorting using bubble sort](#list-sorting-using-bubble-sort)                              |
+|       | [Sorting multidimensional array by name](#sorting-multidimensional-array-by-name)              |
+
+|  No.  | [Other Program]()         |
 |       | [generate a random number between 0 and 9](#Program-to-generate-a-random-number-between-0-and-9)         |
 |       | [Get a Substring of a String](#Get-a-Substring-of-a-String)                                              |
 |       | [How to reverse a sentence in Python input by User?](#How-to-reverse-a-sentence-in-Python-input-by-User) |
@@ -411,8 +415,6 @@ def fibonacci(n):
 fibonacci(9)
 ```
 
-
-
 ### Ques. Check number is an Armstrong number or not?
 * 153 = 1*1*1 + 5*5*5 + 3*3*3 = 153
 * 1634 = 1*1*1*1 + 6*6*6*6 + 3*3*3*3 + 4*4*4*4 = 1634
@@ -436,6 +438,50 @@ Output:-
 Enter a number: 1634
 1634 is an Armstrong number
 ```
+
+### list Sorting using bubble sort
+```python
+list = [3,-6,2,4,6,-2,-7]
+
+def sortUsingBubbleSort(list):
+    length = len(list)
+    for i in range(length):
+        for j in range(0, length-i-1):
+            if list[j] > list[j+1]:
+                temp        = list[j]
+                list[j]     = list[j+1]
+                list[j+1]   = temp
+                # list[j], list[j+1] = list[j+1], list[j]
+
+sortUsingBubbleSort(list)
+print(list)
+
+Output:- [-7, -6, -2, 2, 3, 4, 6]
+```
+
+### Sorting multidimensional array by name
+```python
+abc = [
+    {"name": "mohit", "age": 30},
+    {"name": "abhinav", "age": 36},
+    {"name": "rohit", "age": 25}
+]
+
+# Bubble sort by "name" key
+n = len(abc)
+for i in range(n - 1):
+    for j in range(0, n - i - 1):
+        if abc[j]["name"] > abc[j + 1]["name"]:
+            # Swap elements
+            abc[j], abc[j + 1] = abc[j + 1], abc[j]
+print(abc)
+# Print the sorted array
+for person in abc:
+    print("Name: {}, Age: {}".format(person["name"], person["age"]))
+```
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
 
 ### **Ques. program to convert a list to string**
 ```python
@@ -484,6 +530,8 @@ print(random.randint(0,9))
 
 Output:- 0 se 9 tak ka koi bhi number aa sakta hai.
 ```
+
+
 
 ### **Calculate the number of words**
 * Using split method
@@ -766,26 +814,7 @@ Output:-
 *
 ```
 
-### Sort multidimensional array by name
-```python
-abc = [
-    {"name": "mohit", "age": 30},
-    {"name": "abhinav", "age": 36},
-    {"name": "rohit", "age": 25}
-]
 
-# Bubble sort by "name" key
-n = len(abc)
-for i in range(n - 1):
-    for j in range(0, n - i - 1):
-        if abc[j]["name"] > abc[j + 1]["name"]:
-            # Swap elements
-            abc[j], abc[j + 1] = abc[j + 1], abc[j]
-print(abc)
-# Print the sorted array
-for person in abc:
-    print("Name: {}, Age: {}".format(person["name"], person["age"]))
-```
 
 
 ### Find the missing number in the array?

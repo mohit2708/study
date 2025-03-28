@@ -5,7 +5,9 @@
 |       | [Counting the Number of objects of a Class?](#ques-counting-the-number-of-objects-of-a-class) |
 
 ### Ques. What is Object?
+* An object is a container that contains data and functionality.
 * The object is an entity that has state and behavior. It may be any real-world object like the mouse, keyboard, chair, table, pen, etc.
+* Before creating objects, you define a class first. And from the class, you can create one or more objects. The objects of a class are also called **instances** of a class.
 * **For example:** if you have an employee class, then it should contain an attribute and method, i.e. an email id, name, age, salary, etc.
   
 ```python

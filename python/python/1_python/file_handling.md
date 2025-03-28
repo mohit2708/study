@@ -193,3 +193,5 @@ for file_name in listdir(my_path):
     if file_name.endswith('.txt'):
         os.remove(my_path + file_name)
 ```
+
+### What is the Python “with” statement designed for?

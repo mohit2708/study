@@ -13,6 +13,109 @@
 * To define a class in Python, you can use the class keyword, followed by the class name and a colon. Inside the class, an __init__ method has to be defined with def. This is the initializer that you can later use to instantiate objects. It's similar to a constructor in Java. __init__ must always be present! It takes one argument: self, which refers to the object itself. Inside the method, the pass keyword is used as of now, because Python expects you to type something there.
 * **Example:-** Email is a class and headding, particiant, attachment is object
 
+#### Define a class
+* To define a class in Python, you use the class keyword followed by the class name and a colon. The following example defines a Person class:
+```python
+class Person:
+    pass
+```
+* By convention, you use capitalized names for classes in Python. If the class name contains multiple words, you use the CamelCase format, for example SalesEmployee.
+* When printing out the person object, you’ll see its name and memory address:
+```python
+class Person:
+    pass
+
+print(person)
+
+Output:- <__main__.Person object at 0x000001C46D1C47F0>
+```
+* To get an identity of an object, you use the id() function. For example:
+```python
+print(id(person)) # 1943155787760
+```
+
+### Python Class Variables
+* Get the values of **class variables**
+```python
+class HtmlDocument:
+    extension = 'html'
+    version = '5'
+
+print(HtmlDocument.extension) # html
+print(HtmlDocument.version) # 5
+```
+* If you access a class variable that doesn’t exist, you’ll get an AttributeError exception.
+
+
+* **getattr()**:- Another way to get the value of a class variable is to use the **getattr()** function. The getattr() function accepts an object and a variable name. It returns the value of the class variable. For example:
+```python
+class HtmlDocument:
+    extension = 'html'
+    version = '5'
+
+extension = getattr(HtmlDocument, 'extension')
+version = getattr(HtmlDocument, 'version')
+
+print(extension)  # html
+print(version)  # 5
+```
+
+### Set values for class variables
+* To set a value for a class variable, you use the dot notation:
+```python
+HtmlDocument.version = 10
+```
+```python
+class HtmlDocument:
+    extension = 'html'
+    version = '5'
+
+HtmlDocument.version = 10
+print(HtmlDocument.version)
+
+version = getattr(HtmlDocument, 'version')
+print(version)
+```
+* or you can use the setattr() built-in function:
+```python
+setattr(HtmlDocument, 'version', 10)
+```
+```python
+class HtmlDocument:
+    extension = 'html'
+    version = '5'
+
+setattr(HtmlDocument, 'version', 10)
+print(HtmlDocument.version)
+
+version = getattr(HtmlDocument, 'version')
+print(version)  # 5
+```
+
+* Since Python is a dynamic language, you can add a class variable to a class at runtime after you have created it. 
+```python
+class HtmlDocument:
+    extension = 'html'
+    version = '5'
+
+HtmlDocument.media_type = 'text/html'
+print(HtmlDocument.media_type)
+
+Output:- text/html
+```
+
+### Delete class variables
+* To delete a class variable at runtime, you use the **delattr()** function:
+```python
+delattr(HtmlDocument, 'version')
+```
+* Or you can use the **del** keyword:
+```python
+del HtmlDocument.version
+```
+
+
+
 ```python
 class Student:
     name = "mohit"
@@ -30,8 +133,8 @@ class Person:
 
 p1 = Person("John", 36)
 
-print(p1.f_name)
-print(p1.age)
+print(p1.f_name) # John
+print(p1.age)    #  36
 ```
 * **Example 2**
 ```python

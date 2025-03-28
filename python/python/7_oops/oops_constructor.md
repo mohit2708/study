@@ -1,62 +1,10 @@
 ### **Ques. What is a constructor in Python?**
+* Constructors are special function/method which is automatically called when an object is created.
 * In Python the __init__() method is called the constructor and is always called when an object is created.
 * A constructor is called only once at the time of creation an object.
-* if two object are created for a class, the constructerwill be called once for each instance.
+* if two object are created for a class, the constructer will be called once for each instance.
+* If you don't define a __init__ method in your class, Python automatically provides a default constructor that takes no arguments.
 
-**Types of constructors:**
-1. **default constructor/Non-Parameterized Constructor:** The default constructor is a simple constructor which doesn’t accept any arguments. Its definition has only one argument which is a reference to the instance being constructed.
-```python
-class Shot:
-    # Creating default constructor
-    def __init__(self):
-        print("This is a default constructor")
-        self.title = "Constructor in Python"
-
-    # a method to display the data member
-    def display_message(self):
-        print(self.title)
-
-# creating object of the class
-s1_obj = Shot()
-s1_obj.display_message()
-
-Output:-
-This is a default constructor
-Constructor in Python
-```
-2. **parameterized constructor:** constructor with parameters is known as parameterized constructor. The parameterized constructor takes its first argument as a reference to the instance being constructed known as self and the rest of the arguments are provided by the programmer.
-```python
-class Triangle:
-    # parameterized constructor
-    def __init__(self, b, h):
-        self.base = b
-        self.height = h
-
- 
-    def areaOfTriangle(self):
-        self.area = self.base * self.height * 0.5
-        print("Area of triangle: " + str(self.area))
- 
-# creating object of the class
-# this will invoke parameterized constructor
-obj = Triangle(5, 14)
-obj.areaOfTriangle()
-
-Output:-
-Area of triangle: 35.0
-```
-
-d. Why used constructor?
-e. Advantage of constructor
-
-
-### Ques. What is Constructor?
-* Constructors are special function/method which is automatically called when an object is created.
-* Syntax of a constructor
-```python
-def __init__(self):
-    # body of the constructor
-```
 * Example:-
 ```python
 class Student:
@@ -81,6 +29,11 @@ Inside Constructor
 All variables initialized
 Hello, my name is Emma
 ```
+
+d. Why used constructor?
+e. Advantage of constructor
+
+
 * **Types of Constructors:-**
   * Default Constructor
   * Non-parametrized constructor

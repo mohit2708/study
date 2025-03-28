@@ -545,39 +545,21 @@ WHERE (employee.departmentId, employee.salary) IN (
 
 
 ### Ques. How to find Nth highest salary from a table?
-```sql
-select emp_name, salary from employee order by Salary DESC;
-+----------+---------+
-| emp_name | salary  |
-+----------+---------+
-| KAYLING  | 6000.00 |
-| SCARLET  | 3100.00 |
-| FRANK    | 3100.00 |
-| JONAS    | 2957.00 |
-| BLAZE    | 2750.00 |
-| CLARE    | 2550.00 |
-| ADELYN   | 1700.00 |
-| TUCKER   | 1600.00 |
-| MARKER   | 1400.00 |
-| MADDEN   | 1350.00 |
-| WADE     | 1350.00 |
-| ADNRES   | 1200.00 |
-| JULIUS   | 1050.00 |
-| SANDRINE |  900.00 |
-+----------+---------+
-```
 
 #### Using the LIMIT Clause
 * Syntex:-
 ```sql
-Select Salary from table_name order by Salary DESC limit n-1,1;
+Select DISTINCT Salary from table_name order by Salary DESC limit n-1,1;
+SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET N-1;
 ```
 
-* The limit clause has two components, the **First component** is to skip a number of rows from the top and the **second component** is to display the number of rows we want. 
+* The limit clause has two components, the **First component** is to skip a number of rows from the top and the **second component** is to display the number of rows we want.
 * To find the **4th** Highest salary query will be
-
 ```sql
-Select emp_name, salary from Employee order by salary DESC limit 3,1;
+Select DISTINCT emp_name, salary from Employee order by salary DESC limit 3,1;
+(OR)
+Select DISTINCT Salary from employees order by Salary DESC limit 1 OFFSET 3;
+
 +----------+---------+
 | emp_name | salary  |
 +----------+---------+
@@ -585,10 +567,10 @@ Select emp_name, salary from Employee order by salary DESC limit 3,1;
 +----------+---------+
 
 ```
-* using sub Query
+#### using sub Query
 ```sql
 # 3rd higest salery
-SELECT MAX(salary) FROM Employee WHERE salary < (SELECT MAX(salary) FROM Employee WHERE salary < (SELECT MAX(salary) FROM Employee));
+SELECT MAX(salary) AS ThirdHighestSalary FROM Employee WHERE salary < (SELECT MAX(salary) FROM Employee WHERE salary < (SELECT MAX(salary) FROM Employee));
 +-------------+
 | MAX(salary) |
 +-------------+
@@ -597,27 +579,6 @@ SELECT MAX(salary) FROM Employee WHERE salary < (SELECT MAX(salary) FROM Employe
 ```
 
 ### Ques. Top 5 Salery?
-```sql
-select emp_name, salary from employee order by Salary DESC;
-+----------+---------+
-| emp_name | salary  |
-+----------+---------+
-| KAYLING  | 6000.00 |
-| SCARLET  | 3100.00 |
-| FRANK    | 3100.00 |
-| JONAS    | 2957.00 |
-| BLAZE    | 2750.00 |
-| CLARE    | 2550.00 |
-| ADELYN   | 1700.00 |
-| TUCKER   | 1600.00 |
-| MARKER   | 1400.00 |
-| MADDEN   | 1350.00 |
-| WADE     | 1350.00 |
-| ADNRES   | 1200.00 |
-| JULIUS   | 1050.00 |
-| SANDRINE |  900.00 |
-+----------+---------+
-```
 * Using limit
 ```sql
 SELECT salary FROM employee ORDER BY salary DESC LIMIT 4
