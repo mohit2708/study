@@ -2,6 +2,18 @@
 * Python has a built-in module that you can use for mathematical tasks.
 
 ### Math Methods
+* **Arithmetic operations:** math.ceil(), math.floor(), math.fabs(), math.fmod(), math.pow(), math.sqrt(), math.trunc().
+* **Trigonometric functions:** math.sin(), math.cos(), math.tan(), math.asin(), math.acos(), math.atan(), math.atan2(), math.hypot().
+* **Logarithmic and exponential functions:** math.exp(), math.log(), math.log10(), math.log2().
+* **Angular conversion:** math.degrees(), math.radians().
+* **Constants:** math.pi, math.e, math.tau, math.inf, math.nan.
+
+### Example
+```python
+result = math.sqrt(25)  # Calculates the square root of 25
+print(result)  # Output: 5.0
+```
+
 
 ### math.floor() Method
 * The math.floor() method rounds a number DOWN to the nearest integer, if necessary, and returns the result.

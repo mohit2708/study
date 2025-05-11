@@ -1,9 +1,7 @@
 ### **Ques. What is a constructor in Python?**
-* Constructors are special function/method which is automatically called when an object is created.
-* In Python the __init__() method is called the constructor and is always called when an object is created.
-* A constructor is called only once at the time of creation an object.
-* if two object are created for a class, the constructer will be called once for each instance.
-* If you don't define a __init__ method in your class, Python automatically provides a default constructor that takes no arguments.
+* In Python, the __init__() method is a special constructor method that is automatically called when an object is created, and it is called once for each instance of the class.
+* If two objects are created from the same class, the constructor will be called separately for each object.
+* If you don't define an __init__() method in your class, Python automatically provides a default constructor that takes no arguments.
 
 * Example:-
 ```python
@@ -71,9 +69,7 @@ class Company:
 cmp = Company()
 
 # calling the instance method using the object
-cmp.show()
-
-Output:- Name: Mohit Address: Greater Noida
+cmp.show()  # Output:- Name: Mohit Address: Greater Noida
 ```
 
 #### Parameterized Constructor:-
@@ -93,14 +89,10 @@ class Employee:
 
 # creating object of the Employee class
 emma = Employee('Emma', 23, 7500)
-emma.show()
+emma.show() # Output:- Emma 23 7500
 
 kelly = Employee('Kelly', 25, 8500)
-kelly.show()
-
-Output:-
-Emma 23 7500
-Kelly 25 8500
+kelly.show() # Output:- Kelly 25 8500
 ```
 
 ### Ques. Constructor With Default Values?
@@ -146,11 +138,8 @@ class Student:
         self.age = age
 
 # creating first object
-emma = Student('Emma')
+emma = Student('Emma')  # output:- Student.__init__() missing 1 required positional argument: 'age'
 
 # creating Second object
-kelly = Student('Kelly', 13)
-
-Output:-
-TypeError: __init__() missing 1 required positional argument: 'age'
+kelly = Student('Kelly', 13) # output:- Two arguments constructor
 ```

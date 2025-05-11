@@ -52,10 +52,12 @@ SHOW TABLES;
 +-----------------------+
 ```
 
-### Create table
+### select table
 ```sql
 use database_name;
 ```
+
+### Create table
 ```sql
 CREATE TABLE table_name(  
     id int NOT NULL AUTO_INCREMENT,  
@@ -65,15 +67,7 @@ CREATE TABLE table_name(
     PRIMARY KEY (id) 
 );
 ```
-```sql
-CREATE TABLE STUDENTS(
-id INT NOT NULL,  
-first_name VARCHAR (20) NOT NULL,
-age INT NOT NULL,  
-address CHAR (25),  
-PRIMARY KEY (id)  
-);  
-```
+
 ```sql
 CREATE TABLE table_name
 (

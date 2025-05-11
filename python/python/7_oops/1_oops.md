@@ -4,7 +4,6 @@
 |       | [What is the use of self in Python?](#ques-what-is-the-use-of-self-in-python)                  |
 |       | [What is pass in Python?](#ques-what-is-pass-in-python)                                        |
 |       | [What is break, continue and pass in Python?](#ques-what-is-break-continue-and-pass-in-python) |
-|       | [What is the super() Function?](#ques-what-is-the-super-function)                              |
 |       | [What is issubclass()?](#ques-what-is-issubclass)                                              |
 |       | [What is __str_ _ and __repr_ _?](#ques-what-is-str-and-repr)                                  |
 |       | [What is Abstract Method?](#ques-what-is-abstract-method)                                      |
@@ -23,8 +22,7 @@
   
 
 ### Ques. What is the use of self in Python?
-* The Self parameter is a reference to the current instance of the class, and is used to access varibales that belongs to the class.
-* Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python.
+* The Self parameter is a reference to the current instance of the class, we can access the attributes and methods of the class in python.
 ```python
 class Person:
   def __init__(self, name, age):
@@ -82,31 +80,6 @@ for p in pat:
 print(current)    # output => 0
 ```
 
-
-### Ques. What is the super() Function?
-* Super() method is used to access method of the parant class.
-* The **super** function returns a temporary object of the parent class that allows us to call a parent class method inside a child class method.
-* **Benefits** of using the super() function.
-  * We are not required to remember or specify the parent class name to access its methods.
-  * We can use the super() function in both single and multiple inheritances.
-  * The super() function support code reusability as there is no need to write the entire function
-```python
-class Company:
-    def company_name(self):
-        return 'Google'
-
-class Employee(Company):
-    def info(self):
-        # Calling the superclass method using super()function
-        c_name = super().company_name()
-        print("Jessa works at", c_name)
-
-# Creating object of child class
-emp = Employee()
-emp.info()
-
-Output:- Jessa works at Google
-```
 
 ### Ques. What is issubclass()?
 * we can use Python built-in function issubclass(). This function returns True if the given class is the subclass of the specified class. Otherwise, it returns False.
@@ -169,7 +142,7 @@ def add_numbers(x, y):
 result = add_numbers(5, 3)
 print(result)
 ```
-#### Mthod
+#### Method
 * A method is a function that is associated with an object or a class.
 * It is defined within a class and operates on the data or attributes of that class.
 * It is called using the dot notation on an object of the class.
@@ -180,4 +153,23 @@ class Dog:
 
 my_dog = Dog()
 my_dog.bark()
+```
+
+### What is Python Enumeration?
+* In Python, an enumeration (or "enum") is a class that defines a set of symbolic names (constants) that are bound to unique, constant values. Enums are created using the enum module and are typically used to represent groups of related constants, making code more readable and maintainable.
+```python
+from enum import Enum
+
+class TrafficLight(Enum):
+    RED = 1
+    YELLOW = 2
+    GREEN = 3
+
+# Accessing enum members by name:
+print(TrafficLight.RED.name)  # Output: RED
+print(TrafficLight.GREEN.value) # Output: 3
+
+# Accessing enum members by value:
+print(TrafficLight(1).name) # Output: RED
+print(TrafficLight(3).value) # Output: 3
 ```

@@ -9,7 +9,14 @@
 * The object is an entity that has state and behavior. It may be any real-world object like the mouse, keyboard, chair, table, pen, etc.
 * Before creating objects, you define a class first. And from the class, you can create one or more objects. The objects of a class are also called **instances** of a class.
 * **For example:** if you have an employee class, then it should contain an attribute and method, i.e. an email id, name, age, salary, etc.
-  
+
+```python
+class Person:
+    pass
+
+person = Person()
+print(person)
+```
 ```python
 class car:
     a = "mohit"
@@ -20,12 +27,8 @@ class car:
         print(self.modelname,self.year)  
   
 c1 = car("Toyota", 2016)  
-print(c1.a)             # Accessing Object's variables
-c1.display()            # Accessing Object's functions
-
-output:- 
-mohit
-Toyota 2016
+print(c1.a)       # Accessing Object's variables    Output:- mohit
+c1.display()      # Accessing Object's functions    Output:- Toyota 2016
 ```
 
 * Modifying Object's properties
@@ -35,17 +38,12 @@ class Scaler:
 
 # Declaring an object
 obj1 = Scaler()
-print(obj1.a)
+print(obj1.a)   # output:- 10
 
 #Modifying value
 obj1.a = 200
-print("After modifying the object properties")
-print(obj1.a) 
-
-Output:-
-10
-After modifying the object properties
-200
+print("After modifying the object properties")  # output:- After modifying the object properties
+print(obj1.a)   # output:- 200
 ```
 
 
@@ -55,9 +53,9 @@ After modifying the object properties
 
 
 ### Ques. Delete the Object?
-We can delete the properties of the object or object itself by using the del keyword.
-* Deleting the property of object
+* We can **delete the properties of the object** or object itself by using the **del** keyword.
 ```python
+# delete the properties of the object
 class Student:
     def __init__(self,name):
         self.name = name
@@ -66,18 +64,15 @@ obj = Student("mohit")
 print(obj.__dict__)   # Output:- {'name': 'mohit'}
 del obj.name
 print(obj.__dict__)   # Output:- {}
-```
-* Deleting the object itself
-```python
-class Student:
-    def __init__(self,name):
-        self.name = name
 
+
+# Deleting the object itself by del keyword
 obj = Student("mohit")
 print(obj.__dict__)   # Output:- {'name': 'mohit'}
 del obj
 print(obj.__dict__)   # Output:- ERROR!
 ```
+
 
 ### Ques. Counting the Number of objects of a Class?
 ```python

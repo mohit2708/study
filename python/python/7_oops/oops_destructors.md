@@ -6,31 +6,25 @@ class Student:
 
     # constructor
     def __init__(self, name):
-        print('Inside Constructor')
         self.name = name
-        print('Object initialized')
+        print('Object is created')
 
     def show(self):
         print('Hello, my name is', self.name)
 
     # destructor
     def __del__(self):
-        print('Inside destructor')
-        print('Object destroyed')
+        print('Object is being destroyed')
 
 # create object
-s1 = Student('Emma')
+s1 = Student('Emma')    # call init method automatically
 s1.show()
 
 # delete object
-del s1
+del s1          # # call del method automatically
 
 Output:-
-Inside Constructor
-Object initialized
-
+Object is created
 Hello, my name is Emma
-
-Inside destructor
-Object destroyed
+Object is being destroyed
 ```

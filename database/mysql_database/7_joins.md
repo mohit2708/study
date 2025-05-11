@@ -1,74 +1,45 @@
-## Ques. **What Is Joins?**
-* Joins is used to retrieve data from multiple tables. It is performed whenever you need to fetch records from two or more tables.
+### Ques. What Is Joins?
+* A JOIN is a method used to combine rows from two or more tables based on a related column between them.
 * MySQL JOINS are used with SELECT statement.
 
 #### Many types of MySQL joins:
 1. Self Join
-2. Outer Join
-3. Inner Join
-4. Left JOIN
-5. Right JOIN
-6. Full Join
+2. Inner Join
+3. Left JOIN
+4. Right JOIN
+5. Full Join
+6. Outer Join
 7. Cross Join 
 
 
 ### Self Join
-* A self-join in SQL allows you to join a table to itself. 
+* A self join connects a table to itself. Used when you want to compare rows within the same table.
 ```sql
-SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
-FROM Customers A, Customers B
-WHERE A.CustomerID <> B.CustomerID
-AND A.City = B.City
-ORDER BY A.City;
+Customers table:                                      
++----+----------+-----+-----------+----------+        
+| ID | NAME     | AGE | ADDRESS   | SALARY   |        
++----+----------+-----+-----------+----------+        
+|  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |        
+|  2 | Khilan   |  25 | Delhi     |  1500.00 |        
+|  3 | kaushik  |  23 | Kota      |  2000.00 |        
+|  4 | Chaitali |  25 | Mumbai    |  6500.00 |        
+|  5 | Hardik   |  27 | Bhopal    |  8500.00 |   
+|  6 | Komal    |  22 | MP        |  4500.00 |
+|  7 | Muffy    |  24 | Indore    | 10000.00 |
++----+----------+-----+-----------+----------+
+
+-- Example
+SELECT c1.NAME AS Customer1, c2.NAME AS Customer2, c1.SALARY FROM Customers c1
+JOIN Customers c2 ON c1.SALARY = c2.SALARY AND c1.ID < c2.ID;
+-- Output:
++------------+------------+----------+
+| Customer1  | Customer2  | SALARY   |
++------------+------------+----------+
+| Ramesh     | kaushik    | 2000.00  |
++------------+------------+----------+
 ```
 
-### Outer join
-* SQL OUTER JOIN, often referred to as a full outer join, is a type of SQL JOIN operation that retrieves all records from both tables, including matching and non-matching records.
-* SQL Outer Joins allow retrieval of rows from two or more tables based on a related column.
-```sql
-SELECT column_list
-FROM table1
-FULL OUTER JOIN table2 ON table1.column = table2.column;
-```
-
-```sql
-# Example query
-employees:
-
-| employee_id | employee_name | department_id |
-| ----------- | ------------- | ------------- |
-| 1           | John Smith    | 101           |
-| 2           | Mary Johnson  | 102           |
-| 3           | Sam Brown     | 103           |
-
-departments:
-
-| department_id | department_name |
-| ------------- | --------------- |
-| 101           | HR              |
-| 102           | Finance         |
-| 104           | Marketing       |
-
-SELECT employees.employee_id, employees.employee_name, departments.department_name
-FROM employees
-FULL OUTER JOIN departments ON employees.department_id = departments.department_id;
-
-| employee_id | employee_name | department_name |
-| ----------- | ------------- | --------------- |
-| 1           | John Smith    | HR              |
-| 2           | Mary Johnson  | Finance         |
-| 3           | Sam Brown     | NULL            |
-| NULL        | NULL          | Marketing       |
-```
-
-#### When you would use it
-1. **Merging data**: When you need to combine data from two tables into a single result set while preserving all records.
-2. **Handling missing data**: In scenarios where data might be missing or incomplete in one or both tables.
-3. **Comparing data**: For data analysis, auditing, or quality control to compare and identify differences between two data sources.
-4. **Reporting exceptions**: To identify and report data discrepancies or anomalies across tables.
-
-
-### **INNER JOIN:-**  
+### INNER JOIN:-
 * The MySQL Inner Join is used to returns only those results from the tables that **match** the specified condition and hides other rows and columns.
 ```sql
 Customers table:                                      
@@ -100,7 +71,7 @@ SELECT customers.name, customers.age, customers.salary, order.date FROM customer
 +----------+-----+---------+---------------------+
 ```
 
-### **Left JOIN:-** 
+### Left JOIN:-
 * The LEFT JOIN keyword returns all records from the left table (table1), and the matching records (if any) from the right table (table2).
 ```sql
 CUSTOMERS Table
@@ -144,18 +115,90 @@ Result:-
 +----+----------+--------+---------------------+
 ```
 
-### **Right JOIN:-** The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records (if any) from the left table (table1).
+### Right JOIN:-
+* The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records (if any) from the left table (table1).
 ```sql
-+-------+----+                  +-------+----+  
-| ID    |NAME|                  | ID    |NAME|
-+-------+----+
-|  1001 | A  |
-|  1002 | B  |
-|  1003 | C  |
-|  1004 | D  |
-+-------+----+
+-- Customers Table
++----+----------+
+| ID | NAME     |
++----+----------+
+|  1 | Ramesh   |
+|  2 | Khilan   |
+|  3 | Kaushik  |
+
+-- Orders Table
++----------+------------+
+| OrderID  | CustomerID |
++----------+------------+
+|   101    |     2      |
+|   102    |     3      |
+|   103    |     4      |
++----------+------------+
+
+-- RIGHT JOIN Result
+SELECT Customers.NAME, Orders.OrderID FROM Customers RIGHT JOIN Orders 
+ON Customers.ID = Orders.CustomerID;
++----------+------------+
+| NAME     | OrderID    |
++----------+------------+
+| Khilan   |   101      |
+| Kaushik  |   102      |
+| NULL     |   103      |
++----------+------------+
 
 ```
+
+### Outer join
+* Returns all rows from both tables, Matching and non-matching rows.
+* NULL values where no match exists
+```sql
+SELECT column_list
+FROM table1
+FULL OUTER JOIN table2 ON table1.column = table2.column;
+```
+
+```sql
+# Example query
+employees:
+
+| employee_id | employee_name | department_id |
+| ----------- | ------------- | ------------- |
+| 1           | John Smith    | 101           |
+| 2           | Mary Johnson  | 102           |
+| 3           | Sam Brown     | 103           |
+
+departments:
+
+| department_id | department_name |
+| ------------- | --------------- |
+| 101           | HR              |
+| 102           | Finance         |
+| 104           | Marketing       |
+
+SELECT employees.employee_id, employees.employee_name, departments.department_name
+FROM employees
+FULL OUTER JOIN departments ON employees.department_id = departments.department_id;
+
+| employee_id | employee_name | department_name |
+| ----------- | ------------- | --------------- |
+| 1           | John Smith    | HR              |
+| 2           | Mary Johnson  | Finance         |
+| 3           | Sam Brown     | NULL            |
+| NULL        | NULL          | Marketing       |
+```
+
+#### When you would use it
+1. **Merging data**: When you need to combine data from two tables into a single result set while preserving all records.
+2. **Handling missing data**: In scenarios where data might be missing or incomplete in one or both tables.
+3. **Comparing data**: For data analysis, auditing, or quality control to compare and identify differences between two data sources.
+4. **Reporting exceptions**: To identify and report data discrepancies or anomalies across tables.
+
+
+
+
+
+
+
 
 
 ```sql

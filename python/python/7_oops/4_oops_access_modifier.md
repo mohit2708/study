@@ -79,6 +79,7 @@ objsubclass.access_protected() # Output:- My name is mohit and I am 30 years old
 ```
 
 ### private access modifier:-
+*  private attributes are denoted with a double underscore prefix (__) and are intended for internal use within a class, not to be accessed or modified directly from outside.
 * Private attributes & method are meant to be used only within the class and are not accessibale from the outside the class.
 * Example for private method
 * agar humne double underscore se kisi ko private kar diya hai to use usi class ke function call kar payenge.

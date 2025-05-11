@@ -14,12 +14,12 @@
 * **Example:-** Email is a class and headding, particiant, attachment is object
 
 #### Define a class
-* To define a class in Python, you use the class keyword followed by the class name and a colon. The following example defines a Person class:
+* We use the class keyword followed by the class name and a colon. The following example defines a Person class:
 ```python
 class Person:
     pass
 ```
-* By convention, you use capitalized names for classes in Python. If the class name contains multiple words, you use the CamelCase format, for example SalesEmployee.
+* If the class name contains multiple words, you use the CamelCase format, for example SalesEmployee.
 * When printing out the person object, you’ll see its name and memory address:
 ```python
 class Person:
@@ -34,62 +34,77 @@ Output:- <__main__.Person object at 0x000001C46D1C47F0>
 print(id(person)) # 1943155787760
 ```
 
-### Python Class Variables
+### Python get Class Variables
 * Get the values of **class variables**
 ```python
-class HtmlDocument:
-    extension = 'html'
-    version = '5'
+# using calss name
+class Student:
+    name = 'mohit saxena'
+    roll_no = '12845678'
+    
+print(Student.name)     # mohit saxena
+print(Student.roll_no)  # 12845678
 
-print(HtmlDocument.extension) # html
-print(HtmlDocument.version) # 5
+
+# using **getattr()** function:- The getattr() function accepts an object and a variable name. It returns the value of the class variable.
+name = getattr(Student, 'name')
+rollno = getattr(Student, 'roll_no')
+
+print(name)     # mohit saxena
+print(rollno)   # 12845678
 ```
 * If you access a class variable that doesn’t exist, you’ll get an AttributeError exception.
 
 
-* **getattr()**:- Another way to get the value of a class variable is to use the **getattr()** function. The getattr() function accepts an object and a variable name. It returns the value of the class variable. For example:
-```python
-class HtmlDocument:
-    extension = 'html'
-    version = '5'
-
-extension = getattr(HtmlDocument, 'extension')
-version = getattr(HtmlDocument, 'version')
-
-print(extension)  # html
-print(version)  # 5
-```
 
 ### Set values for class variables
 * To set a value for a class variable, you use the dot notation:
+
 ```python
-HtmlDocument.version = 10
+# set the value using class
+class Student:
+    name = 'mohit saxena'
+    roll_no = 12845678
+
+Student.roll_no = 10     
+print(Student.roll_no)    # output:- 10
+
+# using setattr() built-in function
+setattr(Student, 'roll_no', 10)
+print(Student.roll_no)  # output:- 10
 ```
+
+
+### Delete class variables
 ```python
-class HtmlDocument:
-    extension = 'html'
-    version = '5'
+class Student:
+    name = 'mohit saxena'
+    roll_no = '12845678'
+    
+print(Student.name)     # mohit saxena
+print(Student.roll_no)  # 12845678
 
-HtmlDocument.version = 10
-print(HtmlDocument.version)
+# using **delattr()** function:
+delattr(Student, 'roll_no') # Output:- AttributeError: type object 'Student' has no attribute 'roll_no'
 
-version = getattr(HtmlDocument, 'version')
-print(version)
+# using del keyword
+del Student.roll_no
+print(Student.roll_no)  # Output:- AttributeError: type object 'Student' has no attribute 'roll_no'
 ```
-* or you can use the setattr() built-in function:
-```python
-setattr(HtmlDocument, 'version', 10)
-```
-```python
-class HtmlDocument:
-    extension = 'html'
-    version = '5'
 
-setattr(HtmlDocument, 'version', 10)
-print(HtmlDocument.version)
+### Ques.  What is __init__ Method?
+* **__init__** is a constructor method in Python and is automatically called to allocate memory when a new object/instance is created.
+* All classes have a function called __init__() function, which is always excuted when the object is being initiated.
+* Python always calls init function whatever you create them or not.
 
-version = getattr(HtmlDocument, 'version')
-print(version)  # 5
+```python
+class Student:
+   def __init__(self, fname, lname):
+       self.firstname = fname
+       self.lastname = lname
+       print("My name is " + self.firstname + " " + self.lastname)
+# creating a new object
+stu1 = Student("Mohit", "Saxena") #output:- My name is Mohit Saxena
 ```
 
 * Since Python is a dynamic language, you can add a class variable to a class at runtime after you have created it. 
@@ -102,26 +117,6 @@ HtmlDocument.media_type = 'text/html'
 print(HtmlDocument.media_type)
 
 Output:- text/html
-```
-
-### Delete class variables
-* To delete a class variable at runtime, you use the **delattr()** function:
-```python
-delattr(HtmlDocument, 'version')
-```
-* Or you can use the **del** keyword:
-```python
-del HtmlDocument.version
-```
-
-
-
-```python
-class Student:
-    name = "mohit"
-
-obj1 = Student()
-print(obj1.name)
 ```
 
 * **Example 1**
@@ -213,17 +208,3 @@ Machine Learning
 Machine Learning
 ```
 
-### Ques.  What is __init__ Method?
-* **__init__** is a constructor method in Python and is automatically called to allocate memory when a new object/instance is created.
-* All classes have a function called __init__() function, which is always excuted when the object is being initiated.
-* Python always calls init function whatever you create them or not.
-
-```python
-class Student:
-   def __init__(self, fname, lname):
-       self.firstname = fname
-       self.lastname = lname
-       print("My name is " + self.firstname + " " + self.lastname)
-# creating a new object
-stu1 = Student("Mohit", "Saxena") #output:- My name is Mohit Saxena
-```

@@ -16,156 +16,180 @@
 
 
 ## Primary Key?
-### **Ques. What Is Primary Key?**
-* The PRIMARY KEY constraint uniquely identifies each record in a database table. It must contain unique values. 
+### Ques. What Is Primary Key?
+* A PRIMARY KEY is a column or combination of columns that uniquely identifies each record in a database table.
 * A Primary Key column cannot have Null values.
-* A table can have only one primary key, which may consist of single or multiple fields. When multiple fields are used as a primary key, they are called a composite key.
-* **Create Primary Key:-**
+* A table can have only one primary key per table.
+* When multiple fields are used as a primary key, they are called a composite key.
+
 ```sql
-CREATE table Employee ( 
- Employee_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
- Employee_Name VARCHAR(30) NOT NULL,
- Employee_License INT NOT NULL,
- Employee_Department VARCHAR(15) NOT NULL DEFAULT 0
+-- Create Primary Key
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100)
+);
+-- (OR)
+CREATE TABLE Students (
+    student_id INT,
+    name VARCHAR(50),
+    email VARCHAR(100),
+    PRIMARY KEY (student_id) 
 );
 
-# OR
-CREATE table Employee (
- Employee_ID INT NOT NULL AUTO_INCREMENT,
- Employee_Name VARCHAR(30) NOT NULL,
- Employee_License INT NOT NULL,
- Employee_Department VARCHAR(15) NOT NULL DEFAULT 0,
- PRIMARY KEY (Employee_ID) 
+-- Create Primary Key with Auto Increment
+CREATE TABLE Employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50)
 );
 
-# For multiple column
-CREATE table Employee (
- Employee_ID INT NOT NULL AUTO_INCREMENT,
- Employee_Name VARCHAR(30) NOT NULL,
- Employee_License INT NOT NULL,
- Employee_Department VARCHAR(15) NOT NULL DEFAULT 0,
- PRIMARY KEY (Employee_ID ,Employee_License)
- );
+-- Create Primary Key with multiple column
+CREATE TABLE Order_Items (
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    PRIMARY KEY (order_id, product_id)  -- Multiple columns as primary key
+);
 ```
 
 ### **Add primary Key**
-* if primary key doesn’t exists in the created table
 ```sql
+-- if primary key doesn’t exists in the created table 
 ALTER TABLE table_name ADD PRIMARY KEY (Id)
-```
-* For multiple column
-```sql
-ALTER table Employee ADD constraints PK_Employee PRIMARY KEY (column name1, column name 2);
+
+-- For multiple column 
+ALTER table Employee ADD constraints PK_Employee PRIMARY KEY (column_name1, column_name2);
+-- (OR)
+ALTER TABLE table_name ADD PRIMARY KEY (column1, column2);
+
+-- Adding Primary Key with Auto-Increment
+ALTER TABLE table_name MODIFY column_name INT AUTO_INCREMENT PRIMARY KEY;
 ```
 
-### **Delete primary Key**
+### Delete primary Key
 ```sql
-ALTER TABLE CUSTOMERS DROP PRIMARY KEY;
-```
-* For multiple column
-```sql
+ALTER TABLE table_name DROP PRIMARY KEY;
+
+-- For multiple column 
 ALTER TABLE Employee DROP CONSTRAINT PK_Employee;
-```
-
-**[⬆ Back to Top](#table-of-contents)**
-
-## Foreign Key?
-### **Ques. What Is Foreign Key?**
-* A foreign key is a key used to link two tables together. This is something called a reference key.
-* Foreign key is a column or a combination of columns whose values match a primary key in a different table.
-* The relationship between two tables matches the primary key in one of the tables with a foreign key in the second table.
-
-  * We have two tables that are Employee and Department table. 
-```sql
-CREATE TABLE Department( department_id INT PRIMARY KEY, department_name VARCHAR(25));
-```
-```sql
-CREATE table Employee (
- Employee_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
- department_id INT,
- Employee_Name VARCHAR(30) NOT NULL,
- Employee_License INT NOT NULL,
- Employee_Department VARCHAR(15) NOT NULL DEFAULT 0,
- FOREIGN KEY(department_id) REFERENCES Department(department_id)
- );
-
-# Here department_id is the foreign key in the employee table while it is primary key in the department table.
-```
-
-* To allow naming of a Foreign Key constraint, and for defining a Foreign Key on multiple columns,
-```sql
-CREATE table Employee (
- Employee_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
- department_id INT,
- Employee_Name VARCHAR(30) NOT NULL,
- Employee_License INT NOT NULL,
- Employee_Department VARCHAR(15) NOT NULL DEFAULT 0,
- CONSTRAINT FK_dept_id FOREIGN KEY(department_id) REFERENCES Department(department_id)
-);
-```
-
-### Defining Foreign Key using ALTER?
-* if primary key doesn’t exists in the created table
-```sql
-ALTER TABLE Employee ADD FOREIGN KEY (department_id) REFERENCES Department(department_id);
-```
-* For multiple column
-```sql
-ALTER TABLE Employee 
-ADD CONSTRAINT FK_dept_id FOREIGN KEY (department_id) REFERENCES Department(department_id);
-```
-
-### DROP a Foreign Key from the table
-* For single column
-```sql
-ALTER TABLE Employee DROP FOREIGN KEY FK_dept_id;
-```
-* For multiple column
-```sql
-ALTER TABLE Employee DROP CONSTRAINT FK_dept_id;
+-- (OR)
+ALTER TABLE table_name DROP PRIMARY KEY;
 ```
 
 
-
-
-
-## Unique Key?
-### **Ques. What Is Unique Key?**
-* A unique key is a set of one or more than one fields/columns of a table that uniquely identify each record in a database table.
+### Ques. What Is Unique Key?
+* A Unique Key is a constraint that ensures all values in a column or a combination of columns are unique across all records in a table.
 * The Unique and Primary Key constraints both provide a guarantee for a column or set of columns.
 * A Primary Key consist automatically has a unique constraint define on it.
   * Defining unique key
 ```sql
-CREATE table Employee (
- Employee_ID INT NOT NULL UNIQUE,
- Employee_Name VARCHAR(30) NOT NULL,
- Employee_License INT NOT NULL,
- Employee_Department VARCHAR(15) NOT NULL DEFAULT 0
+-- Single Column Unique Key
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE
 );
-```
-* If you wish to define more than one Unique Key within a table you can use the following syntax:
-```sql
-CREATE TABLE <table_name>
-(
-Column_name1 datatype(),
-Column_name2 datatype(),…
-Column_namen datatype(),
-UNIQUE (column_name1, column_name2)
+
+-- Multiple Column Unique Key
+CREATE TABLE Employees (
+    id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    UNIQUE (first_name, last_name)
 );
 ```
 
 ### ALTER unique key
 ```sql
+-- Single Column
 ALTER table Employee ADD UNIQUE(column name);
+-- (OR)
+ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column_name);
+
+-- Multiple Columns
+ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column1, column2);
 ``` 
 
 ### Drop unique key
 ```sql
-ALTER TABLE Employee DROP CONSTRAINT Employee_ID ;
+ALTER TABLE Employee DROP CONSTRAINT Employee_ID;
+-- (OR)
+ALTER TABLE table_name DROP INDEX constraint_name;
+```
+**[⬆ Back to Top](#table-of-contents)**
+
+
+### **Ques. What Is Foreign Key?**
+* A foreign key is a key used to link two tables together. This is something called a reference key.
+* A column or set of columns in a table that references the PRIMARY KEY of another table.
+* Foreign key is a column or a combination of columns whose values match a primary key in a different table.
+* The relationship between two tables matches the primary key in one of the tables with a foreign key in the second table.
+
+```sql
+-- create Customers table
+CREATE TABLE Customers (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(100),
+  age INTEGER
+);
+
+-- create Products table
+CREATE TABLE Products (
+    customer_id INTEGER ,
+    name VARCHAR(100),
+    FOREIGN KEY (customer_id)
+    REFERENCES Customers(id)
+);
+
+-- Here, the customer_id column in the Products table references the id column in the Customers table.
+```
+```sql
+-- One-to-One:- Each record in one table connects to single record in another
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    passport_number INT,
+    FOREIGN KEY (passport_number) 
+    REFERENCES Passport(passport_number)
+);
+
+-- One-to-Many:- One record in parent table can relate to multiple records in child table
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    FOREIGN KEY (customer_id) 
+    REFERENCES Customers(customer_id)
+);
+
+-- Many-to-Many:- Multiple records in both tables can relate to each other
+CREATE TABLE StudentCourses (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+);
 ```
 
-## Composite Key?
-### **Ques. What is Composite Key?**
+
+
+### Adding Foreign Key to Existing Table?
+```sql
+-- if primary key doesn’t exists in the created table
+ALTER TABLE Employee ADD FOREIGN KEY (department_id) REFERENCES Department(department_id);
+
+-- For multiple column
+ALTER TABLE Employee ADD CONSTRAINT FK_dept_id FOREIGN KEY (department_id) REFERENCES Department(department_id);
+```
+
+### DROP a Foreign Key from the table
+```sql
+-- For single column/multiple column
+ALTER TABLE Employee DROP FOREIGN KEY FK_dept_id;
+```
+
+
+
+### Ques. What is Composite Key?
 * Composite key is combination of two or more columns that can uniquely identify each row in the table.
 * composite key is also a primary key, but the difference is that it is made by the combination of more than one column to identify the particular row in the table.
 * A composite key cannot be null.
@@ -177,6 +201,26 @@ class VARCHAR(30),
 section VARCHAR(1), 
 mobile VARCHAR(10),
 PRIMARY KEY (rollNumber, mobile));
+```
+
+#### Types of Composite Keys
+1. Composite Primary Key
+```sql
+CREATE TABLE StudentCourses (
+    student_id INT,
+    course_id INT,
+    semester VARCHAR(10),
+    PRIMARY KEY (student_id, course_id, semester)
+);
+```
+2. Composite Unique Key
+```sql
+CREATE TABLE Employees (
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    department VARCHAR(50),
+    UNIQUE (first_name, last_name, department)
+);
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
