@@ -89,34 +89,10 @@ Syntex:- issubclass(class, classinfo)
 
 
 ### Ques. What is __str__ and __repr__?
-* The __str__ method also known as a "dunder" method (double underscore method), that defines the string representation of an object. It's used to return a **human-readable** string when the built-in functions str() or print() are called on an instance of a class.
-```python
-class Book:
-    def __init__(self, title, author):
-        self.title = title
-        self.author = author
-    def __str__(self):
-        return f'"{self.title}" by {self.author}'
-
-book = Book("C++", "E balaguswami")
-print(book) # Output: "C++" by E balaguswami
-print(str(book))   # Output: '"C++" by E balaguswami'
-
-
-# Without a __str__ method, Python uses the default representation, like 
-# <__main__.Person object at 0x000001>.
-```
-
 * The repr() method returns a string containing a printable representation of an object. The repr() function calls the underlying __repr__() function of the object.
-* **__repr__** method returns a string representation of an object that is **machine-readable**.
-```python
-import datetime
-today = datetime.datetime.now()
-print(str(today))   # 2025-05-11 10:47:08.923663 (Readable end user format)
-print(repr(today))  # datetime.datetime(2025, 5, 11, 10, 47, 8, 923663) (official developmrnt format)
-```
-
-
+* The <b>__str__</b> method returns a string representation of an object that is human-readable while the 
+* <b>__repr__</b> method returns a string representation of an object that is machine-readable.
+	
 
 
 ### Ques. What is Abstract Method?

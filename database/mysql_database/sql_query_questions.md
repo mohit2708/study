@@ -185,38 +185,25 @@ CREATE TABLE IF NOT EXISTS jobs(
 
 
 ## Aggregate function
-
-### SUM()
-* SUM() is a function that takes the name of a column as an argument and returns the sum of all the values in that column.
 ```sql
+-- Sum() :- The SUM() function returns the total sum of a numeric column. 
 SELECT SUM(column_name) FROM table_name;
-```
 
-### AVG()
-* AVG() is an aggregate function that returns the average value for a numeric column.
-```sql
+-- AVG():- The AVG() function returns the average value of a numeric column. 
 SELECT AVG(column_name) FROM table_name;
-```
 
-### MAX()
-* MAX() is a function that takes the name of a column as an argument and returns the largest value in that column.
-```sql
-SELECT MAX(column_name)
-FROM table_name;
-```
+-- MAX() :- The MAX() function returns the largest value of the selected column.
+SELECT MAX(column_name) FROM table_name;
 
-### MIN()
-* MIN() is a function that takes the name of a column as an argument and returns the smallest value in that column.
-```sql
-SELECT MIN(column_name)
-FROM table_name;
-```
+-- Min():- The MIN() function returns the smallest value of the selected column.
+SELECT MIN(column_name) FROM table_name;
 
-### COUNT()
-* COUNT() is a function that takes the name of a column as an argument and counts the number of rows where the column is not NULL.
-```sql
+-- count():- The COUNT() function returns the number of rows that matches a specified criterion.
 SELECT COUNT(column_name) FROM table_name;
 ```
+
+
+
 
 ### ROUND()
 * ROUND() is a function that takes a column name and an integer as arguments. It rounds the values in the column to the number of decimal places specified by the integer.

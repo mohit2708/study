@@ -40,8 +40,6 @@
   * **SET TRANSACTION:** Places a name on a transaction.
 
 
-
-
 ### Show tables;
 ```sql
 SHOW TABLES;
