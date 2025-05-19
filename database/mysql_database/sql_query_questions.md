@@ -17,13 +17,14 @@
 |       | [Find Names of students whose age is greater than 21?](#find-names-of-students-whose-age-is-greater-than-21)                               |
 
 
-|  No.  | [Aggregate function]()                         |
+|  No.  | [Aggregate function](#aggregate-function)      |
 | :---: | ---------------------------------------------- |
 |       | [SUM()](#sum)                                  |
 |       | [AVG()](#avg)                                  |
 |       | [Max()](#max)                                  |
 |       | [MIN()](#min)                                  |
 |       | [COUNT()](#count)                              |
+|       | [ROUND()](#round)                              |
 |       | [BETWEEN()](#between)                          |
 |       | [AND](#and)                                    |
 |       | [OR](#or)                                      |
@@ -42,6 +43,8 @@
 |  No.  | [Questions]()                                                                    |
 | :---: | -------------------------------------------------------------------------------- |
 |       | [Wildcard Characters/Like Characters?](#ques-wildcard-characterslike-characters) |
+
+<div style="page-break-before: always;"></div>
 
 
 ### Demo data for execute the query
@@ -182,9 +185,9 @@ CREATE TABLE IF NOT EXISTS jobs(
     CHECK(MAX_SALARY<=25000)
 );
 ```
+<div style="page-break-before: always;"></div>
 
-
-## Aggregate function
+### Aggregate function
 ```sql
 -- Sum() :- The SUM() function returns the total sum of a numeric column. 
 SELECT SUM(column_name) FROM table_name;
@@ -203,12 +206,16 @@ SELECT COUNT(column_name) FROM table_name;
 ```
 
 
-
-
-### ROUND()
-* ROUND() is a function that takes a column name and an integer as arguments. It rounds the values in the column to the number of decimal places specified by the integer.
+###### ROUND()
+* The ROUND() function is used to round a numeric value to a specified number of decimal places.*
+* syntex:- syntex:- ROUND(number, decimal_places)
 ```sql
-SELECT ROUND(column_name, integer) FROM table_name;
+SELECT ROUND(123.4567, 2);  -- Returns 123.46
+SELECT ROUND(123.4567, 0);  -- Returns 123
+SELECT ROUND(123.4567, -1); -- Returns 120 (rounds to the nearest 10)
+
+-- example:-
+SELECT ROUND(salary, 2) AS rounded_salary FROM employees;
 ```
 
 ### BETWEEN()
@@ -339,34 +346,6 @@ WHERE some_column = some_value;
 
 Update customer set name="mohit" where id =1;
 ```
-
-### Ques. Wildcard Characters/Like Characters?
-* LIKE is a special operator used with the WHERE clause to search for a specific pattern in a column.
-* Wildcard characters are used with the LIKE operator. The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
-  * Wildcard Characters in MySQL
-
-| Symbol | Description                        |
-| :----- | :--------------------------------- |
-| %      | Represents zero or more characters |
-| _      | Represents a single character      |
-
-##### Some Example
-| LIKE Operator                   | Description                                                                   |
-| :------------------------------ | :---------------------------------------------------------------------------- |
-| WHERE CustomerName LIKE 'a%'    | Finds any values that starts with "a"                                         |
-| WHERE CustomerName LIKE '%a'    | Finds any values that ends with "a"                                           |
-| WHERE CustomerName LIKE '%or%'  | Finds any values that have "or" in any position                               |
-| WHERE CustomerName LIKE '_r%'   | Finds any values that have "r" in the second position                         |
-| WHERE CustomerName LIKE 'a_%_%' | Finds any values that starts with "a" and are at least 3 characters in length |
-| WHERE ContactName LIKE 'a%o'    | Finds any values that starts with "a" and ends with "o"                       |
-
-```sql
-# syntex
-SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern;
-
-SELECT * FROM Customers WHERE City LIKE 'ber%';
-```
-
 
 ##
 

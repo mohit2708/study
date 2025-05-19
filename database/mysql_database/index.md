@@ -15,7 +15,15 @@ CREATE INDEX idx_product_id ON Sales (product_id);
 ```sql
 CREATE INDEX idx_dept_salary ON employees(department, salary);
 ```
-3. 
+3. Unique Index:- 
+```sql
+CREATE UNIQUE INDEX idx_email_unique ON employees(email);
+```
+4. Full-Text Index :- Designed for efficient text search in large text fields (e.g., for searching keywords in articles, product descriptions, etc.)
+```sql
+CREATE FULLTEXT INDEX idx_description ON products(description);
+```
+
 
 ### Create index
 ```sql
