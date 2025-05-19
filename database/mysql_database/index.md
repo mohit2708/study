@@ -4,7 +4,18 @@
 * Indexes can be created on one or more columns of a table.
 * Index allows the database application to find data fast, without reading the whole table.
 * An index can be created in a table to find data more quickly and efficiently.
+* **How It Works:-** Behind the scenes, an index is usually implemented as a B-tree or similar structure.
 
+### Types of Indexes?
+1. **Single-column index:-** on one column
+```sql
+CREATE INDEX idx_product_id ON Sales (product_id);
+```
+2. **Composite/Multi-column indexes:** on multiple columns
+```sql
+CREATE INDEX idx_dept_salary ON employees(department, salary);
+```
+3. 
 
 ### Create index
 ```sql

@@ -79,6 +79,10 @@ SELECT name, email FROM customers WHERE customer_id = 1;
 6. Use stored procedures
 7. 
 
+
+### What is the difference between CHAR and VARCHAR?
+
+
 ### What is MySQL?Explain the differences between **SQL** and **MySQL**?In which language has MySQL been written?How to create a database in MySQL?.What is the MySQL server’s default port?  ->3306
 
 
