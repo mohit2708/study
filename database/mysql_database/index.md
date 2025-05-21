@@ -1,5 +1,4 @@
-**[⬆ Back to Top](#table-of-contents)**
-### **What is Index?**
+#### What is Index?
 * An index is used to enhance the performance of SQL Queries. It allows the database to find data quickly and efficiently by using Row ID, avoiding full table scans.
 * Indexes can be created on one or more columns of a table.
 * Index allows the database application to find data fast, without reading the whole table.
@@ -25,14 +24,6 @@ CREATE FULLTEXT INDEX idx_description ON products(description);
 ```
 
 
-### Create index
-```sql
-CREATE INDEX index_name on table_name (column_name)
-
--- Created index on multiple columns
-CREATE INDEX index_name ON table_name (column1, column2);
-```
-
 ### Unique Indexes
 * A Unique Index is a database index that ensures the uniqueness of values in one or more columns of a database table.
 * This index ensures that no two rows in the Employees table have the same employee_id(Colum_name), which maintains data integrity and prevents duplicate entries.
@@ -45,12 +36,12 @@ CREATE UNIQUE INDEX idx_email ON users(email);
 CREATE UNIQUE INDEX idx_name_age ON employees(last_name, first_name);
 ```
 
-### Show Index
+#### Show Index
 ```sql
 show index from table_name
 ```
 
-### Altering an Index
+#### Alter/Modify an Index
 ```sql
 -- Rename Index name
 ALTER TABLE table_name 
@@ -82,7 +73,7 @@ SET (
 );
 ```
 
-### Drop Index
+#### Drop Index
 ```sql
 Drop index index_name on table_name
 (OR) DROP INDEX table_name.index_name;

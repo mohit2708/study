@@ -9,32 +9,6 @@
 
 ## Tables
 
-
-
-### Alter command
-
-
-
-##### MAX()
-* MAX() is a function that takes the name of a column as an argument and returns the largest value in that column.
-```sql
-SELECT MAX(column_name)
-FROM table_name;
-```
-
-##### MIN()
-* MIN() is a function that takes the name of a column as an argument and returns the smallest value in that column.
-```sql
-SELECT MIN(column_name)
-FROM table_name;
-```
-
-
-
-
-
-
-
 ```sql
 Commands
 ALTER TABLE

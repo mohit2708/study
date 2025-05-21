@@ -66,27 +66,6 @@ CREATE TABLE table_name(
 );
 ```
 
-```sql
-CREATE TABLE table_name
-(
-id int AUTO_INCREMENT primary key, 
-column_name1 data_type(size),
-column_name2 data_type(size),
-column_name3 data_type(size),
-..
-);
-```
-* Create table with **primary key**
-```sql
-CREATE TABLE Employee(  
-EmployeeID NOT NULL,  
-FirstName varchar(255) NOT NULL,  
-LastName varchar(255),  
-City varchar(255),  
-PRIMARY KEY (EmployeeID)  
-); 
-```
-
 ### Insert table
 ```sql
 INSERT INTO table_name

@@ -1,60 +1,3 @@
-### Table of Contents
-
-|  No.  | Questions                                                                                            |
-| :---: | ---------------------------------------------------------------------------------------------------- |
-|       | [What is database?](#ques-What-is-database)                                                          |
-|       | [what is sql?](#ques-what-is-sql)                                                                    |
-|       | [What Is DBMS?](#Ques-What-is-DBMS)                                                                  |
-|       | [What Is RDBMS?](#what-is-rdbms)                                                                     |
-|       | [Difference between DBMS & RDBMS?](#ques-difference-between-dbms--rdbms)                             |
-|       | [Optimizing SQL Queries for Faster Performance](#ques-optimizing-sql-queries-for-faster-performance) |
-
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is database?
-* A database is an organized collection of data, stored and retrieved digitally from a remote or local computer system. Databases can be vast and complex, and such databases are developed using fixed design and modeling approaches.
-* Database is nothing but an organized form of data for easy access, storing, retrieval and managing of data. 
-* This is also known as structured form of data which can be accessed in many ways.
-**[⬆ Back to Top](#table-of-contents)**
-
-### Ques. What is Sql?
-* SQL is stands for structure query language. 
-* It is a database language used for database creation, deletion, fetching rows and modifying rows etc.
-* It is a kind of ANSI standard language, used with all database. 
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What Is DBMS?
-* A database management system is program that control creation, maintenance and use of a database.
-* DBMS can be termed as File Manager that manages data in a database rather than saving it in ﬁle systems.
-
-**[⬆ Back to Top](#table-of-contents)**
-### What is RDBMS?
-RDBMS stands for Relational Database Management System. RDBMS store the data into the collection of tables, which is related by common fields between the columns of the table. It also provides relational operators to manipulate the data stored into the tables.
-
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. Difference between DBMS & RDBMS?
-| DBMS                                          | RDBMS                                           |
-| :-------------------------------------------- | :---------------------------------------------- |
-| DBMS applications store data as file          | RDBMS applications store data in a tabular form |
-| Normalization is not present in DBMS          | Normalization is present in RDBMS               |
-| DBMS does not support distributed data hnbase | RDBMS support distributed database              |
-
-
-### Ques. Difference between **CHAR** and **VARCHAR** data types?
-* Both of these data types are used for characters.
-* **CHAR data** type is used to store **fixed-length** character strings. When VARCHAR data type is used to store **variable-length** character strings.
-* char occupies all the space and if space is remaining, then it fill all the blank space with "space". But in case of varchar, It takes only the required length & release remaining.
-```sql
-Char -> 10      | R | A | M | space | space | sapce | space | space | space | space |
-Varchar -> 10   | R | A | M |   |   |   |   |   |   |   |
-| R | A | M |
-```
-* varchar is better than Char in term of space. 
-* char perform is better than varchar.
-* Char max 256 characters, varchar 65535 characters.
-
-
 ### Ques. Optimizing SQL Queries for Faster Performance
 1. Minimize the use of wildcard characters
    * The use of wildcard characters, such as % and _, in SQL queries, can slow down query performance. When using wildcard characters, the database has to scan the entire table to find the relevant data. To optimize SQL queries, it is important to minimize the use of wildcard characters and to use them only when absolutely necessary.
@@ -80,10 +23,206 @@ SELECT name, email FROM customers WHERE customer_id = 1;
 7. 
 
 
-### What is the difference between CHAR and VARCHAR?
 
 
-### What is MySQL?Explain the differences between **SQL** and **MySQL**?In which language has MySQL been written?How to create a database in MySQL?.What is the MySQL server’s default port?  ->3306
+### What is MySQL?
+### Explain the differences between **SQL** and **MySQL**?In which language has MySQL been written?How to create a database in MySQL?.What is the MySQL server’s default port?  ->3306
+
+### **Ques. What are Constraints in SQL?**
+Constraints are used to specify the rules concerning data in the table. It can be applied for single or multiple fields in an SQL table during the creation of the table or after creating using the ALTER TABLE command. The constraints are:<br>
+* **NOT NULL** - Restricts NULL value from being inserted into a column.
+* **CHECK** - Verifies that all values in a field satisfy a condition.
+* **DEFAULT** - Automatically assigns a default value if no value has been specified for the field.
+* **UNIQUE** - Ensures unique values to be inserted into the field.
+* **INDEX** - Indexes a field providing faster retrieval of records.
+* **PRIMARY KEY** - Uniquely identifies each record in a table.
+* **FOREIGN KEY** - Ensures referential integrity for a record in another table.
 
 
 
+**[⬆ Back to Top](#table-of-contents)**
+### **What is Cursor?**
+* WHEN WE USE SELECT STMT IN DATABASE(ORACLE/SQLSERVER/MYSQL) ,   it allocate memory for that known as cursor.
+* A cursor is a pointer to this context area. PL/SQL controls the context area through a Cursor.
+* A Cursor can hold more than one row, but can process only one row at a time. The set of rows the cursor hold is called the active set.
+* A cursor is a temporary work area created in the system memory when a SQL statement is executed. A cursor contains information on a select statement and the rows of data accessed by it.
+* This temporary work area is used to store the data retrieved from the database and manipulate this data.
+
+#### There are two type of cursor in PL/SQL:-
+
+1. **Implicit cursor:-**
+   * These are creating by default when DML statement like, INSERT, UPDATE, and DELETE statement are executed. They are also created when a SELECT statement that returns just one row is executed.
+   * Implicit cursors are automatically created by oracle whenever an SQL statement is executed, when there is no explicit cursor for the statement. Programmers cannot control the implicit cursor and the information in it.
+
+
+### Difference between WHERE and HAVING in SQL?
+| Having                                                           | Where                                                                      |
+| :--------------------------------------------------------------- | :------------------------------------------------------------------------- |
+| Having ke sath GROUP BY use hota hai                             |                                                                            |
+| Having post filter hai(data fatch hone ke baad filter lagta hai) | where pre filter hai(isme pahle filter lagta hai phir fatch data hota hai) |
+| having can be used only with select command                      | can be used with select update delete                                      |
+| HAVING is used for column operations.                            | WHERE is used for row operations                                           |
+| having ke aggrigate function sath kar sakte hai                  | where ke sath aggrigate function use nahi kar sakte                        |
+```sql
+a   c1  40
+a   c2  50
+b   c3  30
+c   c1  20
+
+select std, sum(score) as total from record group by std having total>60;
+```
+
+### **List of Mysql storage Engines/Table Type?**
+Mysql ne apni requirment ke according alag-alag table type diye hai.
+1. MyIsam:-
+* Myisam good for select command.
+* it support full text searching.
+* it support table level locking.
+* it support Blob and text column can be indexed.
+2. Innodb
+* it support for referential integrity.
+* it support foreign key constraint.
+* it support Row level locking.
+* it support for transaction. 
+3. CSV
+* The CSV storage engine stores data in text file using comma separated values format.
+4. Archive
+5. memory 
+6. black hole
+7. merge
+8. federated
+
+
+### **Ques. What is Stored procedure?**
+* Stored procedure is a function which cantains a collection of sql quries, the procedure can take inputs, process them and send back output.
+* Stored procedure is a database object which is used to perform some specific task.
+* Stored procedure is called explicitly.
+* Store procedures is set of structure Query language (SQL) statement that perform particular task.
+* Store procedures is set of structure Query language (SQL) statement with an assigned name, which are stored in a relation database 
+management system as a group, so it can be reused and shered by multipal program.
+* Advantage: Stored Procedures are precompiled and stored in the database. This enables the Database to execute the queries much faster. Since many queries can be included in a stored procedure, round trip time to execute multiple queries from source code to
+Database and back is avoided.
+* A procedure is a group of SQL statement that you can call by name.
+* Store procedures is a database object which is used to perform some specific task.
+
+__Advantage__
+* Store procedure is reducing the complexity of code in code behind.
+* Store procedures have repeatedly having data. It helps to reuse the code.
+* It store in precompiled format so execution of speed is much faster than SQL statement.
+
+```
+1. Store procedures explicitly call hote hai.
+2. Tiger automatic call hote hai.
+3. Function inside the sql call hote hai.
+```
+
+```sql
+create procedure procedure_name as
+begain
+  select name, age from emp;
+end
+
+execute procedure_name
+```
+
+```sql
+CREATE OR REPLACE PROCEDURE ABCD
+IS 
+BEGIN
+DBMS_OUTPUT.PUT_LINE('JAI PL BABA');
+END;
+sql>EXECUTE ABCD (sql>set serveroutput on)
+```
+```sql
+ALTER procedure [dbo].[inemp]
+@eno int,@enm varchar(20),@sl int
+as
+begin
+insert into emp(EMPNO,ENAME,SAL) values(@eno,@enm,@sl);
+end
+```
+
+
+
+### **Ques. What is Json?**
+* Json stands for Javascript Object Notation and Json is lightweight data interchange format.
+* Json is syntax for storing and exchanging data.
+* it is easy for machine to parse and recreates.
+* Json is often used when data is sent from a server to a web page.
+
+__JSON Advantage__
+* JSON does not have namespace.
+* JSON is not extensible.
+
+
+### **Ques. is a blank space or zero the same as a null value in sql?**
+No 
+
+
+MySql Interview Questions
+
+
+
+Ques. Difference between inner & self & cross ?
+Ans. 
+Inner:-
+Self:-
+Cross:-
+
+
+
+SQL Queries:-
+-------?
+
+Delete table
+Delete table_name; (only table data del)drop table persons;
+drop table persons;
+
+
+
+Insert data in another table
+
+Add column
+ALTER TABLE table_name
+ADD column_name datatype(size), column_name datatype(size));
+ALTER TABLE table_name
+ADD column_name datatype
+
+
+
+Data insert/update in a column
+update emp set city='noida' where lastname='saxena'
+
+Rename Datatype
+ALTER TABLE LALU MODIFY (MOBILE NUMBER(15));
+
+
+
+
+
+
+
+
+
+1.  What are set operators in SQL?
+
+
+
+1.  What are types of locks?
+2. Sheared lock: When a shared lock is applied on data item, other transactions can only read the
+item, but can&#39;t write into it.
+1. Exclusive lock: When an exclusive lock is applied on data item, other transactions can&#39;t read or
+write into the data item.
+1.  How to delete duplicate record from a table?
+SQL&gt;DELETE FROM EMP WHERE ROWID NOT IN (SELECT MAX (ROWID) FROM EMP GROUP BY
+ROLL)
+
+
+
+
+
+#### When you would use it
+1. **Merging data**: When you need to combine data from two tables into a single result set while preserving all records.
+2. **Handling missing data**: In scenarios where data might be missing or incomplete in one or both tables.
+3. **Comparing data**: For data analysis, auditing, or quality control to compare and identify differences between two data sources.
+4. **Reporting exceptions**: To identify and report data discrepancies or anomalies across tables.
